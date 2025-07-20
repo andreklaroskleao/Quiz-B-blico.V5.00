@@ -76,6 +76,15 @@ const chatFormWaitingRoom = document.getElementById('chat-form-waiting-room');
 const chatInputWaitingRoom = document.getElementById('chat-input-waiting-room');
 const startRequirementMessage = document.getElementById('start-requirement-message');
 
+// Novos elementos para a tela de resultados da competição
+const competitionResultScreen = document.getElementById('competition-result-screen');
+const competitionResultTitle = document.getElementById('competition-result-title');
+const competitionResultCode = document.getElementById('competition-result-code');
+const competitionRankingTbody = document.getElementById('competition-ranking-tbody');
+const playAgainCompetitionBtn = document.getElementById('play-again-competition-btn');
+const returnToLobbyBtn = document.getElementById('return-to-lobby-btn');
+
+
 // --- Estado do Quiz e Usuário ---
 let currentUser = null;
 let currentUserAgeGroup = "adulto";
@@ -86,6 +95,7 @@ let correctAnswersCount = 0;
 let currentGroupId = null;
 let quizAtualDifficulty = 'facil';
 let activeCompetitionId = null;
+let competitionData = null; // Para armazenar os dados da competição ativa
 let unsubscribeCompetition = null;
 let unsubscribeChat = null;
 
@@ -99,12 +109,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const urlParams = new URLSearchParams(window.location.search);
     const groupIdFromUrl = urlParams.get('groupId');
     const difficultyFromUrl = urlParams.get('difficulty');
+    const competitionIdFromUrl = urlParams.get('competitionId'); // Nova: para deep linking em competições
+
     if (groupIdFromUrl) {
         sessionStorage.setItem('currentGroupId', groupIdFromUrl);
         if (difficultyFromUrl) {
             sessionStorage.setItem('currentGroupDifficulty', difficultyFromUrl);
         }
+    } else if (competitionIdFromUrl) { // Se houver competitionId na URL, tentamos carregar a competição
+        sessionStorage.setItem('activeCompetitionId', competitionIdFromUrl);
     }
+
+
     if (window.history.replaceState) {
         const cleanUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
         window.history.replaceState({path: cleanUrl}, '', cleanUrl);
@@ -128,14 +144,18 @@ function getAgeGroup(birthDateString) {
 }
 
 function switchScreen(newScreenId) {
-    document.querySelectorAll('.screen').forEach(screen => {
-        if (screen && !screen.classList.contains('hidden')) {
+    document.querySelectorAll('.screen, .modal').forEach(screen => { // Inclui .modal para garantir que todos os modais sejam escondidos
+        if (screen && !screen.classList.contains('hidden') && screen.id !== 'dob-modal') { // Mantém dob-modal visível se necessário
             screen.classList.add('hidden');
+            screen.classList.remove('visible'); // Remove a classe 'visible' para modais
         }
     });
     const screenToShow = document.getElementById(newScreenId);
     if (screenToShow) {
         screenToShow.classList.remove('hidden');
+        if (screenToShow.classList.contains('modal')) { // Adiciona 'visible' se for um modal
+            screenToShow.classList.add('visible');
+        }
     }
 }
 
@@ -195,19 +215,46 @@ onAuthStateChanged(auth, async (user) => {
             if (currentUserAgeGroup === "crianca") {
                 document.body.classList.add('tema-crianca');
             }
+            if(dobModal) dobModal.classList.remove('visible'); // Esconde o modal se a data já existe
         } else {
-            if(dobModal) dobModal.classList.add('visible');
+            if(dobModal) dobModal.classList.add('visible'); // Mostra o modal se a data não existe
         }
 
-        const groupIdFromSession = sessionStorage.getItem('currentGroupId');
-        const groupDifficultyFromSession = sessionStorage.getItem('currentGroupDifficulty');
-        if (groupIdFromSession && groupDifficultyFromSession) {
-            await updateUiforGroupMode();
-            startQuiz(groupDifficultyFromSession);
-        } else {
-            if (mainMenu) mainMenu.classList.remove('hidden');
-            if (welcomeMessage) welcomeMessage.classList.add('hidden');
-            await loadUserGroups(user.uid); 
+        // Nova lógica para carregar competição de sessão/URL
+        const competitionIdFromSession = sessionStorage.getItem('activeCompetitionId');
+        if (competitionIdFromSession) {
+            activeCompetitionId = competitionIdFromSession;
+            const competitionRef = doc(db, 'competicoes', activeCompetitionId);
+            const competitionDoc = await getDoc(competitionRef);
+
+            if (competitionDoc.exists()) {
+                competitionData = competitionDoc.data();
+                if (competitionData.estado === 'aguardando') {
+                    showWaitingRoom(currentUser.uid === competitionData.criadorUid);
+                } else if (competitionData.estado === 'em_andamento') {
+                    // Se o usuário recarregou e a competição está em andamento, redireciona para o quiz
+                    startCompetitionQuiz(competitionData.perguntas);
+                } else if (competitionData.estado === 'finalizada') {
+                    showCompetitionResults(competitionData); // Se já finalizada, mostra os resultados
+                }
+            } else {
+                console.error("Competição da sessão não encontrada.");
+                sessionStorage.removeItem('activeCompetitionId'); // Limpa a sessão se a competição não existe
+                if (mainMenu) mainMenu.classList.remove('hidden');
+                if (welcomeMessage) welcomeMessage.classList.add('hidden');
+                await loadUserGroups(user.uid); 
+            }
+        } else { // Lógica original para grupos e menu inicial
+            const groupIdFromSession = sessionStorage.getItem('currentGroupId');
+            const groupDifficultyFromSession = sessionStorage.getItem('currentGroupDifficulty');
+            if (groupIdFromSession && groupDifficultyFromSession) {
+                await updateUiforGroupMode();
+                startQuiz(groupDifficultyFromSession);
+            } else {
+                if (mainMenu) mainMenu.classList.remove('hidden');
+                if (welcomeMessage) welcomeMessage.classList.add('hidden');
+                await loadUserGroups(user.uid); 
+            }
         }
     } else {
         currentUser = null;
@@ -218,6 +265,13 @@ onAuthStateChanged(auth, async (user) => {
         if (welcomeMessage) welcomeMessage.classList.remove('hidden');
         if (adminLink) adminLink.classList.add('hidden');
         if (profileLink) profileLink.classList.add('hidden');
+        // Limpa estados de competição ao deslogar
+        sessionStorage.removeItem('activeCompetitionId');
+        if (unsubscribeCompetition) unsubscribeCompetition();
+        if (unsubscribeChat) unsubscribeChat();
+        activeCompetitionId = null;
+        competitionData = null;
+        switchScreen('initial-screen');
     }
 });
 
@@ -237,7 +291,7 @@ async function saveUserToFirestore(user) {
                 showInRanking: true,
                 stats: { pontuacaoTotal: 0, quizzesJogadosTotal: 0, respostasCertasTotal: 0, respostasErradasTotal: 0 },
                 conquistas: [],
-                bordasDesbloqueadas: ["default", "simples_azul", "simples_verde", "simples_roxo"],
+                bordasDesbloqueadas: ["default", "simples_azul", "simples_verde", "simples_roxo", "floral_verde", "geometrico_teal", "folhas_violeta", "galhos_cinza"],
                 bordaEquipada: "default"
             });
         } else {
@@ -451,7 +505,11 @@ async function startQuiz(difficulty) {
 
 function displayQuestion() {
     if (currentQuestionIndex >= questions.length) {
-        showResults();
+        if (activeCompetitionId) {
+            endCompetition(); // Nova: para finalizar a competição
+        } else {
+            showResults();
+        }
         return;
     }
     const progress = (currentQuestionIndex / questions.length) * 100;
@@ -471,25 +529,45 @@ function displayQuestion() {
     });
 }
 
-function handleAnswer(e) {
+async function handleAnswer(e) {
     Array.from(optionsContainer.children).forEach(btn => btn.disabled = true);
     const selectedButton = e.target;
     const selectedIndex = parseInt(selectedButton.dataset.index);
     const question = questions[currentQuestionIndex];
     const isCorrect = selectedIndex === question.correta;
+    
+    let questionScore = 0;
     if (isCorrect) {
         selectedButton.classList.add('correct');
         if (feedback) feedback.textContent = 'Resposta Correta!';
-        score += 10;
+        questionScore = 10; // Cada pergunta vale 10 pontos
         correctAnswersCount++;
     } else {
         selectedButton.classList.add('wrong');
         if (feedback) feedback.textContent = 'Resposta Errada!';
         optionsContainer.children[question.correta].classList.add('correct');
     }
+    score += questionScore; // Acumula pontuação para o quiz individual/grupo
+
     if (reference) reference.textContent = `Referência: ${question.referencia}`;
     if (nextBtn) nextBtn.classList.remove('hidden');
     if (progressBar) progressBar.style.width = `${((currentQuestionIndex + 1) / questions.length) * 100}%`;
+
+    // Lógica para competição
+    if (activeCompetitionId && currentUser) {
+        const competitionRef = doc(db, 'competicoes', activeCompetitionId);
+        const participantPath = `participantes.${currentUser.uid}`;
+        
+        await updateDoc(competitionRef, {
+            [`${participantPath}.pontuacao`]: increment(questionScore),
+            [`${participantPath}.respostas`]: arrayUnion({
+                questionIndex: currentQuestionIndex,
+                answeredCorrectly: isCorrect,
+                selectedOption: selectedIndex,
+                timestamp: serverTimestamp()
+            })
+        });
+    }
 }
 
 if (nextBtn) nextBtn.addEventListener('click', () => {
@@ -536,7 +614,7 @@ async function showResults() {
     }
 }
 
-async function checkAndAwardAchievements(userRef, currentQuizScore, currentQuizCorrectAnswers) {
+async function checkAndAwardAchievements(userRef, currentQuizScore, currentQuizCorrectAnswers, competitionRank = null) {
     const userDoc = await getDoc(userRef);
     if (!userDoc.exists()) return;
     const userData = userDoc.data();
@@ -544,6 +622,7 @@ async function checkAndAwardAchievements(userRef, currentQuizScore, currentQuizC
     let newAchievements = [];
     const stats = userData.stats;
 
+    // Conquistas baseadas em quizzes individuais/grupo
     if (!userAchievements.has("iniciante_da_fe") && (stats.quizzesJogadosTotal || 0) >= 1) newAchievements.push("iniciante_da_fe");
     if (!userAchievements.has("peregrino_fiel") && (stats.quizzesJogadosTotal || 0) >= 10) newAchievements.push("peregrino_fiel");
     if (!userAchievements.has("discipulo_dedicado") && (stats.quizzesJogadosTotal || 0) >= 50) newAchievements.push("discipulo_dedicado");
@@ -555,13 +634,21 @@ async function checkAndAwardAchievements(userRef, currentQuizScore, currentQuizC
     if (!userAchievements.has("mestre_da_palavra") && (stats.respostasCertasTotal || 0) >= 100) newAchievements.push("mestre_da_palavra");
     if (!userAchievements.has("escriba_habil") && (stats.respostasCertasTotal || 0) >= 500) newAchievements.push("escriba_habil");
     if (!userAchievements.has("doutor_da_lei") && (stats.respostasCertasTotal || 0) >= 1000) newAchievements.push("doutor_da_lei");
-    if (!userAchievements.has("quase_la") && currentQuizScore >= 90) newAchievements.push("quase_la");
-    if (!userAchievements.has("perfeccionista") && currentQuizScore >= 100) newAchievements.push("perfeccionista");
-    if (!userAchievements.has("impecavel") && currentQuizCorrectAnswers === questions.length) newAchievements.push("impecavel");
+    if (!userAchievements.has("quase_la") && currentQuizScore >= 90 && currentQuizScore < 100) newAchievements.push("quase_la"); // Ajustado para ser 'quase lá'
+    if (!userAchievements.has("perfeccionista") && currentQuizScore === 100) newAchievements.push("perfeccionista");
+    if (!userAchievements.has("impecavel") && currentQuizCorrectAnswers === questions.length && questions.length > 0) newAchievements.push("impecavel");
     if (!userAchievements.has("explorador_facil") && (stats.pontuacaoFacil || 0) >= 1000) newAchievements.push("explorador_facil");
     if (!userAchievements.has("desafiante_medio") && (stats.pontuacaoMedio || 0) >= 1000) newAchievements.push("desafiante_medio");
     if (!userAchievements.has("estrategista_dificil") && (stats.pontuacaoDificil || 0) >= 1000) newAchievements.push("estrategista_dificil");
     if (currentGroupId && !userAchievements.has("competidor")) newAchievements.push("competidor");
+
+    // Conquistas baseadas no ranking da competição
+    if (competitionRank !== null) {
+        if (competitionRank === 1 && !userAchievements.has('competicao_ouro')) newAchievements.push('competicao_ouro');
+        if (competitionRank === 2 && !userAchievements.has('competicao_prata')) newAchievements.push('competicao_prata');
+        if (competitionRank === 3 && !userAchievements.has('competicao_bronze')) newAchievements.push('competicao_bronze');
+        if (competitionRank === 4 && !userAchievements.has('competicao_honra')) newAchievements.push('competicao_honra');
+    }
 
     if (newAchievements.length > 0) {
         await updateDoc(userRef, { conquistas: arrayUnion(...newAchievements) });
@@ -571,11 +658,17 @@ async function checkAndAwardAchievements(userRef, currentQuizScore, currentQuizC
     }
 }
 
+
 if (leaveQuizBtn) {
     leaveQuizBtn.addEventListener('click', () => {
         if (confirm("Tem certeza de que deseja sair do quiz? O seu progresso nesta partida não será salvo.")) {
+            // Se estiver em competição, também precisa sair da competição
+            if (activeCompetitionId) {
+                leaveWaitingRoom(); // Esta função já cuida da remoção do participante/fechamento da sala
+            }
             sessionStorage.removeItem('currentGroupId');
             sessionStorage.removeItem('currentGroupDifficulty');
+            sessionStorage.removeItem('activeCompetitionId'); // Garante que a competição seja limpa
             updateUiforGroupMode();
             switchScreen('initial-screen');
             if (mainMenu) mainMenu.classList.remove('hidden');
@@ -587,6 +680,7 @@ if (leaveQuizBtn) {
 if (restartBtn) restartBtn.addEventListener('click', () => {
     sessionStorage.removeItem('currentGroupId');
     sessionStorage.removeItem('currentGroupDifficulty');
+    sessionStorage.removeItem('activeCompetitionId');
     updateUiforGroupMode();
     switchScreen('initial-screen');
     if (mainMenu) mainMenu.classList.remove('hidden');
@@ -718,6 +812,7 @@ if (createCompetitionBtn) createCompetitionBtn.addEventListener('click', async (
             dataCriacao: serverTimestamp()
         });
         activeCompetitionId = competitionRef.id;
+        sessionStorage.setItem('activeCompetitionId', activeCompetitionId); // Salva na sessão
         showWaitingRoom(true);
 
     } catch (error) {
@@ -750,6 +845,15 @@ if (joinCompetitionBtn) joinCompetitionBtn.addEventListener('click', async () =>
         const competitionDoc = competitionSnapshot.docs[0];
         const competitionRef = doc(db, 'competicoes', competitionDoc.id);
 
+        // Verifica se o usuário já está no jogo
+        if (competitionDoc.data().participantes && competitionDoc.data().participantes[currentUser.uid]) {
+            alert("Você já está nesta sala!");
+            activeCompetitionId = competitionDoc.id;
+            sessionStorage.setItem('activeCompetitionId', activeCompetitionId);
+            showWaitingRoom(currentUser.uid === competitionDoc.data().criadorUid);
+            return;
+        }
+
         await updateDoc(competitionRef, {
             [`participantes.${currentUser.uid}`]: {
                 nome: currentUser.displayName,
@@ -760,6 +864,7 @@ if (joinCompetitionBtn) joinCompetitionBtn.addEventListener('click', async () =>
             }
         });
         activeCompetitionId = competitionDoc.id;
+        sessionStorage.setItem('activeCompetitionId', activeCompetitionId);
         showWaitingRoom(false);
 
     } catch (error) {
@@ -789,7 +894,7 @@ teamAzulBox.addEventListener('click', () => selectTeam('azul'));
 teamAmareloBox.addEventListener('click', () => selectTeam('amarelo'));
 
 function showWaitingRoom(isCreator) {
-    if(waitingRoomModal) waitingRoomModal.classList.add('visible');
+    switchScreen('waiting-room-modal'); // Garante que o modal esteja visível
     if(startCompetitionBtn) startCompetitionBtn.classList.toggle('hidden', !isCreator);
 
     if (unsubscribeCompetition) unsubscribeCompetition();
@@ -797,21 +902,24 @@ function showWaitingRoom(isCreator) {
     unsubscribeCompetition = onSnapshot(doc(db, 'competicoes', activeCompetitionId), (docSnapshot) => {
         if (!docSnapshot.exists()) {
             alert("A sala de competição foi fechada pelo criador.");
-            leaveWaitingRoom();
+            leaveWaitingRoom(false); // Não tenta remover de novo, apenas limpa
             return;
         }
 
-        const data = docSnapshot.data();
-        if(inviteCodeDisplay) inviteCodeDisplay.textContent = data.codigoConvite;
+        competitionData = docSnapshot.data(); // Atualiza os dados da competição
+        if(inviteCodeDisplay) inviteCodeDisplay.textContent = competitionData.codigoConvite;
         
         // Limpa listas
         teamAzulList.innerHTML = '';
         teamAmareloList.innerHTML = '';
 
-        const participantes = data.participantes || {};
-        const participantesArray = Object.values(participantes);
+        const participantes = competitionData.participantes || {};
+        const participantesArray = Object.values(participantes).filter(p => p !== null); // Filtra participantes nulos
+        
+        // Ordena participantes para exibição consistente
+        participantesArray.sort((a, b) => a.nome.localeCompare(b.nome));
 
-        Object.entries(participantes).forEach(([uid, player]) => {
+        participantesArray.forEach((player) => {
             const playerElement = document.createElement('li');
             playerElement.innerHTML = `<img src="${player.fotoURL || 'https://placehold.co/30x30/e0e0e0/333?text=?'}" alt="Foto de ${player.nome}"> <span>${player.nome}</span>`;
             if(player.team === 'azul') {
@@ -819,7 +927,7 @@ function showWaitingRoom(isCreator) {
             } else if (player.team === 'amarelo') {
                 teamAmareloList.appendChild(playerElement);
             } else {
-                 // Jogador ainda não escolheu, pode-se adicionar a uma lista de 'sem equipe' se quiser
+                 // Pode adicionar a uma seção de "Aguardando equipe" se houver uma no HTML
             }
         });
 
@@ -831,21 +939,25 @@ function showWaitingRoom(isCreator) {
         // Lógica para habilitar o botão de início
         if(isCreator && startCompetitionBtn) {
             const playerCount = participantesArray.length;
-            if(playerCount >= data.minParticipantes) {
+            if(playerCount >= competitionData.minParticipantes) {
                 startCompetitionBtn.disabled = false;
                 startRequirementMessage.classList.add('hidden');
             } else {
                 startCompetitionBtn.disabled = true;
-                startRequirementMessage.textContent = `São necessários pelo menos ${data.minParticipantes} jogadores para começar. Atuais: ${playerCount}.`;
+                startRequirementMessage.textContent = `São necessários pelo menos ${competitionData.minParticipantes} jogadores para começar. Atuais: ${playerCount}.`;
                 startRequirementMessage.classList.remove('hidden');
             }
         }
 
-        if (data.estado === 'em_andamento') {
+        if (competitionData.estado === 'em_andamento') {
             if (unsubscribeCompetition) unsubscribeCompetition();
             if(waitingRoomModal) waitingRoomModal.classList.remove('visible');
             alert("A competição vai começar!");
-            startCompetitionQuiz(data.perguntas);
+            startCompetitionQuiz(competitionData.perguntas);
+        } else if (competitionData.estado === 'finalizada') {
+            // Se a competição for finalizada enquanto em sala de espera, mostra resultados
+            if (unsubscribeCompetition) unsubscribeCompetition();
+            showCompetitionResults(competitionData);
         }
     });
 
@@ -877,33 +989,11 @@ function listenToChat() {
     });
 }
 
-if(chatFormWaitingRoom) {
-    chatFormWaitingRoom.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const messageText = chatInputWaitingRoom.value.trim();
-        if(messageText.length === 0 || !currentUser || !activeCompetitionId) return;
-
-        chatInputWaitingRoom.value = '';
-        try {
-            const messagesRef = collection(db, 'competicoes', activeCompetitionId, 'messages');
-            await addDoc(messagesRef, {
-                text: messageText,
-                uid: currentUser.uid,
-                senderName: currentUser.displayName,
-                timestamp: serverTimestamp()
-            });
-        } catch(error) {
-            console.error("Erro ao enviar mensagem:", error);
-            chatInputWaitingRoom.value = messageText; // Retorna a mensagem ao input se falhar
-        }
-    });
-}
-
 function startCompetitionQuiz(competitionQuestions) {
-    score = 0;
+    score = 0; // Pontuação para o quiz atual do usuário na competição
     correctAnswersCount = 0;
     currentQuestionIndex = 0;
-    questions = competitionQuestions;
+    questions = competitionQuestions; // As perguntas da competição são carregadas aqui
 
     if (nextBtn) nextBtn.classList.add('hidden');
     if (progressBar) progressBar.style.width = '0%';
@@ -914,42 +1004,187 @@ function startCompetitionQuiz(competitionQuestions) {
     } else {
         alert("Erro: Nenhuma pergunta foi carregada para a competição.");
         switchScreen('initial-screen');
+        sessionStorage.removeItem('activeCompetitionId'); // Limpa a sessão
+        activeCompetitionId = null;
     }
 }
+
+async function endCompetition() {
+    if (!activeCompetitionId || !currentUser) return;
+
+    const competitionRef = doc(db, 'competicoes', activeCompetitionId);
+    
+    try {
+        // Atualiza o estado da competição para 'finalizada'
+        await updateDoc(competitionRef, {
+            estado: 'finalizada',
+            dataTermino: serverTimestamp()
+        });
+        
+        // A onSnapshot em showWaitingRoom (ou um novo listener) lidará com a transição
+        // para showCompetitionResults quando o estado for 'finalizada'.
+        // Não chamamos showCompetitionResults diretamente aqui para que a UI seja reativa ao Firestore.
+    } catch (error) {
+        console.error("Erro ao finalizar competição:", error);
+        alert("Ocorreu um erro ao finalizar a competição.");
+    }
+}
+
+async function showCompetitionResults(competitionData) {
+    switchScreen('competition-result-screen');
+    if (competitionResultCode) competitionResultCode.textContent = `Código da Sala: ${competitionData.codigoConvite}`;
+    
+    if (competitionRankingTbody) {
+        competitionRankingTbody.innerHTML = '';
+
+        const participants = Object.values(competitionData.participantes || {}).filter(p => p !== null);
+        // Ordena os participantes pela pontuação em ordem decrescente
+        participants.sort((a, b) => b.pontuacao - a.pontuacao);
+
+        let rank = 1;
+        for (const participant of participants) {
+            const row = document.createElement('tr');
+            let rankClass = '';
+            let borderClass = '';
+
+            // Lógica para as bordas e classes de ranking
+            if (rank === 1) { rankClass = 'rank-1'; borderClass = 'borda_competicao_ouro'; }
+            else if (rank === 2) { rankClass = 'rank-2'; borderClass = 'borda_competicao_prata'; }
+            else if (rank === 3) { rankClass = 'rank-3'; borderClass = 'borda_competicao_bronze'; }
+            else if (rank === 4) { rankClass = 'rank-4'; borderClass = 'borda_competicao_honra'; }
+            
+            row.innerHTML = `
+                <td class="rank ${rankClass}">${rank}</td>
+                <td class="member-info">
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <div class="profile-photo-container ${borderClass}" style="width: 40px; height: 40px; padding: 2px;">
+                            <img src="${participant.fotoURL || 'https://placehold.co/40x40'}" alt="Foto de ${participant.nome}" style="width: 100%; height: 100%;">
+                        </div>
+                        <span>${participant.nome}</span>
+                    </div>
+                </td>
+                <td class="score">${participant.pontuacao}</td>
+                <td>${participant.team ? (participant.team === 'azul' ? 'Azul' : 'Amarelo') : 'N/A'}</td>
+            `;
+            competitionRankingTbody.appendChild(row);
+
+            // Conceder conquistas de competição (apenas para o usuário logado)
+            if (currentUser && participant.uid === currentUser.uid) {
+                const userRef = doc(db, 'usuarios', currentUser.uid);
+                await checkAndAwardAchievements(userRef, participant.pontuacao, participant.respostas.filter(r => r.answeredCorrectly).length, rank);
+            }
+            rank++;
+        }
+    }
+
+    // Apenas o criador pode "Jogar Novamente"
+    if (playAgainCompetitionBtn) {
+        playAgainCompetitionBtn.classList.toggle('hidden', currentUser.uid !== competitionData.criadorUid);
+    }
+}
+
 
 if(startCompetitionBtn) startCompetitionBtn.addEventListener('click', async () => {
     if(!activeCompetitionId) return;
     const competitionRef = doc(db, 'competicoes', activeCompetitionId);
     await updateDoc(competitionRef, { estado: 'em_andamento' });
 });
-if(leaveWaitingRoomBtn) leaveWaitingRoomBtn.addEventListener('click', leaveWaitingRoom);
-async function leaveWaitingRoom() {
-    const isCreator = startCompetitionBtn && !startCompetitionBtn.classList.contains('hidden');
 
-    if(isCreator) {
-        // Se o criador sai, a sala é deletada
+if(leaveWaitingRoomBtn) leaveWaitingRoomBtn.addEventListener('click', () => leaveWaitingRoom(true)); // Passa true para indicar que é uma saída voluntária
+async function leaveWaitingRoom(voluntaryExit = true) {
+    const isCreator = competitionData && currentUser.uid === competitionData.criadorUid;
+
+    if (voluntaryExit && isCreator) {
         if(confirm("Você é o criador da sala. Sair irá fechar a sala para todos. Deseja continuar?")) {
             const competitionRef = doc(db, 'competicoes', activeCompetitionId);
+            // Deletar a subcoleção 'messages' antes de deletar o documento da competição
+            const messagesRef = collection(competitionRef, 'messages');
+            const messageDocs = await getDocs(messagesRef);
             const batch = writeBatch(db);
-            batch.delete(competitionRef);
-            await batch.commit(); // A sala será fechada para todos via onSnapshot
+            messageDocs.forEach(doc => {
+                batch.delete(doc.ref);
+            });
+            batch.delete(competitionRef); // Adiciona a exclusão do documento principal
+            await batch.commit(); 
         } else {
             return; // O criador cancelou a saída
         }
-    } else {
+    } else if (voluntaryExit && !isCreator) {
         // Se um participante normal sai, ele é removido da lista
         const competitionRef = doc(db, 'competicoes', activeCompetitionId);
         await updateDoc(competitionRef, {
-            [`participantes.${currentUser.uid}`]: null // Firestore não tem um 'delete field', então usamos null e filtramos
+            [`participantes.${currentUser.uid}`]: null // Define o participante como null para removê-lo
         });
     }
 
+    // Limpa os listeners e estados
     if (unsubscribeCompetition) unsubscribeCompetition();
     if (unsubscribeChat) unsubscribeChat();
 
+    sessionStorage.removeItem('activeCompetitionId');
     activeCompetitionId = null;
-    if(waitingRoomModal) waitingRoomModal.classList.remove('visible');
+    competitionData = null;
+    switchScreen('initial-screen');
+    if (mainMenu) mainMenu.classList.remove('hidden');
+    if (welcomeMessage) welcomeMessage.classList.add('hidden');
+    if (currentUser) {
+        await loadUserGroups(currentUser.uid); // Recarrega os grupos do usuário
+    }
 }
+
+if (playAgainCompetitionBtn) {
+    playAgainCompetitionBtn.addEventListener('click', async () => {
+        if (!activeCompetitionId || !currentUser || currentUser.uid !== competitionData.criadorUid) {
+            alert("Apenas o criador da sala pode iniciar uma nova rodada.");
+            return;
+        }
+
+        // Reinicia a competição
+        const competitionRef = doc(db, 'competicoes', activeCompetitionId);
+        
+        // Resetar participantes e estado, mas manter o código e perguntas
+        const resetParticipants = {};
+        Object.keys(competitionData.participantes).forEach(uid => {
+            const participant = competitionData.participantes[uid];
+            if (participant) { // Garante que participantes que saíram não sejam reiniciados
+                resetParticipants[uid] = {
+                    nome: participant.nome,
+                    fotoURL: participant.fotoURL,
+                    pontuacao: 0,
+                    respostas: [],
+                    team: participant.team // Mantém a equipe selecionada
+                };
+            }
+        });
+
+        try {
+            await updateDoc(competitionRef, {
+                estado: 'aguardando',
+                participantes: resetParticipants,
+                dataTermino: null // Limpa a data de término
+            });
+            // O onSnapshot em showWaitingRoom irá detectar a mudança e reabrir a sala de espera
+        } catch (error) {
+            console.error("Erro ao reiniciar competição:", error);
+            alert("Não foi possível reiniciar a competição.");
+        }
+    });
+}
+
+if (returnToLobbyBtn) {
+    returnToLobbyBtn.addEventListener('click', () => {
+        if (activeCompetitionId && currentUser) {
+            showWaitingRoom(currentUser.uid === competitionData.criadorUid);
+        } else {
+            // Se por algum motivo não houver competição ativa, volta ao menu inicial
+            switchScreen('initial-screen');
+            if (mainMenu) mainMenu.classList.remove('hidden');
+            if (welcomeMessage) welcomeMessage.classList.add('hidden');
+        }
+    });
+}
+
+
 // --- Lógica do Modal de Doação PIX ---
 const donateCard = document.getElementById('donate-card');
 const donateModal = document.getElementById('donate-modal');
