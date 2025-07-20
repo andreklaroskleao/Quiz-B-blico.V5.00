@@ -1,0 +1,4919 @@
+[
+    {
+      "tema": "evangelhos",
+      "nivel": "facil",
+      "alternativas": [
+        "Gritou bem alto",
+        "Subiu em uma árvore",
+        "Empurrou a multidão",
+        "Ficou em cima de uma casa"
+      ],
+      "referencia": "Lucas 19:4",
+      "correta": 1,
+      "enunciado": "O que Zaqueu fez para conseguir ver Jesus?",
+      "faixaEtaria": ["crianca", "adolescente", "adulto"]
+    },
+    {
+      "correta": 3,
+      "tema": "epistolas",
+      "referencia": "1 João 1:9",
+      "nivel": "facil",
+      "enunciado": "Qual o nome do homem que foi o primeiro a dizer 'Se confessarmos os nossos pecados, ele é fiel e justo para nos perdoar os pecados'?",
+      "alternativas": [
+        "Jesus",
+        "Paulo",
+        "Pedro",
+        "João"
+      ],
+      "faixaEtaria": ["adolescente", "adulto"]
+    },
+    {
+      "correta": 1,
+      "tema": "personagens",
+      "referencia": "Êxodo 32:26",
+      "alternativas": [
+        "Arão",
+        "Moisés",
+        "Josué",
+        "Finéias"
+      ],
+      "enunciado": "Qual o nome do homem que foi o primeiro a dizer 'Quem é da parte do Senhor, venha a mim'?",
+      "nivel": "medio",
+      "faixaEtaria": ["adolescente", "adulto"]
+    },
+    {
+      "correta": 1,
+      "alternativas": [
+        "Pedro",
+        "Paulo",
+        "João",
+        "Tiago"
+      ],
+      "enunciado": "Qual o nome do homem que foi o primeiro a dizer 'Todos pecaram e destituídos estão da glória de Deus'?",
+      "referencia": "Romanos 3:23",
+      "nivel": "facil",
+      "tema": "epistolas",
+      "faixaEtaria": ["adolescente", "adulto"]
+    },
+    {
+      "alternativas": [
+        "Miguel",
+        "Rafael",
+        "Uriel",
+        "Gabriel"
+      ],
+      "correta": 3,
+      "tema": "personagens",
+      "enunciado": "Qual o nome do anjo que anunciou o nascimento de Jesus a Maria?",
+      "nivel": "facil",
+      "referencia": "Lucas 1:26-28",
+      "faixaEtaria": ["crianca", "adolescente", "adulto"]
+    },
+    {
+      "nivel": "facil",
+      "tema": "evangelhos",
+      "correta": 1,
+      "alternativas": [
+        "Paulo",
+        "Jesus",
+        "Pedro",
+        "João"
+      ],
+      "enunciado": "Qual o nome do homem que foi o primeiro a dizer 'No mundo tereis aflições, mas tende bom ânimo, eu venci o mundo'?",
+      "referencia": "João 16:33",
+      "faixaEtaria": ["adolescente", "adulto"]
+    },
+    {
+      "nivel": "medio",
+      "correta": 2,
+      "alternativas": [
+        "Davi",
+        "Gideão",
+        "Paulo",
+        "Sansão"
+      ],
+      "tema": "epistolas",
+      "enunciado": "Qual o nome do homem que foi o primeiro a dizer 'Quando estou fraco então sou forte'?",
+      "referencia": "2 Coríntios 12:10",
+      "faixaEtaria": ["adolescente", "adulto"]
+    },
+    {
+      "correta": 2,
+      "referencia": "Hebreus 11:6",
+      "alternativas": [
+        "Jesus",
+        "Paulo",
+        "O autor de Hebreus",
+        "Pedro"
+      ],
+      "tema": "epistolas",
+      "nivel": "facil",
+      "enunciado": "Qual o nome do homem que foi o primeiro a dizer 'Sem fé é impossível agradar-lhe'?",
+      "faixaEtaria": ["adolescente", "adulto"]
+    },
+    {
+      "enunciado": "Qual o nome do homem que foi o primeiro rei de Israel?",
+      "alternativas": [
+        "Davi",
+        "Salomão",
+        "Saul",
+        "Samuel"
+      ],
+      "correta": 2,
+      "tema": "historia",
+      "nivel": "medio",
+      "referencia": "1 Samuel 9-10",
+      "faixaEtaria": ["adolescente", "adulto"]
+    },
+    {
+      "nivel": "facil",
+      "tema": "igreja primitiva",
+      "correta": 2,
+      "alternativas": [
+        "Coroas de ouro",
+        "Aureolas de luz",
+        "Línguas de fogo",
+        "Pombas brancas"
+      ],
+      "enunciado": "O que apareceu acima da cabeça dos apóstolos no dia de Pentecostes?",
+      "referencia": "Atos 2:3",
+      "faixaEtaria": ["crianca", "adolescente", "adulto"]
+    },
+    {
+      "correta": 3,
+      "tema": "patriarcas",
+      "nivel": "facil",
+      "alternativas": [
+        "Noé",
+        "Sem",
+        "Éber",
+        "Abraão"
+      ],
+      "enunciado": "Qual o nome do homem que foi o primeiro a receber a promessa da terra de Canaã?",
+      "referencia": "Gênesis 12:1-7",
+      "faixaEtaria": ["crianca", "adolescente", "adulto"]
+    },
+    {
+      "alternativas": [
+        "Salmos",
+        "Ester",
+        "Neemias",
+        "Rute"
+      ],
+      "enunciado": "Que livro do Antigo Testamento vem imediatamente antes do livro de Jó?",
+      "referencia": "Cânon do Antigo Testamento",
+      "correta": 1,
+      "tema": "livros",
+      "nivel": "facil",
+      "faixaEtaria": ["adolescente", "adulto"]
+    },
+    {
+      "tema": "profetas",
+      "correta": 1,
+      "enunciado": "Quem era o profeta que foi chamado por Deus enquanto era ainda um menino, servindo no templo com Eli?",
+      "alternativas": [
+        "Jeremias",
+        "Samuel",
+        "Isaías",
+        "Daniel"
+      ],
+      "referencia": "1 Samuel 3:1-10",
+      "nivel": "medio",
+      "faixaEtaria": ["adolescente", "adulto"]
+    },
+    {
+      "enunciado": "Qual o nome do homem que foi o primeiro a fazer um machado flutuar?",
+      "correta": 1,
+      "referencia": "2 Reis 6:1-7",
+      "nivel": "dificil",
+      "tema": "profetas",
+      "alternativas": [
+        "Elias",
+        "Eliseu",
+        "Sansão",
+        "Gideão"
+      ],
+      "faixaEtaria": ["adulto"]
+    },
+    {
+      "enunciado": "Que tipo de trabalho Neemias realizou em Jerusalém?",
+      "referencia": "Neemias 2:17",
+      "nivel": "medio",
+      "correta": 2,
+      "alternativas": [
+        "Reconstrução do Templo",
+        "Reforma religiosa",
+        "Reconstrução dos muros",
+        "Comando do exército"
+      ],
+      "tema": "historia",
+      "faixaEtaria": ["adolescente", "adulto"]
+    },
+    {
+      "referencia": "1 João 4:8",
+      "nivel": "facil",
+      "correta": 3,
+      "enunciado": "Qual o nome do homem que foi o primeiro a dizer 'Deus é amor'?",
+      "tema": "epistolas",
+      "alternativas": [
+        "Jesus",
+        "Paulo",
+        "Pedro",
+        "João"
+      ],
+      "faixaEtaria": ["adolescente", "adulto"]
+    },
+    {
+      "enunciado": "Qual era o nome do filho prometido a Abraão e Sara em sua velhice?",
+      "nivel": "facil",
+      "alternativas": [
+        "Ismael",
+        "Isaque",
+        "Jacó",
+        "Esaú"
+      ],
+      "referencia": "Gênesis 21:2-3",
+      "correta": 1,
+      "tema": "patriarcas",
+      "faixaEtaria": ["crianca", "adolescente", "adulto"]
+    },
+    {
+      "alternativas": [
+        "Arão",
+        "Moisés",
+        "Josué",
+        "Calebe"
+      ],
+      "referencia": "Josué 24:15",
+      "enunciado": "Qual o nome do homem que foi o primeiro a dizer 'Eu e a minha casa serviremos ao Senhor'?",
+      "nivel": "facil",
+      "tema": "personagens",
+      "correta": 2,
+      "faixaEtaria": ["adolescente", "adulto"]
+    },
+    {
+      "alternativas": [
+        "Davi",
+        "Paulo",
+        "Pedro",
+        "Salomão"
+      ],
+      "correta": 1,
+      "referencia": "Filipenses 4:19",
+      "enunciado": "Qual o nome do homem que foi o primeiro a dizer 'O meu Deus, segundo as suas riquezas, suprirá todas as vossas necessidades em glória, por Cristo Jesus'?",
+      "nivel": "medio",
+      "tema": "epistolas",
+      "faixaEtaria": ["adolescente", "adulto"]
+    },
+    {
+      "referencia": "Oseias 1:2-3",
+      "nivel": "dificil",
+      "alternativas": [
+        "Amós",
+        "Oseias",
+        "Joel",
+        "Miqueias"
+      ],
+      "tema": "profetas",
+      "correta": 1,
+      "enunciado": "Qual o nome do profeta que casou com uma prostituta chamada Gômer?",
+      "faixaEtaria": ["adulto"]
+    },
+    {
+      "referencia": "Gênesis 50:20",
+      "alternativas": [
+        "Jacó",
+        "José",
+        "Davi",
+        "Jesus"
+      ],
+      "nivel": "medio",
+      "enunciado": "Qual o nome do homem que foi o primeiro a dizer 'Vós bem intentastes mal contra mim, porém Deus o tornou em bem'?",
+      "correta": 1,
+      "tema": "patriarcas",
+      "faixaEtaria": ["adolescente", "adulto"]
+    },
+    {
+      "alternativas": [
+        "Estêvão",
+        "Jesus",
+        "Pedro",
+        "Paulo"
+      ],
+      "correta": 1,
+      "tema": "evangelhos",
+      "referencia": "Lucas 23:34",
+      "nivel": "facil",
+      "enunciado": "Qual o nome do homem que foi o primeiro a dizer 'Pai, perdoa-lhes, porque não sabem o que fazem'?",
+      "faixaEtaria": ["crianca", "adolescente", "adulto"]
+    },
+    {
+      "alternativas": [
+        "Gafanhotos",
+        "Trevas",
+        "Terremoto",
+        "Morte dos primogênitos"
+      ],
+      "nivel": "facil",
+      "correta": 2,
+      "referencia": "Êxodo 7-12",
+      "enunciado": "Qual destes não era uma das pragas do Egito?",
+      "tema": "pentateuco",
+      "faixaEtaria": ["crianca", "adolescente", "adulto"]
+    },
+    {
+      "enunciado": "Qual o nome do homem que foi o primeiro a dizer 'Vinde a mim, todos os que estais cansados e oprimidos, e eu vos aliviarei'?",
+      "tema": "evangelhos",
+      "alternativas": [
+        "Deus",
+        "Jesus",
+        "Pedro",
+        "Paulo"
+      ],
+      "referencia": "Mateus 11:28",
+      "correta": 1,
+      "nivel": "facil",
+      "faixaEtaria": ["adolescente", "adulto"]
+    },
+    {
+      "referencia": "Juízes 6-8",
+      "alternativas": [
+        "Gênesis",
+        "Êxodo",
+        "Juízes",
+        "Rute"
+      ],
+      "tema": "livros",
+      "nivel": "medio",
+      "enunciado": "Qual o nome do livro que contém a história de Gideão?",
+      "correta": 2,
+      "faixaEtaria": ["adolescente", "adulto"]
+    },
+    {
+      "nivel": "medio",
+      "correta": 3,
+      "enunciado": "Qual destes não era um dos amigos de Daniel na Babilônia?",
+      "referencia": "Daniel 1:6",
+      "tema": "personagens",
+      "alternativas": [
+        "Hananias",
+        "Misael",
+        "Azarias",
+        "Daniel"
+      ],
+      "faixaEtaria": ["adolescente", "adulto"]
+    },
+    {
+      "correta": 2,
+      "nivel": "facil",
+      "tema": "evangelhos",
+      "alternativas": [
+        "Jardim do Éden",
+        "Jardins da Babilônia",
+        "Getsêmani",
+        "Horto do Templo"
+      ],
+      "enunciado": "Qual era o nome do jardim onde Jesus orou antes de ser preso?",
+      "referencia": "Mateus 26:36",
+      "faixaEtaria": ["crianca", "adolescente", "adulto"]
+    },
+    {
+      "alternativas": [
+        "Arão",
+        "Moisés",
+        "Josué",
+        "Calebe"
+      ],
+      "enunciado": "Qual o nome do homem que foi o primeiro a liderar o povo de Israel para fora do Egito?",
+      "nivel": "facil",
+      "referencia": "Êxodo 12-14",
+      "tema": "personagens",
+      "correta": 1,
+      "faixaEtaria": ["crianca", "adolescente", "adulto"]
+    },
+    {
+      "tema": "personagens",
+      "nivel": "facil",
+      "alternativas": [
+        "Golias",
+        "Sansão",
+        "Davi",
+        "Hércules"
+      ],
+      "correta": 1,
+      "enunciado": "Quem era o homem mais forte da Bíblia, cuja força vinha de seu cabelo?",
+      "referencia": "Juízes 16:17",
+      "faixaEtaria": ["crianca", "adolescente", "adulto"]
+    },
+    {
+      "alternativas": [
+        "Pedro",
+        "João",
+        "Paulo",
+        "Tiago"
+      ],
+      "tema": "epistolas",
+      "correta": 2,
+      "nivel": "medio",
+      "enunciado": "Qual o nome do homem que foi o primeiro a dizer 'Combati o bom combate, acabei a carreira, guardei a fé'?",
+      "referencia": "2 Timóteo 4:7",
+      "faixaEtaria": ["adolescente", "adulto"]
+    },
+    {
+      "nivel": "dificil",
+      "referencia": "1 Reis 12:20",
+      "correta": 1,
+      "enunciado": "Quem foi o primeiro rei do Reino do Norte (Israel) após a divisão?",
+      "alternativas": [
+        "Roboão",
+        "Jeroboão",
+        "Acabe",
+        "Josafá"
+      ],
+      "tema": "historia",
+      "faixaEtaria": ["adulto"]
+    },
+    {
+      "nivel": "medio",
+      "tema": "personagens",
+      "enunciado": "Qual foi a cidade natal de Paulo?",
+      "alternativas": [
+        "Jerusalém",
+        "Tarso",
+        "Antioquia",
+        "Éfeso"
+      ],
+      "referencia": "Atos 22:3",
+      "correta": 1,
+      "faixaEtaria": ["adolescente", "adulto"]
+    },
+    {
+      "correta": 1,
+      "tema": "historia",
+      "alternativas": [
+        "Salomão",
+        "Roboão",
+        "Asa",
+        "Josafá"
+      ],
+      "enunciado": "Qual o nome do primeiro rei de Judá após a divisão do reino?",
+      "referencia": "1 Reis 14:21",
+      "nivel": "dificil",
+      "faixaEtaria": ["adulto"]
+    },
+    {
+      "nivel": "medio",
+      "tema": "personagens",
+      "correta": 1,
+      "alternativas": [
+        "Arão",
+        "Moisés",
+        "Josué",
+        "Davi"
+      ],
+      "referencia": "Êxodo 33:18",
+      "enunciado": "Qual o nome do homem que foi o primeiro a dizer 'Mostra-me a tua glória'?",
+      "faixaEtaria": ["adolescente", "adulto"]
+    },
+    {
+      "tema": "personagens",
+      "nivel": "medio",
+      "enunciado": "Qual o nome do homem que foi o primeiro a plantar uma vinha e se embriagar?",
+      "alternativas": [
+        "Adão",
+        "Noé",
+        "Ló",
+        "Abraão"
+      ],
+      "referencia": "Gênesis 9:20-21",
+      "correta": 1,
+      "faixaEtaria": ["adolescente", "adulto"]
+    },
+    {
+      "alternativas": [
+        "José de Arimateia",
+        "Nicodemos",
+        "Simão Cireneu",
+        "Barrabás"
+      ],
+      "nivel": "medio",
+      "enunciado": "Qual o nome do homem que ajudou Jesus a carregar a cruz?",
+      "referencia": "Marcos 15:21",
+      "correta": 2,
+      "tema": "evangelhos",
+      "faixaEtaria": ["adolescente", "adulto"]
+    },
+    {
+      "alternativas": [
+        "Judá",
+        "Benjamim",
+        "Levi",
+        "Rúben"
+      ],
+      "enunciado": "Qual era a tribo de Israel responsável pelos deveres sacerdotais?",
+      "referencia": "Números 3:5-9",
+      "tema": "historia",
+      "correta": 2,
+      "nivel": "medio",
+      "faixaEtaria": ["adolescente", "adulto"]
+    },
+    {
+      "correta": 2,
+      "enunciado": "Qual dos profetas menores repreende Edom por se alegrar com a destruição de Jerusalém?",
+      "alternativas": [
+        "Naum",
+        "Sofonias",
+        "Obadias",
+        "Habacuque"
+      ],
+      "tema": "profetas",
+      "nivel": "dificil",
+      "referencia": "Obadias 1:10-12",
+      "faixaEtaria": ["adulto"]
+    },
+    {
+      "enunciado": "Qual o nome do homem que foi o primeiro a dizer 'Convertei-vos, porque é chegado o reino dos céus'?",
+      "tema": "evangelhos",
+      "correta": 1,
+      "referencia": "Mateus 3:2",
+      "alternativas": [
+        "Jesus",
+        "João Batista",
+        "Pedro",
+        "Paulo"
+      ],
+      "nivel": "facil",
+      "faixaEtaria": ["adolescente", "adulto"]
+    },
+    {
+      "enunciado": "Quem foi a única mulher juíza de Israel?",
+      "referencia": "Juízes 4:4",
+      "tema": "personagens",
+      "nivel": "facil",
+      "alternativas": [
+        "Ester",
+        "Rute",
+        "Débora",
+        "Miriã"
+      ],
+      "correta": 2,
+      "faixaEtaria": ["crianca", "adolescente", "adulto"]
+    },
+
+    {
+    "enunciado": "Na parábola da Ovelha Perdida, quantas ovelhas o pastor deixou para trás para procurar a que se perdeu?",
+    "alternativas": [
+      "100",
+      "99",
+      "10",
+      "12"
+    ],
+    "correta": 1,
+    "nivel": "facil",
+    "tema": "evangelhos",
+    "referencia": "Lucas 15:4",
+    "faixaEtaria": ["crianca", "adolescente", "adulto"]
+  },
+  {
+    "enunciado": "Qual era o nome do gigante, rei de Basã, que foi derrotado por Moisés e os israelitas?",
+    "alternativas": [
+      "Golias",
+      "Sion",
+      "Ogue",
+      "Agague"
+    ],
+    "correta": 2,
+    "nivel": "medio",
+    "tema": "historia",
+    "referencia": "Deuteronômio 3:11",
+    "faixaEtaria": ["adolescente", "adulto"]
+  },
+  {
+    "enunciado": "Qual é o nome do silversmith em Éfeso que iniciou um motim contra Paulo?",
+    "alternativas": [
+      "Alexandre",
+      "Demetrius",
+      "Figelo",
+      "Hermógenes"
+    ],
+    "correta": 1,
+    "nivel": "dificil",
+    "tema": "igreja primitiva",
+    "referencia": "Atos 19:24",
+    "faixaEtaria": ["adulto"]
+  },
+  {
+    "enunciado": "Qual o nome da esposa de Moisés?",
+    "alternativas": [
+      "Miriã",
+      "Joquebede",
+      "Zípora",
+      "Raabe"
+    ],
+    "correta": 2,
+    "nivel": "facil",
+    "tema": "personagens",
+    "referencia": "Êxodo 2:21",
+    "faixaEtaria": ["crianca", "adolescente", "adulto"]
+  },
+  {
+    "enunciado": "Qual profeta foi instruído por Deus a cozinhar pão usando esterco humano como combustível como um sinal para Israel?",
+    "alternativas": [
+      "Isaías",
+      "Jeremias",
+      "Ezequiel",
+      "Oseias"
+    ],
+    "correta": 2,
+    "nivel": "dificil",
+    "tema": "profetas",
+    "referencia": "Ezequiel 4:12",
+    "faixaEtaria": ["adulto"]
+  },
+  {
+    "enunciado": "Quem era o rei de Judá que restaurou o Templo após encontrar o Livro da Lei?",
+    "alternativas": [
+      "Ezequias",
+      "Manassés",
+      "Josias",
+      "Asa"
+    ],
+    "correta": 2,
+    "nivel": "medio",
+    "tema": "historia",
+    "referencia": "2 Reis 22:8-11",
+    "faixaEtaria": ["adolescente", "adulto"]
+  },
+  {
+    "enunciado": "Qual foi o primeiro dos Dez Mandamentos?",
+    "alternativas": [
+      "Não matarás",
+      "Não furtarás",
+      "Não terás outros deuses diante de mim",
+      "Honra teu pai e tua mãe"
+    ],
+    "correta": 2,
+    "nivel": "facil",
+    "tema": "pentateuco",
+    "referencia": "Êxodo 20:3",
+    "faixaEtaria": ["crianca", "adolescente", "adulto"]
+  },
+  {
+    "enunciado": "Qual o nome da mulher que ungiu os pés de Jesus com um perfume caro e os enxugou com seus cabelos?",
+    "alternativas": [
+      "Maria Madalena",
+      "Marta",
+      "Maria, irmã de Lázaro",
+      "Salomé"
+    ],
+    "correta": 2,
+    "nivel": "medio",
+    "tema": "evangelhos",
+    "referencia": "João 12:3",
+    "faixaEtaria": ["adolescente", "adulto"]
+  },
+  {
+    "enunciado": "Na carta de Paulo aos Filipenses, quais eram os nomes das duas mulheres que ele exortou a concordarem no Senhor?",
+    "alternativas": [
+      "Trifena e Trifosa",
+      "Evódia e Síntique",
+      "Priscila e Lídia",
+      "Maria e Pérside"
+    ],
+    "correta": 1,
+    "nivel": "dificil",
+    "tema": "epistolas",
+    "referencia": "Filipenses 4:2",
+    "faixaEtaria": ["adulto"]
+  },
+  {
+    "enunciado": "Qual foi o alimento que Deus proveu para os israelitas no deserto?",
+    "alternativas": [
+      "Pão e vinho",
+      "Frutas e mel",
+      "Maná e codornizes",
+      "Peixe e pão"
+    ],
+    "correta": 2,
+    "nivel": "facil",
+    "tema": "pentateuco",
+    "referencia": "Êxodo 16:13-15",
+    "faixaEtaria": ["crianca", "adolescente", "adulto"]
+  },
+  {
+    "enunciado": "Qual era o nome do profeta que se opôs a Balaão a mando do rei Balaque?",
+    "alternativas": [
+      "Moisés",
+      "Josué",
+      "Balaão era o profeta",
+      "Samuel"
+    ],
+    "correta": 2,
+    "nivel": "medio",
+    "tema": "profetas",
+    "referencia": "Números 22:5-7",
+    "faixaEtaria": ["adolescente", "adulto"]
+  },
+  {
+    "enunciado": "Qual destes não era um dos três amigos de Jó que vieram consolá-lo?",
+    "alternativas": [
+      "Elifaz",
+      "Bildade",
+      "Eliú",
+      "Zofar"
+    ],
+    "correta": 2,
+    "nivel": "dificil",
+    "tema": "personagens",
+    "referencia": "Jó 2:11 e Jó 32:2",
+    "faixaEtaria": ["adulto"]
+  },
+  {
+    "enunciado": "Qual o nome da rainha que se recusou a comparecer perante o rei Assuero, o que levou Ester a se tornar rainha?",
+    "alternativas": [
+      "Jezabel",
+      "Vasti",
+      "Atalia",
+      "Zeres"
+    ],
+    "correta": 1,
+    "nivel": "facil",
+    "tema": "personagens",
+    "referencia": "Ester 1:12",
+    "faixaEtaria": ["crianca", "adolescente", "adulto"]
+  },
+  {
+    "enunciado": "Qual era o nome do sogro de Caim?",
+    "alternativas": [
+      "Adão",
+      "Sete",
+      "Lameque",
+      "A Bíblia não menciona"
+    ],
+    "correta": 3,
+    "nivel": "medio",
+    "tema": "curiosidades",
+    "referencia": "Gênesis 4:17",
+    "faixaEtaria": ["adolescente", "adulto"]
+  },
+  {
+    "enunciado": "Qual o nome da cidade para a qual Paulo estava sendo levado como prisioneiro quando seu navio naufragou?",
+    "alternativas": [
+      "Atenas",
+      "Corinto",
+      "Roma",
+      "Éfeso"
+    ],
+    "correta": 2,
+    "nivel": "medio",
+    "tema": "igreja primitiva",
+    "referencia": "Atos 27:1",
+    "faixaEtaria": ["adolescente", "adulto"]
+  },
+  {
+    "enunciado": "Qual o nome do apóstolo que era irmão de Tiago e filho de Zebedeu?",
+    "alternativas": [
+      "Pedro",
+      "André",
+      "João",
+      "Filipe"
+    ],
+    "correta": 2,
+    "nivel": "facil",
+    "tema": "personagens",
+    "referencia": "Mateus 4:21",
+    "faixaEtaria": ["crianca", "adolescente", "adulto"]
+  },
+  {
+    "enunciado": "A qual dos patriarcas Deus prometeu descendentes tão numerosos quanto as estrelas no céu?",
+    "alternativas": [
+      "Isaque",
+      "Jacó",
+      "Noé",
+      "Abraão"
+    ],
+    "correta": 3,
+    "nivel": "facil",
+    "tema": "patriarcas",
+    "referencia": "Gênesis 15:5",
+    "faixaEtaria": ["crianca", "adolescente", "adulto"]
+  },
+  {
+    "enunciado": "Qual era o nome do profeta que ungiu Saul como o primeiro rei de Israel?",
+    "alternativas": [
+      "Natã",
+      "Samuel",
+      "Elias",
+      "Eliseu"
+    ],
+    "correta": 1,
+    "nivel": "medio",
+    "tema": "profetas",
+    "referencia": "1 Samuel 10:1",
+    "faixaEtaria": ["adolescente", "adulto"]
+  },
+  {
+    "enunciado": "Qual é o significado da palavra hebraica 'Selah', frequentemente encontrada nos Salmos?",
+    "alternativas": [
+      "Amém",
+      "Aleluia",
+      "Uma pausa ou interlúdio musical",
+      "Para sempre"
+    ],
+    "correta": 2,
+    "nivel": "dificil",
+    "tema": "curiosidades",
+    "referencia": "Livro de Salmos",
+    "faixaEtaria": ["adulto"]
+  },
+  {
+    "enunciado": "Em qual livro da Bíblia encontramos a história de Daniel na cova dos leões?",
+    "alternativas": [
+      "Jeremias",
+      "Ezequiel",
+      "Daniel",
+      "Isaías"
+    ],
+    "correta": 2,
+    "nivel": "facil",
+    "tema": "livros",
+    "referencia": "Daniel 6",
+    "faixaEtaria": ["crianca", "adolescente", "adulto"]
+  },
+  {
+    "enunciado": "Qual destes homens foi um dos Sete Diáconos escolhidos em Atos 6?",
+    "alternativas": [
+      "Barnabé",
+      "Silas",
+      "Filipe",
+      "Apolo"
+    ],
+    "correta": 2,
+    "nivel": "medio",
+    "tema": "igreja primitiva",
+    "referencia": "Atos 6:5",
+    "faixaEtaria": ["adolescente", "adulto"]
+  },
+  {
+    "enunciado": "Quem foi o sumo sacerdote que condenou Jesus à morte?",
+    "alternativas": [
+      "Anás",
+      "Caifás",
+      "Zacarias",
+      "Gamaliel"
+    ],
+    "correta": 1,
+    "nivel": "medio",
+    "tema": "historia",
+    "referencia": "Mateus 26:57, 65-66",
+    "faixaEtaria": ["adolescente", "adulto"]
+  },
+  {
+    "enunciado": "Qual o nome do rio em que Naamã, o sírio, foi curado de sua lepra?",
+    "alternativas": [
+      "Nilo",
+      "Eufrates",
+      "Jordão",
+      "Tigre"
+    ],
+    "correta": 2,
+    "nivel": "facil",
+    "tema": "milagres",
+    "referencia": "2 Reis 5:14",
+    "faixaEtaria": ["crianca", "adolescente", "adulto"]
+  },
+  {
+    "enunciado": "Na visão de Pedro, que tipo de animais ele viu em um grande lençol que descia do céu?",
+    "alternativas": [
+      "Apenas ovelhas e cordeiros",
+      "Apenas peixes",
+      "Todos os tipos de animais, répteis e aves",
+      "Apenas animais selvagens"
+    ],
+    "correta": 2,
+    "nivel": "medio",
+    "tema": "igreja primitiva",
+    "referencia": "Atos 10:11-12",
+    "faixaEtaria": ["adolescente", "adulto"]
+  },
+  {
+    "enunciado": "Qual era o nome do pai de Gideão, que defendeu seu filho quando ele destruiu o altar de Baal?",
+    "alternativas": [
+      "Manassés",
+      "Joás",
+      "Efraim",
+      "Abiezer"
+    ],
+    "correta": 1,
+    "nivel": "dificil",
+    "tema": "personagens",
+    "referencia": "Juízes 6:29-31",
+    "faixaEtaria": ["adulto"]
+  },
+  {
+    "enunciado": "Quem foi o primeiro ser humano a pecar?",
+    "alternativas": [
+      "Adão",
+      "Caim",
+      "Eva",
+      "A serpente"
+    ],
+    "correta": 2,
+    "nivel": "facil",
+    "tema": "pentateuco",
+    "referencia": "Gênesis 3:6",
+    "faixaEtaria": ["crianca", "adolescente", "adulto"]
+  },
+  {
+    "enunciado": "Qual era o nome da montanha em que os samaritanos adoravam, em contraste com Jerusalém?",
+    "alternativas": [
+      "Monte Sinai",
+      "Monte Carmelo",
+      "Monte Gerizim",
+      "Monte Hermom"
+    ],
+    "correta": 2,
+    "nivel": "dificil",
+    "tema": "historia",
+    "referencia": "João 4:20",
+    "faixaEtaria": ["adulto"]
+  },
+  {
+    "enunciado": "Qual dos profetas menores era um pastor de ovelhas de Tecoa?",
+    "alternativas": [
+      "Oseias",
+      "Joel",
+      "Amós",
+      "Miqueias"
+    ],
+    "correta": 2,
+    "nivel": "medio",
+    "tema": "profetas",
+    "referencia": "Amós 1:1",
+    "faixaEtaria": ["adolescente", "adulto"]
+  },
+  {
+    "enunciado": "Quantos capítulos tem o livro de Salmos?",
+    "alternativas": [
+      "100",
+      "120",
+      "150",
+      "200"
+    ],
+    "correta": 2,
+    "nivel": "facil",
+    "tema": "livros",
+    "referencia": "Livro de Salmos",
+    "faixaEtaria": ["crianca", "adolescente", "adulto"]
+  },
+  {
+    "enunciado": "Qual o nome da ilha onde Paulo naufragou em sua viagem para Roma?",
+    "alternativas": [
+      "Creta",
+      "Chipre",
+      "Malta",
+      "Patmos"
+    ],
+    "correta": 2,
+    "nivel": "medio",
+    "tema": "igreja primitiva",
+    "referencia": "Atos 28:1",
+    "faixaEtaria": ["adolescente", "adulto"]
+  },
+  {
+    "enunciado": "De acordo com 2 Timóteo, quem era a avó de Timóteo, conhecida por sua fé sincera?",
+    "alternativas": [
+      "Eunice",
+      "Lídia",
+      "Loide",
+      "Febe"
+    ],
+    "correta": 2,
+    "nivel": "dificil",
+    "tema": "personagens",
+    "referencia": "2 Timóteo 1:5",
+    "faixaEtaria": ["adulto"]
+  },
+  {
+    "enunciado": "Qual era o nome do homem que tentou comprar o poder do Espírito Santo de Pedro e João?",
+    "alternativas": [
+      "Elimas, o mágico",
+      "Simão, o Mago",
+      "Barnabé",
+      "Ananias"
+    ],
+    "correta": 1,
+    "nivel": "medio",
+    "tema": "igreja primitiva",
+    "referencia": "Atos 8:18-19",
+    "faixaEtaria": ["adolescente", "adulto"]
+  },
+  {
+    "enunciado": "Qual o nome do rei que ficou louco e comeu grama como os bois?",
+    "alternativas": [
+      "Saul",
+      "Nabucodonosor",
+      "Herodes",
+      "Acabe"
+    ],
+    "correta": 1,
+    "nivel": "facil",
+    "tema": "historia",
+    "referencia": "Daniel 4:33",
+    "faixaEtaria": ["crianca", "adolescente", "adulto"]
+  },
+  {
+    "enunciado": "Qual destes não é um dos rios mencionados que saíam do Jardim do Éden?",
+    "alternativas": [
+      "Pisom",
+      "Jordão",
+      "Giom",
+      "Tigre"
+    ],
+    "correta": 1,
+    "nivel": "dificil",
+    "tema": "pentateuco",
+    "referencia": "Gênesis 2:10-14",
+    "faixaEtaria": ["adulto"]
+  },
+  {
+    "enunciado": "Na parábola do Semeador, o que a semente representa?",
+    "alternativas": [
+      "O povo",
+      "A Palavra de Deus",
+      "A fé",
+      "As boas obras"
+    ],
+    "correta": 1,
+    "nivel": "facil",
+    "tema": "evangelhos",
+    "referencia": "Lucas 8:11",
+    "faixaEtaria": ["crianca", "adolescente", "adulto"]
+  },
+  {
+    "enunciado": "Quem era o general do exército de Davi?",
+    "alternativas": [
+      "Abner",
+      "Joabe",
+      "Abisai",
+      "Benaia"
+    ],
+    "correta": 1,
+    "nivel": "medio",
+    "tema": "historia",
+    "referencia": "2 Samuel 8:16",
+    "faixaEtaria": ["adolescente", "adulto"]
+  },
+  {
+    "enunciado": "Qual profeta viu uma visão de um carro de guerra celestial com rodas dentro de rodas?",
+    "alternativas": [
+      "Isaías",
+      "Daniel",
+      "Ezequiel",
+      "Zacarias"
+    ],
+    "correta": 2,
+    "nivel": "dificil",
+    "tema": "profetas",
+    "referencia": "Ezequiel 1:15-21",
+    "faixaEtaria": ["adulto"]
+  },
+  {
+    "enunciado": "Qual é a primeira bem-aventurança mencionada por Jesus no Sermão da Montanha?",
+    "alternativas": [
+      "Bem-aventurados os que choram",
+      "Bem-aventurados os mansos",
+      "Bem-aventurados os pobres de espírito",
+      "Bem-aventurados os que têm fome e sede de justiça"
+    ],
+    "correta": 2,
+    "nivel": "medio",
+    "tema": "evangelhos",
+    "referencia": "Mateus 5:3",
+    "faixaEtaria": ["adolescente", "adulto"]
+  },
+  {
+    "enunciado": "Quem foram os dois homens que, na transfiguração de Jesus, apareceram falando com ele?",
+    "alternativas": [
+      "Abraão e Isaque",
+      "Davi e Salomão",
+      "Moisés e Elias",
+      "João Batista e Isaías"
+    ],
+    "correta": 2,
+    "nivel": "facil",
+    "tema": "evangelhos",
+    "referencia": "Mateus 17:3",
+    "faixaEtaria": ["crianca", "adolescente", "adulto"]
+  },
+  {
+    "enunciado": "Em qual cidade Jesus encontrou a mulher samaritana junto a um poço?",
+    "alternativas": [
+      "Jericó",
+      "Sicar",
+      "Naim",
+      "Betânia"
+    ],
+    "correta": 1,
+    "nivel": "medio",
+    "tema": "evangelhos",
+    "referencia": "João 4:5-7",
+    "faixaEtaria": ["adolescente", "adulto"]
+  },
+  {
+    "enunciado": "Qual livro do Novo Testamento foi escrito por um irmão de Jesus?",
+    "alternativas": [
+      "Hebreus",
+      "Filemom",
+      "Tiago",
+      "Atos"
+    ],
+    "correta": 2,
+    "nivel": "medio",
+    "tema": "livros",
+    "referencia": "Gálatas 1:19, Tiago 1:1",
+    "faixaEtaria": ["adolescente", "adulto"]
+  },
+  {
+    "enunciado": "Qual o nome do filho mais velho de Isaque?",
+    "alternativas": [
+      "Jacó",
+      "Ismael",
+      "Esaú",
+      "José"
+    ],
+    "correta": 2,
+    "nivel": "facil",
+    "tema": "patriarcas",
+    "referencia": "Gênesis 25:25",
+    "faixaEtaria": ["crianca", "adolescente", "adulto"]
+  },
+  {
+    "enunciado": "Em que cidade nasceu o apóstolo Paulo?",
+    "alternativas": [
+      "Jerusalém",
+      "Tarso",
+      "Antioquia",
+      "Roma"
+    ],
+    "correta": 1,
+    "nivel": "medio",
+    "tema": "personagens",
+    "referencia": "Atos 21:39",
+    "faixaEtaria": ["adolescente", "adulto"]
+  },
+  {
+    "enunciado": "Qual o nome do rei de Israel, casado com Jezabel, que promoveu a adoração a Baal?",
+    "alternativas": [
+      "Saul",
+      "Acabe",
+      "Josafá",
+      "Roboão"
+    ],
+    "correta": 1,
+    "nivel": "medio",
+    "tema": "historia",
+    "referencia": "1 Reis 16:30-31",
+    "faixaEtaria": ["adolescente", "adulto"]
+  },
+  {
+    "enunciado": "O que a palavra 'Hosana' significa?",
+    "alternativas": [
+      "Rei dos Reis",
+      "Aleluia",
+      "Salva-nos, nós te pedimos",
+      "Filho de Davi"
+    ],
+    "correta": 2,
+    "nivel": "dificil",
+    "tema": "curiosidades",
+    "referencia": "Salmo 118:25, Mateus 21:9",
+    "faixaEtaria": ["adulto"]
+  },
+  {
+    "enunciado": "Qual dos apóstolos era conhecido por seu ceticismo, especialmente em relação à ressurreição?",
+    "alternativas": [
+      "Pedro",
+      "Filipe",
+      "Tomé",
+      "Judas (não o Iscariotes)"
+    ],
+    "correta": 2,
+    "nivel": "facil",
+    "tema": "personagens",
+    "referencia": "João 20:24-25",
+    "faixaEtaria": ["crianca", "adolescente", "adulto"]
+  },
+  {
+    "enunciado": "Qual livro do Antigo Testamento relata a história da construção dos muros de Jerusalém sob a liderança de um copeiro do rei?",
+    "alternativas": [
+      "Esdras",
+      "Neemias",
+      "Ageu",
+      "Zacarias"
+    ],
+    "correta": 1,
+    "nivel": "medio",
+    "tema": "livros",
+    "referencia": "Neemias 1:11, 2:17",
+    "faixaEtaria": ["adolescente", "adulto"]
+  },
+  {
+    "enunciado": "Qual o nome do primeiro mártir cristão?",
+    "alternativas": [
+      "Tiago",
+      "Pedro",
+      "Estêvão",
+      "Paulo"
+    ],
+    "correta": 2,
+    "nivel": "medio",
+    "tema": "igreja primitiva",
+    "referencia": "Atos 7:59",
+    "faixaEtaria": ["adolescente", "adulto"]
+  },
+  {
+    "enunciado": "No livro de Apocalipse, qual o número da besta?",
+    "alternativas": [
+      "777",
+      "666",
+      "144",
+      "333"
+    ],
+    "correta": 1,
+    "nivel": "facil",
+    "tema": "profecias",
+    "referencia": "Apocalipse 13:18",
+    "faixaEtaria": ["crianca", "adolescente", "adulto"]
+  },
+  {
+    "enunciado": "Qual o nome do homem que foi levado cativo para a Babilônia e se tornou um alto oficial na corte do rei?",
+    "alternativas": [
+      "Jeremias",
+      "Ezequiel",
+      "Daniel",
+      "Neemias"
+    ],
+    "correta": 2,
+    "nivel": "facil",
+    "tema": "personagens",
+    "referencia": "Daniel 1:1-6",
+    "faixaEtaria": ["crianca", "adolescente", "adulto"]
+  },
+  {
+    "enunciado": "Qual o nome do lugar para onde os demônios expulsos por Jesus pediram para ser enviados?",
+    "alternativas": [
+      "Para o deserto",
+      "Para uma manada de porcos",
+      "Para o abismo",
+      "Para outra cidade"
+    ],
+    "correta": 1,
+    "nivel": "facil",
+    "tema": "milagres",
+    "referencia": "Marcos 5:12",
+    "faixaEtaria": ["crianca", "adolescente", "adulto"]
+  },
+
+    {
+      "enunciado": "Qual o nome da esposa de Jacó que era mãe de José e Benjamim?",
+      "alternativas": [
+        "Lia",
+        "Raquel",
+        "Bila",
+        "Zilpa"
+      ],
+      "correta": 1,
+      "nivel": "facil",
+      "tema": "patriarcas",
+      "referencia": "Gênesis 35:24",
+      "faixaEtaria": ["crianca", "adolescente", "adulto"]
+    },
+    {
+      "enunciado": "Qual era o nome do juiz de Israel que derrotou os midianitas com apenas 300 homens?",
+      "alternativas": [
+        "Sansão",
+        "Jefté",
+        "Gideão",
+        "Eúde"
+      ],
+      "correta": 2,
+      "nivel": "medio",
+      "tema": "personagens",
+      "referencia": "Juízes 7:7",
+      "faixaEtaria": ["adolescente", "adulto"]
+    },
+    {
+      "enunciado": "Qual o nome do governador romano que sucedeu Félix e ouviu a defesa de Paulo?",
+      "alternativas": [
+        "Pôncio Pilatos",
+        "Gálio",
+        "Festo",
+        "Sérgio Paulo"
+      ],
+      "correta": 2,
+      "nivel": "dificil",
+      "tema": "igreja primitiva",
+      "referencia": "Atos 24:27",
+      "faixaEtaria": ["adulto"]
+    },
+    {
+      "enunciado": "O que os irmãos de José usaram para enganar seu pai, Jacó, fazendo-o pensar que José estava morto?",
+      "alternativas": [
+        "Uma carta falsa",
+        "A túnica de José manchada com sangue de animal",
+        "Testemunhas falsas",
+        "Um pedaço de osso"
+      ],
+      "correta": 1,
+      "nivel": "facil",
+      "tema": "patriarcas",
+      "referencia": "Gênesis 37:31-33",
+      "faixaEtaria": ["crianca", "adolescente", "adulto"]
+    },
+    {
+      "enunciado": "Qual o nome do profeta que Deus enviou para Nínive pela segunda vez, depois que ele fugiu para Társis?",
+      "alternativas": [
+        "Naum",
+        "Jonas",
+        "Sofonias",
+        "Habacuque"
+      ],
+      "correta": 1,
+      "nivel": "medio",
+      "tema": "profetas",
+      "referencia": "Jonas 3:1-3",
+      "faixaEtaria": ["adolescente", "adulto"]
+    },
+    {
+      "enunciado": "Qual livro do Novo Testamento é explicitamente endereçado a uma pessoa chamada Teófilo?",
+      "alternativas": [
+        "Romanos",
+        "Hebreus",
+        "Atos dos Apóstolos",
+        "Filemom"
+      ],
+      "correta": 2,
+      "nivel": "dificil",
+      "tema": "livros",
+      "referencia": "Atos 1:1",
+      "faixaEtaria": ["adulto"]
+    },
+    {
+      "enunciado": "Qual o nome da cidade em que Jesus curou um paralítico que foi baixado pelo telhado?",
+      "alternativas": [
+        "Nazaré",
+        "Jerusalém",
+        "Cafarnaum",
+        "Betânia"
+      ],
+      "correta": 2,
+      "nivel": "facil",
+      "tema": "milagres",
+      "referencia": "Marcos 2:1-5",
+      "faixaEtaria": ["crianca", "adolescente", "adulto"]
+    },
+    {
+      "enunciado": "Qual o nome do rei babilônico que viu uma escrita misteriosa na parede durante um banquete?",
+      "alternativas": [
+        "Nabucodonosor",
+        "Dario",
+        "Belsazar",
+        "Ciro"
+      ],
+      "correta": 2,
+      "nivel": "medio",
+      "tema": "historia",
+      "referencia": "Daniel 5:5",
+      "faixaEtaria": ["adolescente", "adulto"]
+    },
+    {
+      "enunciado": "Quem é tradicionalmente considerado o autor do livro de Hebreus?",
+      "alternativas": [
+        "Paulo",
+        "Pedro",
+        "Lucas",
+        "O autor é anônimo"
+      ],
+      "correta": 3,
+      "nivel": "dificil",
+      "tema": "livros",
+      "referencia": "Estudos Bíblicos",
+      "faixaEtaria": ["adulto"]
+    },
+    {
+      "enunciado": "Qual o nome da mãe de João Batista?",
+      "alternativas": [
+        "Maria",
+        "Ana",
+        "Isabel",
+        "Sara"
+      ],
+      "correta": 2,
+      "nivel": "facil",
+      "tema": "personagens",
+      "referencia": "Lucas 1:13",
+      "faixaEtaria": ["crianca", "adolescente", "adulto"]
+    },
+    {
+      "enunciado": "Que parente de Barnabé acompanhou ele e Paulo em parte da primeira viagem missionária?",
+      "alternativas": [
+        "Seu filho",
+        "Seu sobrinho, João Marcos",
+        "Seu irmão",
+        "Seu primo, Silas"
+      ],
+      "correta": 1,
+      "nivel": "medio",
+      "tema": "igreja primitiva",
+      "referencia": "Atos 12:25",
+      "faixaEtaria": ["adolescente", "adulto"]
+    },
+    {
+      "enunciado": "Qual dos profetas menores contém uma queixa a Deus sobre a injustiça e a aparente inação divina?",
+      "alternativas": [
+        "Ageu",
+        "Sofonias",
+        "Habacuque",
+        "Malaquias"
+      ],
+      "correta": 2,
+      "nivel": "dificil",
+      "tema": "profetas",
+      "referencia": "Habacuque 1:2-4",
+      "faixaEtaria": ["adulto"]
+    },
+    {
+      "enunciado": "Qual o nome do homem que foi o primeiro rei de Israel?",
+      "alternativas": [
+        "Davi",
+        "Salomão",
+        "Saul",
+        "Samuel"
+      ],
+      "correta": 2,
+      "nivel": "facil",
+      "tema": "historia",
+      "referencia": "1 Samuel 10:1",
+      "faixaEtaria": ["crianca", "adolescente", "adulto"]
+    },
+    {
+      "enunciado": "Qual o nome do general sírio que foi curado da lepra por Eliseu?",
+      "alternativas": [
+        "Ben-Hadade",
+        "Hazael",
+        "Naamã",
+        "Rezom"
+      ],
+      "correta": 2,
+      "nivel": "medio",
+      "tema": "milagres",
+      "referencia": "2 Reis 5:1",
+      "faixaEtaria": ["adolescente", "adulto"]
+    },
+    {
+      "enunciado": "Qual o nome do profeta que foi casado com uma mulher infiel chamada Gômer?",
+      "alternativas": [
+        "Amós",
+        "Oseias",
+        "Joel",
+        "Miqueias"
+      ],
+      "correta": 1,
+      "nivel": "dificil",
+      "tema": "profetas",
+      "referencia": "Oseias 1:3",
+      "faixaEtaria": ["adulto"]
+    },
+    {
+      "enunciado": "Qual destes milagres Jesus realizou logo após o Sermão da Montanha?",
+      "alternativas": [
+        "Acalmar a tempestade",
+        "Andar sobre as águas",
+        "Curar um leproso",
+        "Expulsar uma legião de demônios"
+      ],
+      "correta": 2,
+      "nivel": "medio",
+      "tema": "milagres",
+      "referencia": "Mateus 8:1-3",
+      "faixaEtaria": ["adolescente", "adulto"]
+    },
+    {
+      "enunciado": "O que Jacó usou para obter o direito de primogenitura de seu irmão Esaú?",
+      "alternativas": [
+        "Ouro e prata",
+        "Um rebanho de ovelhas",
+        "Um prato de lentilhas",
+        "Uma túnica nova"
+      ],
+      "correta": 2,
+      "nivel": "facil",
+      "tema": "patriarcas",
+      "referencia": "Gênesis 25:33-34",
+      "faixaEtaria": ["crianca", "adolescente", "adulto"]
+    },
+    {
+      "enunciado": "Qual o nome da serva de Sara que foi mãe de Ismael?",
+      "alternativas": [
+        "Bila",
+        "Zilpa",
+        "Hagar",
+        "Quetura"
+      ],
+      "correta": 2,
+      "nivel": "facil",
+      "tema": "personagens",
+      "referencia": "Gênesis 16:15",
+      "faixaEtaria": ["crianca", "adolescente", "adulto"]
+    },
+    {
+      "enunciado": "Qual destes não é um dos itens da Armadura de Deus descrita em Efésios 6?",
+      "alternativas": [
+        "Capacete da Salvação",
+        "Couraça da Justiça",
+        "Sandálias da Paz",
+        "Cajado da Fé"
+      ],
+      "correta": 3,
+      "nivel": "medio",
+      "tema": "epistolas",
+      "referencia": "Efésios 6:14-17",
+      "faixaEtaria": ["adolescente", "adulto"]
+    },
+    {
+      "enunciado": "Qual era o nome do avô de Noé, que viveu 969 anos?",
+      "alternativas": [
+        "Enoque",
+        "Lameque",
+        "Matusalém",
+        "Jarede"
+      ],
+      "correta": 2,
+      "nivel": "medio",
+      "tema": "personagens",
+      "referencia": "Gênesis 5:27",
+      "faixaEtaria": ["adolescente", "adulto"]
+    },
+    {
+      "enunciado": "Qual o nome da serva que atendeu à porta quando Pedro foi libertado da prisão, mas não o deixou entrar por causa de sua alegria e espanto?",
+      "alternativas": [
+        "Lídia",
+        "Tabita",
+        "Rode",
+        "Febe"
+      ],
+      "correta": 2,
+      "nivel": "dificil",
+      "tema": "igreja primitiva",
+      "referencia": "Atos 12:13-14",
+      "faixaEtaria": ["adulto"]
+    },
+    {
+      "enunciado": "Quantos leprosos Jesus curou de uma só vez, dos quais apenas um voltou para agradecer?",
+      "alternativas": [
+        "Um",
+        "Sete",
+        "Doze",
+        "Dez"
+      ],
+      "correta": 3,
+      "nivel": "facil",
+      "tema": "milagres",
+      "referencia": "Lucas 17:12-17",
+      "faixaEtaria": ["crianca", "adolescente", "adulto"]
+    },
+    {
+      "enunciado": "Qual o nome do sumo sacerdote que ungiu Salomão como rei?",
+      "alternativas": [
+        "Abiatar",
+        "Zadoque",
+        "Eli",
+        "Finéias"
+      ],
+      "correta": 1,
+      "nivel": "dificil",
+      "tema": "historia",
+      "referencia": "1 Reis 1:39",
+      "faixaEtaria": ["adulto"]
+    },
+    {
+      "enunciado": "De acordo com o livro de Provérbios, o que a mulher virtuosa vale mais do que?",
+      "alternativas": [
+        "Ouro",
+        "Rubis",
+        "Pérolas",
+        "Diamantes"
+      ],
+      "correta": 1,
+      "nivel": "medio",
+      "tema": "livros",
+      "referencia": "Provérbios 31:10",
+      "faixaEtaria": ["adolescente", "adulto"]
+    },
+    {
+      "enunciado": "Qual foi o sinal que Raabe, a prostituta, usou para que os espias israelitas poupassem sua casa?",
+      "alternativas": [
+        "Uma bandeira branca",
+        "Um cordão de escarlate na janela",
+        "Uma lamparina acesa",
+        "Um ramo de oliveira na porta"
+      ],
+      "correta": 1,
+      "nivel": "facil",
+      "tema": "personagens",
+      "referencia": "Josué 2:18",
+      "faixaEtaria": ["crianca", "adolescente", "adulto"]
+    },
+    {
+      "enunciado": "Em qual livro do Antigo Testamento a frase 'O Senhor é meu pastor, nada me faltará' é encontrada?",
+      "alternativas": [
+        "Provérbios",
+        "Isaías",
+        "Gênesis",
+        "Salmos"
+      ],
+      "correta": 3,
+      "nivel": "facil",
+      "tema": "livros",
+      "referencia": "Salmo 23:1",
+      "faixaEtaria": ["crianca", "adolescente", "adulto"]
+    },
+    {
+      "enunciado": "Qual o nome do diácono que foi o primeiro missionário aos samaritanos?",
+      "alternativas": [
+        "Estêvão",
+        "Filipe",
+        "Nicanor",
+        "Prócoro"
+      ],
+      "correta": 1,
+      "nivel": "medio",
+      "tema": "igreja primitiva",
+      "referencia": "Atos 8:5",
+      "faixaEtaria": ["adolescente", "adulto"]
+    },
+    {
+      "enunciado": "Qual o nome da cidade em que os discípulos foram chamados de 'cristãos' pela primeira vez?",
+      "alternativas": [
+        "Jerusalém",
+        "Antioquia",
+        "Roma",
+        "Éfeso"
+      ],
+      "correta": 1,
+      "nivel": "medio",
+      "tema": "igreja primitiva",
+      "referencia": "Atos 11:26",
+      "faixaEtaria": ["adolescente", "adulto"]
+    },
+    {
+      "enunciado": "Qual o nome do profeta que foi contemporâneo do rei Davi e o repreendeu por seu pecado com Bate-Seba?",
+      "alternativas": [
+        "Samuel",
+        "Gad",
+        "Natã",
+        "Aías"
+      ],
+      "correta": 2,
+      "nivel": "medio",
+      "tema": "profetas",
+      "referencia": "2 Samuel 12:1",
+      "faixaEtaria": ["adolescente", "adulto"]
+    },
+    {
+      "enunciado": "Qual era o nome do pai de Saul, o primeiro rei de Israel?",
+      "alternativas": [
+        "Abiel",
+        "Ner",
+        "Quis",
+        "Afias"
+      ],
+      "correta": 2,
+      "nivel": "dificil",
+      "tema": "personagens",
+      "referencia": "1 Samuel 9:1",
+      "faixaEtaria": ["adulto"]
+    },
+    {
+      "enunciado": "Quem foi o primeiro sumo sacerdote de Israel?",
+      "alternativas": [
+        "Moisés",
+        "Arão",
+        "Eleazar",
+        "Samuel"
+      ],
+      "correta": 1,
+      "nivel": "facil",
+      "tema": "personagens",
+      "referencia": "Êxodo 28:1",
+      "faixaEtaria": ["crianca", "adolescente", "adulto"]
+    },
+    {
+      "enunciado": "No livro de Apocalipse, a igreja de Laodiceia foi repreendida por ser...",
+      "alternativas": [
+        "Fria",
+        "Quente",
+        "Morna",
+        "Idólatra"
+      ],
+      "correta": 2,
+      "nivel": "medio",
+      "tema": "profecias",
+      "referencia": "Apocalipse 3:15-16",
+      "faixaEtaria": ["adolescente", "adulto"]
+    },
+    {
+      "enunciado": "Quem foi o autor da maior parte do livro de Provérbios?",
+      "alternativas": [
+        "Davi",
+        "Salomão",
+        "Agur",
+        "Lemuel"
+      ],
+      "correta": 1,
+      "nivel": "facil",
+      "tema": "livros",
+      "referencia": "Provérbios 1:1",
+      "faixaEtaria": ["crianca", "adolescente", "adulto"]
+    },
+    {
+      "enunciado": "Qual dos filhos de Noé foi amaldiçoado por ele?",
+      "alternativas": [
+        "Sem",
+        "Jafé",
+        "Cam",
+        "Nenhum deles"
+      ],
+      "correta": 2,
+      "nivel": "medio",
+      "tema": "patriarcas",
+      "referencia": "Gênesis 9:24-25",
+      "faixaEtaria": ["adolescente", "adulto"]
+    },
+    {
+      "enunciado": "Qual o nome do imperador romano a quem Paulo apelou para ser julgado?",
+      "alternativas": [
+        "Tibério",
+        "Cláudio",
+        "Nero (César)",
+        "Augusto"
+      ],
+      "correta": 2,
+      "nivel": "dificil",
+      "tema": "igreja primitiva",
+      "referencia": "Atos 25:10-12",
+      "faixaEtaria": ["adulto"]
+    },
+    {
+      "enunciado": "Qual é a cidade natal de Davi?",
+      "alternativas": [
+        "Jerusalém",
+        "Hebrom",
+        "Belém",
+        "Jericó"
+      ],
+      "correta": 2,
+      "nivel": "facil",
+      "tema": "personagens",
+      "referencia": "1 Samuel 17:12",
+      "faixaEtaria": ["crianca", "adolescente", "adulto"]
+    },
+    {
+      "enunciado": "Qual o nome do profeta que ficou conhecido como 'o profeta chorão'?",
+      "alternativas": [
+        "Isaías",
+        "Jeremias",
+        "Ezequiel",
+        "Daniel"
+      ],
+      "correta": 1,
+      "nivel": "medio",
+      "tema": "profetas",
+      "referencia": "Tradição Cristã, Livro de Lamentações",
+      "faixaEtaria": ["adolescente", "adulto"]
+    },
+    {
+      "enunciado": "Qual o nome da bisavó de Davi, que era moabita?",
+      "alternativas": [
+        "Sara",
+        "Rebeca",
+        "Raabe",
+        "Rute"
+      ],
+      "correta": 3,
+      "nivel": "facil",
+      "tema": "personagens",
+      "referencia": "Rute 4:17",
+      "faixaEtaria": ["crianca", "adolescente", "adulto"]
+    },
+    {
+      "enunciado": "Qual o nome do lugar onde Jacó sonhou com uma escada que alcançava o céu?",
+      "alternativas": [
+        "Siquém",
+        "Hebrom",
+        "Betel",
+        "Peniel"
+      ],
+      "correta": 2,
+      "nivel": "medio",
+      "tema": "patriarcas",
+      "referencia": "Gênesis 28:19",
+      "faixaEtaria": ["adolescente", "adulto"]
+    },
+    {
+      "enunciado": "Quem era o pai de Matusalém, conhecido por ter 'andado com Deus' e não ter visto a morte?",
+      "alternativas": [
+        "Jarede",
+        "Lameque",
+        "Enoque",
+        "Sete"
+      ],
+      "correta": 2,
+      "nivel": "dificil",
+      "tema": "personagens",
+      "referencia": "Gênesis 5:22-24",
+      "faixaEtaria": ["adulto"]
+    },
+    {
+      "enunciado": "Qual foi a primeira praga que Deus enviou sobre o Egito?",
+      "alternativas": [
+        "Rãs",
+        "Piolhos",
+        "Água transformada em sangue",
+        "Trevas"
+      ],
+      "correta": 2,
+      "nivel": "facil",
+      "tema": "pentateuco",
+      "referencia": "Êxodo 7:20",
+      "faixaEtaria": ["crianca", "adolescente", "adulto"]
+    },
+    {
+      "enunciado": "Quem foi o sucessor de Elias como profeta em Israel?",
+      "alternativas": [
+        "Isaías",
+        "Eliseu",
+        "Amós",
+        "Jonas"
+      ],
+      "correta": 1,
+      "nivel": "facil",
+      "tema": "profetas",
+      "referencia": "2 Reis 2:15",
+      "faixaEtaria": ["crianca", "adolescente", "adulto"]
+    },
+    {
+      "enunciado": "Qual o nome do centurião romano cujo servo foi curado por Jesus?",
+      "alternativas": [
+        "Cornélio",
+        "Júlio",
+        "O nome não é mencionado",
+        "Longino"
+      ],
+      "correta": 2,
+      "nivel": "medio",
+      "tema": "milagres",
+      "referencia": "Mateus 8:5-13",
+      "faixaEtaria": ["adolescente", "adulto"]
+    },
+    {
+      "enunciado": "Qual era o nome do deus dos filisteus que teve sua estátua caída diante da Arca da Aliança?",
+      "alternativas": [
+        "Baal",
+        "Moloque",
+        "Dagom",
+        "Aserá"
+      ],
+      "correta": 2,
+      "nivel": "medio",
+      "tema": "historia",
+      "referencia": "1 Samuel 5:3-4",
+      "faixaEtaria": ["adolescente", "adulto"]
+    },
+    {
+      "enunciado": "Qual o nome do profeta que escreveu o livro mais curto do Antigo Testamento?",
+      "alternativas": [
+        "Jonas",
+        "Ageu",
+        "Obadias",
+        "Naum"
+      ],
+      "correta": 2,
+      "nivel": "dificil",
+      "tema": "livros",
+      "referencia": "Livro de Obadias",
+      "faixaEtaria": ["adulto"]
+    },
+    {
+      "enunciado": "O que a Bíblia diz que é a 'lâmpada para os nossos pés'?",
+      "alternativas": [
+        "A fé",
+        "A oração",
+        "A Palavra de Deus",
+        "O amor"
+      ],
+      "correta": 2,
+      "nivel": "facil",
+      "tema": "livros",
+      "referencia": "Salmo 119:105",
+      "faixaEtaria": ["crianca", "adolescente", "adulto"]
+    },
+    {
+      "enunciado": "Qual destes homens foi o primeiro a ser chamado por Deus para deixar sua terra e ir para uma terra que Deus lhe mostraria?",
+      "alternativas": [
+        "Noé",
+        "Moisés",
+        "Ló",
+        "Abraão"
+      ],
+      "correta": 3,
+      "nivel": "facil",
+      "tema": "patriarcas",
+      "referencia": "Gênesis 12:1",
+      "faixaEtaria": ["crianca", "adolescente", "adulto"]
+    },
+    {
+      "enunciado": "Qual é o livro da Bíblia que mais se assemelha a um hinário?",
+      "alternativas": [
+        "Cânticos",
+        "Lamentações",
+        "Salmos",
+        "Eclesiastes"
+      ],
+      "correta": 2,
+      "nivel": "facil",
+      "tema": "livros",
+      "referencia": "Livro de Salmos",
+      "faixaEtaria": ["crianca", "adolescente", "adulto"]
+    },
+    {
+      "enunciado": "Qual o nome do homem que foi o primeiro rei de Israel?",
+      "alternativas": [
+        "Davi",
+        "Saul",
+        "Salomão",
+        "Samuel"
+      ],
+      "correta": 1,
+      "nivel": "medio",
+      "tema": "historia",
+      "referencia": "1 Samuel 10:24",
+      "faixaEtaria": ["adolescente", "adulto"]
+    },
+    {
+      "enunciado": "Quem era o irmão mais velho de Moisés?",
+      "alternativas": [
+        "Josué",
+        "Calebe",
+        "Arão",
+        "Eleazar"
+      ],
+      "correta": 2,
+      "nivel": "facil",
+      "tema": "personagens",
+      "referencia": "Êxodo 7:7",
+      "faixaEtaria": ["crianca", "adolescente", "adulto"]
+    },
+    {
+      "enunciado": "Qual o nome do homem que liderou a reconstrução dos muros de Jerusalém?",
+      "alternativas": [
+        "Esdras",
+        "Zorobabel",
+        "Neemias",
+        "Ageu"
+      ],
+      "correta": 2,
+      "nivel": "medio",
+      "tema": "historia",
+      "referencia": "Neemias 2:17-18",
+      "faixaEtaria": ["adolescente", "adulto"]
+    },
+    {
+      "enunciado": "Qual dos evangelhos é considerado o mais antigo e o mais curto?",
+      "alternativas": [
+        "Mateus",
+        "Marcos",
+        "Lucas",
+        "João"
+      ],
+      "correta": 1,
+      "nivel": "medio",
+      "tema": "livros",
+      "referencia": "Estudos Bíblicos",
+      "faixaEtaria": ["adolescente", "adulto"]
+    },
+    {
+      "enunciado": "Qual o nome do rei de Israel que teve o seu pedido atendido por Deus para que o sol retrocedesse dez graus?",
+      "alternativas": [
+        "Davi",
+        "Josias",
+        "Ezequias",
+        "Salomão"
+      ],
+      "correta": 2,
+      "nivel": "dificil",
+      "tema": "historia",
+      "referencia": "2 Reis 20:10-11",
+      "faixaEtaria": ["adulto"]
+    },
+    {
+      "enunciado": "Qual o nome do anjo que apareceu a Zacarias para anunciar o nascimento de João Batista?",
+      "alternativas": [
+        "Miguel",
+        "Rafael",
+        "Gabriel",
+        "Uriel"
+      ],
+      "correta": 2,
+      "nivel": "facil",
+      "tema": "personagens",
+      "referencia": "Lucas 1:19",
+      "faixaEtaria": ["crianca", "adolescente", "adulto"]
+    },
+    {
+      "enunciado": "Qual dos doze apóstolos era um Zelote, um grupo judeu radicalmente oposto ao domínio romano?",
+      "alternativas": [
+        "Judas Iscariotes",
+        "Simão",
+        "Mateus",
+        "André"
+      ],
+      "correta": 1,
+      "nivel": "dificil",
+      "tema": "personagens",
+      "referencia": "Lucas 6:15",
+      "faixaEtaria": ["adulto"]
+    },
+    {
+      "enunciado": "O que era a Festa dos Tabernáculos (ou Cabanas)?",
+      "alternativas": [
+        "Uma celebração da colheita e da peregrinação no deserto",
+        "A comemoração da saída do Egito",
+        "O dia do perdão dos pecados",
+        "A celebração da entrega da Lei no Sinai"
+      ],
+      "correta": 0,
+      "nivel": "medio",
+      "tema": "historia",
+      "referencia": "Levítico 23:34-43",
+      "faixaEtaria": ["adolescente", "adulto"]
+    },
+    {
+      "enunciado": "Qual o nome da cidade de Lídia, a vendedora de púrpura que se converteu?",
+      "alternativas": [
+        "Filipos",
+        "Éfeso",
+        "Tiatira",
+        "Corinto"
+      ],
+      "correta": 2,
+      "nivel": "dificil",
+      "tema": "personagens",
+      "referencia": "Atos 16:14",
+      "faixaEtaria": ["adulto"]
+    },
+    {
+      "enunciado": "Qual o nome do profeta que o livro de Judas cita como tendo profetizado sobre os ímpios?",
+      "alternativas": [
+        "Isaías",
+        "Moisés",
+        "Enoque",
+        "Elias"
+      ],
+      "correta": 2,
+      "nivel": "dificil",
+      "tema": "profetas",
+      "referencia": "Judas 1:14",
+      "faixaEtaria": ["adulto"]
+    },
+    {
+      "enunciado": "Quantas pragas Deus enviou ao Egito?",
+      "alternativas": [
+        "7",
+        "10",
+        "12",
+        "3"
+      ],
+      "correta": 1,
+      "nivel": "facil",
+      "tema": "pentateuco",
+      "referencia": "Êxodo 7-12",
+      "faixaEtaria": ["crianca", "adolescente", "adulto"]
+    },
+    {
+      "enunciado": "Na parábola do Semeador, que tipo de solo produziu a melhor colheita?",
+      "alternativas": [
+        "Solo rochoso",
+        "Beira do caminho",
+        "Solo bom",
+        "Solo com espinhos"
+      ],
+      "correta": 2,
+      "nivel": "facil",
+      "tema": "evangelhos",
+      "referencia": "Mateus 13:8",
+      "faixaEtaria": ["crianca", "adolescente", "adulto"]
+    },
+    
+        {
+          "enunciado": "Na parábola do Semeador, que tipo de solo representa aqueles que ouvem a palavra, mas as preocupações desta vida a sufocam?",
+          "alternativas": [
+            "Solo rochoso",
+            "Beira do caminho",
+            "Solo bom",
+            "Solo com espinhos"
+          ],
+          "correta": 3,
+          "nivel": "dificil",
+          "tema": "evangelhos",
+          "referencia": "Mateus 13:22",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do diácono que foi o primeiro missionário aos samaritanos?",
+          "alternativas": [
+            "Estêvão",
+            "Filipe",
+            "Nicanor",
+            "Prócoro"
+          ],
+          "correta": 1,
+          "nivel": "medio",
+          "tema": "igreja primitiva",
+          "referencia": "Atos 8:5",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual foi a primeira praga que Deus enviou sobre o Egito?",
+          "alternativas": [
+            "Rãs",
+            "Piolhos",
+            "Água transformada em sangue",
+            "Trevas"
+          ],
+          "correta": 2,
+          "nivel": "facil",
+          "tema": "pentateuco",
+          "referencia": "Êxodo 7:20",
+          "faixaEtaria": ["crianca", "adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do profeta que ficou conhecido como 'o profeta chorão'?",
+          "alternativas": [
+            "Isaías",
+            "Jeremias",
+            "Ezequiel",
+            "Daniel"
+          ],
+          "correta": 1,
+          "nivel": "medio",
+          "tema": "profetas",
+          "referencia": "Tradição Cristã, Livro de Lamentações",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome da bisavó de Davi, que era moabita?",
+          "alternativas": [
+            "Sara",
+            "Rebeca",
+            "Raabe",
+            "Rute"
+          ],
+          "correta": 3,
+          "nivel": "facil",
+          "tema": "personagens",
+          "referencia": "Rute 4:17",
+          "faixaEtaria": ["crianca", "adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome da serva que atendeu à porta quando Pedro foi libertado da prisão, mas não o deixou entrar por causa de sua alegria e espanto?",
+          "alternativas": [
+            "Lídia",
+            "Tabita",
+            "Rode",
+            "Febe"
+          ],
+          "correta": 2,
+          "nivel": "dificil",
+          "tema": "igreja primitiva",
+          "referencia": "Atos 12:13-14",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Quem era o pai de Matusalém, conhecido por ter 'andado com Deus' e não ter visto a morte?",
+          "alternativas": [
+            "Jarede",
+            "Lameque",
+            "Enoque",
+            "Sete"
+          ],
+          "correta": 2,
+          "nivel": "dificil",
+          "tema": "personagens",
+          "referencia": "Gênesis 5:22-24",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Qual destes milagres Jesus realizou logo após o Sermão da Montanha?",
+          "alternativas": [
+            "Acalmar a tempestade",
+            "Andar sobre as águas",
+            "Curar um leproso",
+            "Expulsar uma legião de demônios"
+          ],
+          "correta": 2,
+          "nivel": "medio",
+          "tema": "milagres",
+          "referencia": "Mateus 8:1-3",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Quem foi o primeiro sumo sacerdote de Israel?",
+          "alternativas": [
+            "Moisés",
+            "Arão",
+            "Eleazar",
+            "Samuel"
+          ],
+          "correta": 1,
+          "nivel": "facil",
+          "tema": "personagens",
+          "referencia": "Êxodo 28:1",
+          "faixaEtaria": ["crianca", "adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome da cidade de Lídia, a vendedora de púrpura que se converteu?",
+          "alternativas": [
+            "Filipos",
+            "Éfeso",
+            "Tiatira",
+            "Corinto"
+          ],
+          "correta": 2,
+          "nivel": "dificil",
+          "tema": "personagens",
+          "referencia": "Atos 16:14",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Quem foi o sucessor de Elias como profeta em Israel?",
+          "alternativas": [
+            "Isaías",
+            "Eliseu",
+            "Amós",
+            "Jonas"
+          ],
+          "correta": 1,
+          "nivel": "facil",
+          "tema": "profetas",
+          "referencia": "2 Reis 2:15",
+          "faixaEtaria": ["crianca", "adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do lugar onde Jacó sonhou com uma escada que alcançava o céu?",
+          "alternativas": [
+            "Siquém",
+            "Hebrom",
+            "Betel",
+            "Peniel"
+          ],
+          "correta": 2,
+          "nivel": "medio",
+          "tema": "patriarcas",
+          "referencia": "Gênesis 28:19",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual dos evangelhos é considerado o mais antigo e o mais curto?",
+          "alternativas": [
+            "Mateus",
+            "Marcos",
+            "Lucas",
+            "João"
+          ],
+          "correta": 1,
+          "nivel": "medio",
+          "tema": "livros",
+          "referencia": "Estudos Bíblicos",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual dos apóstolos era um Zelote, um grupo judeu radicalmente oposto ao domínio romano?",
+          "alternativas": [
+            "Judas Iscariotes",
+            "Simão",
+            "Mateus",
+            "André"
+          ],
+          "correta": 1,
+          "nivel": "dificil",
+          "tema": "personagens",
+          "referencia": "Lucas 6:15",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Na parábola dos Talentos, quantos talentos o servo que foi repreendido recebeu de seu senhor?",
+          "alternativas": [
+            "Cinco",
+            "Dois",
+            "Um",
+            "Dez"
+          ],
+          "correta": 2,
+          "nivel": "facil",
+          "tema": "evangelhos",
+          "referencia": "Mateus 25:15-18",
+          "faixaEtaria": ["crianca", "adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome da esposa de Davi que era filha do rei Saul?",
+          "alternativas": [
+            "Bate-Seba",
+            "Abigail",
+            "Mical",
+            "Ainoã"
+          ],
+          "correta": 2,
+          "nivel": "medio",
+          "tema": "personagens",
+          "referencia": "1 Samuel 18:27",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "O que a palavra 'Maranata', usada pelo apóstolo Paulo, significa?",
+          "alternativas": [
+            "Deus é fiel",
+            "A paz esteja convosco",
+            "O nosso Senhor vem",
+            "Graças a Deus"
+          ],
+          "correta": 2,
+          "nivel": "dificil",
+          "tema": "curiosidades",
+          "referencia": "1 Coríntios 16:22",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Quem era o publicano de baixa estatura que subiu em uma árvore para ver Jesus?",
+          "alternativas": [
+            "Mateus",
+            "Zaqueu",
+            "Levi",
+            "Bartimeu"
+          ],
+          "correta": 1,
+          "nivel": "facil",
+          "tema": "personagens",
+          "referencia": "Lucas 19:2-4",
+          "faixaEtaria": ["crianca", "adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do profeta que casou com uma mulher infiel chamada Gômer?",
+          "alternativas": [
+            "Amós",
+            "Oseias",
+            "Joel",
+            "Miqueias"
+          ],
+          "correta": 1,
+          "nivel": "dificil",
+          "tema": "profetas",
+          "referencia": "Oseias 1:3",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Qual o nome da cidade para onde Paulo estava sendo levado como prisioneiro quando seu navio naufragou?",
+          "alternativas": [
+            "Atenas",
+            "Corinto",
+            "Roma",
+            "Éfeso"
+          ],
+          "correta": 2,
+          "nivel": "medio",
+          "tema": "igreja primitiva",
+          "referencia": "Atos 27:1",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual destes não é um dos rios mencionados que saíam do Jardim do Éden?",
+          "alternativas": [
+            "Pisom",
+            "Jordão",
+            "Giom",
+            "Tigre"
+          ],
+          "correta": 1,
+          "nivel": "dificil",
+          "tema": "pentateuco",
+          "referencia": "Gênesis 2:10-14",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Quem foram os dois homens que, na transfiguração de Jesus, apareceram falando com ele?",
+          "alternativas": [
+            "Abraão e Isaque",
+            "Davi e Salomão",
+            "Moisés e Elias",
+            "João Batista e Isaías"
+          ],
+          "correta": 2,
+          "nivel": "facil",
+          "tema": "evangelhos",
+          "referencia": "Mateus 17:3",
+          "faixaEtaria": ["crianca", "adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do lugar onde Jacó sonhou com uma escada que alcançava o céu?",
+          "alternativas": [
+            "Siquém",
+            "Hebrom",
+            "Betel",
+            "Peniel"
+          ],
+          "correta": 2,
+          "nivel": "medio",
+          "tema": "patriarcas",
+          "referencia": "Gênesis 28:19",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do profeta que o livro de Judas cita como tendo profetizado sobre os ímpios?",
+          "alternativas": [
+            "Isaías",
+            "Moisés",
+            "Enoque",
+            "Elias"
+          ],
+          "correta": 2,
+          "nivel": "dificil",
+          "tema": "profetas",
+          "referencia": "Judas 1:14",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Qual o nome da ilha onde Paulo naufragou em sua viagem para Roma?",
+          "alternativas": [
+            "Creta",
+            "Chipre",
+            "Malta",
+            "Patmos"
+          ],
+          "correta": 2,
+          "nivel": "medio",
+          "tema": "igreja primitiva",
+          "referencia": "Atos 28:1",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do sumo sacerdote que ungiu Salomão como rei?",
+          "alternativas": [
+            "Abiatar",
+            "Zadoque",
+            "Eli",
+            "Finéias"
+          ],
+          "correta": 1,
+          "nivel": "dificil",
+          "tema": "historia",
+          "referencia": "1 Reis 1:39",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do homem que foi o primeiro rei de Israel?",
+          "alternativas": [
+            "Davi",
+            "Saul",
+            "Salomão",
+            "Samuel"
+          ],
+          "correta": 1,
+          "nivel": "medio",
+          "tema": "historia",
+          "referencia": "1 Samuel 10:24",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual dos profetas menores era um pastor de ovelhas de Tecoa?",
+          "alternativas": [
+            "Oseias",
+            "Joel",
+            "Amós",
+            "Miqueias"
+          ],
+          "correta": 2,
+          "nivel": "medio",
+          "tema": "profetas",
+          "referencia": "Amós 1:1",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual era o nome da avó de Timóteo, conhecida por sua fé sincera?",
+          "alternativas": [
+            "Eunice",
+            "Lídia",
+            "Loide",
+            "Febe"
+          ],
+          "correta": 2,
+          "nivel": "dificil",
+          "tema": "personagens",
+          "referencia": "2 Timóteo 1:5",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do homem que foi levado cativo para a Babilônia e se tornou um alto oficial na corte do rei?",
+          "alternativas": [
+            "Jeremias",
+            "Ezequiel",
+            "Daniel",
+            "Neemias"
+          ],
+          "correta": 2,
+          "nivel": "facil",
+          "tema": "personagens",
+          "referencia": "Daniel 1:1-6",
+          "faixaEtaria": ["crianca", "adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual dos doze apóstolos era um Zelote, um grupo judeu radicalmente oposto ao domínio romano?",
+          "alternativas": [
+            "Judas Iscariotes",
+            "Simão",
+            "Mateus",
+            "André"
+          ],
+          "correta": 1,
+          "nivel": "dificil",
+          "tema": "personagens",
+          "referencia": "Lucas 6:15",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Quem era o pai de Matusalém, conhecido por ter 'andado com Deus' e não ter visto a morte?",
+          "alternativas": [
+            "Jarede",
+            "Lameque",
+            "Enoque",
+            "Sete"
+          ],
+          "correta": 2,
+          "nivel": "dificil",
+          "tema": "personagens",
+          "referencia": "Gênesis 5:22-24",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Qual dos profetas menores contém uma queixa a Deus sobre a injustiça e a aparente inação divina?",
+          "alternativas": [
+            "Ageu",
+            "Sofonias",
+            "Habacuque",
+            "Malaquias"
+          ],
+          "correta": 2,
+          "nivel": "dificil",
+          "tema": "profetas",
+          "referencia": "Habacuque 1:2-4",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Qual o nome da esposa de Davi que era filha do rei Saul?",
+          "alternativas": [
+            "Bate-Seba",
+            "Abigail",
+            "Mical",
+            "Ainoã"
+          ],
+          "correta": 2,
+          "nivel": "medio",
+          "tema": "personagens",
+          "referencia": "1 Samuel 18:27",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do apóstolo que era irmão de Tiago e filho de Zebedeu?",
+          "alternativas": [
+            "Pedro",
+            "André",
+            "João",
+            "Filipe"
+          ],
+          "correta": 2,
+          "nivel": "facil",
+          "tema": "personagens",
+          "referencia": "Mateus 4:21",
+          "faixaEtaria": ["crianca", "adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual era o nome do juiz de Israel que derrotou os midianitas com apenas 300 homens?",
+          "alternativas": [
+            "Sansão",
+            "Jefté",
+            "Gideão",
+            "Eúde"
+          ],
+          "correta": 2,
+          "nivel": "medio",
+          "tema": "personagens",
+          "referencia": "Juízes 7:7",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome da cidade em que os discípulos foram chamados de 'cristãos' pela primeira vez?",
+          "alternativas": [
+            "Jerusalém",
+            "Antioquia",
+            "Roma",
+            "Éfeso"
+          ],
+          "correta": 1,
+          "nivel": "medio",
+          "tema": "igreja primitiva",
+          "referencia": "Atos 11:26",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome da esposa de Jacó que era mãe de José e Benjamim?",
+          "alternativas": [
+            "Lia",
+            "Raquel",
+            "Bila",
+            "Zilpa"
+          ],
+          "correta": 1,
+          "nivel": "facil",
+          "tema": "patriarcas",
+          "referencia": "Gênesis 35:24",
+          "faixaEtaria": ["crianca", "adolescente", "adulto"]
+        },
+        {
+          "enunciado": "O que a palavra 'Hosana' significa?",
+          "alternativas": [
+            "Rei dos Reis",
+            "Aleluia",
+            "Salva-nos, nós te pedimos",
+            "Filho de Davi"
+          ],
+          "correta": 2,
+          "nivel": "dificil",
+          "tema": "curiosidades",
+          "referencia": "Salmo 118:25, Mateus 21:9",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do homem que foi levado cativo para a Babilônia e se tornou um alto oficial na corte do rei?",
+          "alternativas": [
+            "Jeremias",
+            "Ezequiel",
+            "Daniel",
+            "Neemias"
+          ],
+          "correta": 2,
+          "nivel": "facil",
+          "tema": "personagens",
+          "referencia": "Daniel 1:1-6",
+          "faixaEtaria": ["crianca", "adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Quem era o general do exército de Davi?",
+          "alternativas": [
+            "Abner",
+            "Joabe",
+            "Abisai",
+            "Benaia"
+          ],
+          "correta": 1,
+          "nivel": "medio",
+          "tema": "historia",
+          "referencia": "2 Samuel 8:16",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Quem era o rei de Judá que restaurou o Templo após encontrar o Livro da Lei?",
+          "alternativas": [
+            "Ezequias",
+            "Manassés",
+            "Josias",
+            "Asa"
+          ],
+          "correta": 2,
+          "nivel": "medio",
+          "tema": "historia",
+          "referencia": "2 Reis 22:8-11",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do lugar para onde os demônios expulsos por Jesus pediram para ser enviados?",
+          "alternativas": [
+            "Para o deserto",
+            "Para uma manada de porcos",
+            "Para o abismo",
+            "Para outra cidade"
+          ],
+          "correta": 1,
+          "nivel": "facil",
+          "tema": "milagres",
+          "referencia": "Marcos 5:12",
+          "faixaEtaria": ["crianca", "adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do rei de Israel, casado com Jezabel, que promoveu a adoração a Baal?",
+          "alternativas": [
+            "Saul",
+            "Acabe",
+            "Josafá",
+            "Roboão"
+          ],
+          "correta": 1,
+          "nivel": "medio",
+          "tema": "historia",
+          "referencia": "1 Reis 16:30-31",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do imperador romano a quem Paulo apelou para ser julgado?",
+          "alternativas": [
+            "Tibério",
+            "Cláudio",
+            "Nero (César)",
+            "Augusto"
+          ],
+          "correta": 2,
+          "nivel": "dificil",
+          "tema": "igreja primitiva",
+          "referencia": "Atos 25:10-12",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do profeta que foi contemporâneo do rei Davi e o repreendeu por seu pecado com Bate-Seba?",
+          "alternativas": [
+            "Samuel",
+            "Gad",
+            "Natã",
+            "Aías"
+          ],
+          "correta": 2,
+          "nivel": "medio",
+          "tema": "profetas",
+          "referencia": "2 Samuel 12:1",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "O que a Bíblia diz que é a 'lâmpada para os nossos pés'?",
+          "alternativas": [
+            "A fé",
+            "A oração",
+            "A Palavra de Deus",
+            "O amor"
+          ],
+          "correta": 2,
+          "nivel": "facil",
+          "tema": "livros",
+          "referencia": "Salmo 119:105",
+          "faixaEtaria": ["crianca", "adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual destes homens foi o primeiro a ser chamado por Deus para deixar sua terra e ir para uma terra que Deus lhe mostraria?",
+          "alternativas": [
+            "Noé",
+            "Moisés",
+            "Ló",
+            "Abraão"
+          ],
+          "correta": 3,
+          "nivel": "facil",
+          "tema": "patriarcas",
+          "referencia": "Gênesis 12:1",
+          "faixaEtaria": ["crianca", "adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome da cidade em que Jesus curou um paralítico que foi baixado pelo telhado?",
+          "alternativas": [
+            "Nazaré",
+            "Jerusalém",
+            "Cafarnaum",
+            "Betânia"
+          ],
+          "correta": 2,
+          "nivel": "facil",
+          "tema": "milagres",
+          "referencia": "Marcos 2:1-5",
+          "faixaEtaria": ["crianca", "adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do homem que liderou a reconstrução dos muros de Jerusalém?",
+          "alternativas": [
+            "Esdras",
+            "Zorobabel",
+            "Neemias",
+            "Ageu"
+          ],
+          "correta": 2,
+          "nivel": "medio",
+          "tema": "historia",
+          "referencia": "Neemias 2:17-18",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual dos filhos de Noé foi amaldiçoado por ele?",
+          "alternativas": [
+            "Sem",
+            "Jafé",
+            "Cam",
+            "Nenhum deles"
+          ],
+          "correta": 2,
+          "nivel": "medio",
+          "tema": "patriarcas",
+          "referencia": "Gênesis 9:24-25",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do governador romano que sucedeu Félix e ouviu a defesa de Paulo?",
+          "alternativas": [
+            "Pôncio Pilatos",
+            "Gálio",
+            "Festo",
+            "Sérgio Paulo"
+          ],
+          "correta": 2,
+          "nivel": "dificil",
+          "tema": "igreja primitiva",
+          "referencia": "Atos 24:27",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Qual é a cidade natal de Davi?",
+          "alternativas": [
+            "Jerusalém",
+            "Hebrom",
+            "Belém",
+            "Jericó"
+          ],
+          "correta": 2,
+          "nivel": "facil",
+          "tema": "personagens",
+          "referencia": "1 Samuel 17:12",
+          "faixaEtaria": ["crianca", "adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome da rainha que se recusou a comparecer perante o rei Assuero, o que levou Ester a se tornar rainha?",
+          "alternativas": [
+            "Jezabel",
+            "Vasti",
+            "Atalia",
+            "Zeres"
+          ],
+          "correta": 1,
+          "nivel": "facil",
+          "tema": "personagens",
+          "referencia": "Ester 1:12",
+          "faixaEtaria": ["crianca", "adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do homem que foi o primeiro mártir cristão?",
+          "alternativas": [
+            "Tiago",
+            "Pedro",
+            "Estêvão",
+            "Paulo"
+          ],
+          "correta": 2,
+          "nivel": "medio",
+          "tema": "igreja primitiva",
+          "referencia": "Atos 7:59",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do centurião romano cujo servo foi curado por Jesus?",
+          "alternativas": [
+            "Cornélio",
+            "Júlio",
+            "O nome não é mencionado",
+            "Longino"
+          ],
+          "correta": 2,
+          "nivel": "medio",
+          "tema": "milagres",
+          "referencia": "Mateus 8:5-13",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual profeta viu uma visão de um carro de guerra celestial com rodas dentro de rodas?",
+          "alternativas": [
+            "Isaías",
+            "Daniel",
+            "Ezequiel",
+            "Zacarias"
+          ],
+          "correta": 2,
+          "nivel": "dificil",
+          "tema": "profetas",
+          "referencia": "Ezequiel 1:15-21",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Na parábola da Ovelha Perdida, quantas ovelhas o pastor deixou para trás para procurar a que se perdeu?",
+          "alternativas": [
+            "100",
+            "99",
+            "10",
+            "12"
+          ],
+          "correta": 1,
+          "nivel": "facil",
+          "tema": "evangelhos",
+          "referencia": "Lucas 15:4",
+          "faixaEtaria": ["crianca", "adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual destes homens foi um dos Sete Diáconos escolhidos em Atos 6?",
+          "alternativas": [
+            "Barnabé",
+            "Silas",
+            "Filipe",
+            "Apolo"
+          ],
+          "correta": 2,
+          "nivel": "medio",
+          "tema": "igreja primitiva",
+          "referencia": "Atos 6:5",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Quem era o pai de Matusalém, conhecido por ter 'andado com Deus' e não ter visto a morte?",
+          "alternativas": [
+            "Jarede",
+            "Lameque",
+            "Enoque",
+            "Sete"
+          ],
+          "correta": 2,
+          "nivel": "dificil",
+          "tema": "personagens",
+          "referencia": "Gênesis 5:22-24",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Qual o nome da esposa de Moisés?",
+          "alternativas": [
+            "Miriã",
+            "Joquebede",
+            "Zípora",
+            "Raabe"
+          ],
+          "correta": 2,
+          "nivel": "facil",
+          "tema": "personagens",
+          "referencia": "Êxodo 2:21",
+          "faixaEtaria": ["crianca", "adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do homem que foi o primeiro rei de Israel?",
+          "alternativas": [
+            "Davi",
+            "Salomão",
+            "Saul",
+            "Samuel"
+          ],
+          "correta": 2,
+          "nivel": "facil",
+          "tema": "historia",
+          "referencia": "1 Samuel 10:1",
+          "faixaEtaria": ["crianca", "adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do rei que ficou louco e comeu grama como os bois?",
+          "alternativas": [
+            "Saul",
+            "Nabucodonosor",
+            "Herodes",
+            "Acabe"
+          ],
+          "correta": 1,
+          "nivel": "facil",
+          "tema": "historia",
+          "referencia": "Daniel 4:33",
+          "faixaEtaria": ["crianca", "adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do sumo sacerdote que ungiu Salomão como rei?",
+          "alternativas": [
+            "Abiatar",
+            "Zadoque",
+            "Eli",
+            "Finéias"
+          ],
+          "correta": 1,
+          "nivel": "dificil",
+          "tema": "historia",
+          "referencia": "1 Reis 1:39",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do profeta que o livro de Judas cita como tendo profetizado sobre os ímpios?",
+          "alternativas": [
+            "Isaías",
+            "Moisés",
+            "Enoque",
+            "Elias"
+          ],
+          "correta": 2,
+          "nivel": "dificil",
+          "tema": "profetas",
+          "referencia": "Judas 1:14",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Qual o nome da cidade para onde Paulo estava sendo levado como prisioneiro quando seu navio naufragou?",
+          "alternativas": [
+            "Atenas",
+            "Corinto",
+            "Roma",
+            "Éfeso"
+          ],
+          "correta": 2,
+          "nivel": "medio",
+          "tema": "igreja primitiva",
+          "referencia": "Atos 27:1",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do apóstolo que era irmão de Tiago e filho de Zebedeu?",
+          "alternativas": [
+            "Pedro",
+            "André",
+            "João",
+            "Filipe"
+          ],
+          "correta": 2,
+          "nivel": "facil",
+          "tema": "personagens",
+          "referencia": "Mateus 4:21",
+          "faixaEtaria": ["crianca", "adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual destes não era um dos três amigos de Jó que vieram consolá-lo?",
+          "alternativas": [
+            "Elifaz",
+            "Bildade",
+            "Eliú",
+            "Zofar"
+          ],
+          "correta": 2,
+          "nivel": "dificil",
+          "tema": "personagens",
+          "referencia": "Jó 2:11 e Jó 32:2",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Qual o nome da esposa de Davi que era filha do rei Saul?",
+          "alternativas": [
+            "Bate-Seba",
+            "Abigail",
+            "Mical",
+            "Ainoã"
+          ],
+          "correta": 2,
+          "nivel": "medio",
+          "tema": "personagens",
+          "referencia": "1 Samuel 18:27",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do profeta que casou com uma mulher infiel chamada Gômer?",
+          "alternativas": [
+            "Amós",
+            "Oseias",
+            "Joel",
+            "Miqueias"
+          ],
+          "correta": 1,
+          "nivel": "dificil",
+          "tema": "profetas",
+          "referencia": "Oseias 1:3",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do rei de Israel, casado com Jezabel, que promoveu a adoração a Baal?",
+          "alternativas": [
+            "Saul",
+            "Acabe",
+            "Josafá",
+            "Roboão"
+          ],
+          "correta": 1,
+          "nivel": "medio",
+          "tema": "historia",
+          "referencia": "1 Reis 16:30-31",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual era o nome do juiz de Israel que derrotou os midianitas com apenas 300 homens?",
+          "alternativas": [
+            "Sansão",
+            "Jefté",
+            "Gideão",
+            "Eúde"
+          ],
+          "correta": 2,
+          "nivel": "medio",
+          "tema": "personagens",
+          "referencia": "Juízes 7:7",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual era o nome da avó de Timóteo, conhecida por sua fé sincera?",
+          "alternativas": [
+            "Eunice",
+            "Lídia",
+            "Loide",
+            "Febe"
+          ],
+          "correta": 2,
+          "nivel": "dificil",
+          "tema": "personagens",
+          "referencia": "2 Timóteo 1:5",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Qual o nome da esposa de Jacó que era mãe de José e Benjamim?",
+          "alternativas": [
+            "Lia",
+            "Raquel",
+            "Bila",
+            "Zilpa"
+          ],
+          "correta": 1,
+          "nivel": "facil",
+          "tema": "patriarcas",
+          "referencia": "Gênesis 35:24",
+          "faixaEtaria": ["crianca", "adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do profeta que foi contemporâneo do rei Davi e o repreendeu por seu pecado com Bate-Seba?",
+          "alternativas": [
+            "Samuel",
+            "Gad",
+            "Natã",
+            "Aías"
+          ],
+          "correta": 2,
+          "nivel": "medio",
+          "tema": "profetas",
+          "referencia": "2 Samuel 12:1",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual dos apóstolos era um Zelote, um grupo judeu radicalmente oposto ao domínio romano?",
+          "alternativas": [
+            "Judas Iscariotes",
+            "Simão",
+            "Mateus",
+            "André"
+          ],
+          "correta": 1,
+          "nivel": "dificil",
+          "tema": "personagens",
+          "referencia": "Lucas 6:15",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Qual era o nome do sogro de Caim?",
+          "alternativas": [
+            "Adão",
+            "Sete",
+            "Lameque",
+            "A Bíblia não menciona"
+          ],
+          "correta": 3,
+          "nivel": "medio",
+          "tema": "curiosidades",
+          "referencia": "Gênesis 4:17",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Na parábola dos Talentos, quantos talentos o servo que foi repreendido recebeu de seu senhor?",
+          "alternativas": [
+            "Cinco",
+            "Dois",
+            "Um",
+            "Dez"
+          ],
+          "correta": 2,
+          "nivel": "facil",
+          "tema": "evangelhos",
+          "referencia": "Mateus 25:15-18",
+          "faixaEtaria": ["crianca", "adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do governador romano que sucedeu Félix e ouviu a defesa de Paulo?",
+          "alternativas": [
+            "Pôncio Pilatos",
+            "Gálio",
+            "Festo",
+            "Sérgio Paulo"
+          ],
+          "correta": 2,
+          "nivel": "dificil",
+          "tema": "igreja primitiva",
+          "referencia": "Atos 24:27",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Qual o nome da cidade para onde Paulo estava sendo levado como prisioneiro quando seu navio naufragou?",
+          "alternativas": [
+            "Atenas",
+            "Corinto",
+            "Roma",
+            "Éfeso"
+          ],
+          "correta": 2,
+          "nivel": "medio",
+          "tema": "igreja primitiva",
+          "referencia": "Atos 27:1",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Quem era o pai de Matusalém, conhecido por ter 'andado com Deus' e não ter visto a morte?",
+          "alternativas": [
+            "Jarede",
+            "Lameque",
+            "Enoque",
+            "Sete"
+          ],
+          "correta": 2,
+          "nivel": "dificil",
+          "tema": "personagens",
+          "referencia": "Gênesis 5:22-24",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Qual o nome da serva de Sara que foi mãe de Ismael?",
+          "alternativas": [
+            "Bila",
+            "Zilpa",
+            "Hagar",
+            "Quetura"
+          ],
+          "correta": 2,
+          "nivel": "facil",
+          "tema": "personagens",
+          "referencia": "Gênesis 16:15",
+          "faixaEtaria": ["crianca", "adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do profeta que o livro de Judas cita como tendo profetizado sobre os ímpios?",
+          "alternativas": [
+            "Isaías",
+            "Moisés",
+            "Enoque",
+            "Elias"
+          ],
+          "correta": 2,
+          "nivel": "dificil",
+          "tema": "profetas",
+          "referencia": "Judas 1:14",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Qual dos evangelhos é considerado o mais antigo e o mais curto?",
+          "alternativas": [
+            "Mateus",
+            "Marcos",
+            "Lucas",
+            "João"
+          ],
+          "correta": 1,
+          "nivel": "medio",
+          "tema": "livros",
+          "referencia": "Estudos Bíblicos",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome da cidade em que os discípulos foram chamados de 'cristãos' pela primeira vez?",
+          "alternativas": [
+            "Jerusalém",
+            "Antioquia",
+            "Roma",
+            "Éfeso"
+          ],
+          "correta": 1,
+          "nivel": "medio",
+          "tema": "igreja primitiva",
+          "referencia": "Atos 11:26",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual destes não é um dos rios mencionados que saíam do Jardim do Éden?",
+          "alternativas": [
+            "Pisom",
+            "Jordão",
+            "Giom",
+            "Tigre"
+          ],
+          "correta": 1,
+          "nivel": "dificil",
+          "tema": "pentateuco",
+          "referencia": "Gênesis 2:10-14",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do homem que foi o primeiro rei de Israel?",
+          "alternativas": [
+            "Davi",
+            "Salomão",
+            "Saul",
+            "Samuel"
+          ],
+          "correta": 2,
+          "nivel": "facil",
+          "tema": "historia",
+          "referencia": "1 Samuel 10:1",
+          "faixaEtaria": ["crianca", "adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do rei de Israel que teve o seu pedido atendido por Deus para que o sol retrocedesse dez graus?",
+          "alternativas": [
+            "Davi",
+            "Josias",
+            "Ezequias",
+            "Salomão"
+          ],
+          "correta": 2,
+          "nivel": "dificil",
+          "tema": "historia",
+          "referencia": "2 Reis 20:10-11",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "O que os irmãos de José usaram para enganar seu pai, Jacó, fazendo-o pensar que José estava morto?",
+          "alternativas": [
+            "Uma carta falsa",
+            "A túnica de José manchada com sangue de animal",
+            "Testemunhas falsas",
+            "Um pedaço de osso"
+          ],
+          "correta": 1,
+          "nivel": "facil",
+          "tema": "patriarcas",
+          "referencia": "Gênesis 37:31-33",
+          "faixaEtaria": ["crianca", "adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome da esposa de Davi que era filha do rei Saul?",
+          "alternativas": [
+            "Bate-Seba",
+            "Abigail",
+            "Mical",
+            "Ainoã"
+          ],
+          "correta": 2,
+          "nivel": "medio",
+          "tema": "personagens",
+          "referencia": "1 Samuel 18:27",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do rei que ficou louco e comeu grama como os bois?",
+          "alternativas": [
+            "Saul",
+            "Nabucodonosor",
+            "Herodes",
+            "Acabe"
+          ],
+          "correta": 1,
+          "nivel": "facil",
+          "tema": "historia",
+          "referencia": "Daniel 4:33",
+          "faixaEtaria": ["crianca", "adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do anjo que apareceu a Zacarias para anunciar o nascimento de João Batista?",
+          "alternativas": [
+            "Miguel",
+            "Rafael",
+            "Gabriel",
+            "Uriel"
+          ],
+          "correta": 2,
+          "nivel": "facil",
+          "tema": "personagens",
+          "referencia": "Lucas 1:19",
+          "faixaEtaria": ["crianca", "adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Na parábola do Semeador, que tipo de solo representa aqueles que ouvem a palavra, mas as preocupações desta vida a sufocam?",
+          "alternativas": [
+            "Solo rochoso",
+            "Beira do caminho",
+            "Solo bom",
+            "Solo com espinhos"
+          ],
+          "correta": 3,
+          "nivel": "dificil",
+          "tema": "evangelhos",
+          "referencia": "Mateus 13:22",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do centurião romano cujo servo foi curado por Jesus?",
+          "alternativas": [
+            "Cornélio",
+            "Júlio",
+            "O nome não é mencionado",
+            "Longino"
+          ],
+          "correta": 2,
+          "nivel": "medio",
+          "tema": "milagres",
+          "referencia": "Mateus 8:5-13",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual livro do Novo Testamento foi escrito por um irmão de Jesus?",
+          "alternativas": [
+            "Hebreus",
+            "Filemom",
+            "Tiago",
+            "Atos"
+          ],
+          "correta": 2,
+          "nivel": "medio",
+          "tema": "livros",
+          "referencia": "Gálatas 1:19, Tiago 1:1",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual dos apóstolos era conhecido por seu ceticismo, especialmente em relação à ressurreição?",
+          "alternativas": [
+            "Pedro",
+            "Filipe",
+            "Tomé",
+            "Judas (não o Iscariotes)"
+          ],
+          "correta": 2,
+          "nivel": "facil",
+          "tema": "personagens",
+          "referencia": "João 20:24-25",
+          "faixaEtaria": ["crianca", "adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual era o nome do sogro de Caim?",
+          "alternativas": [
+            "Adão",
+            "Sete",
+            "Lameque",
+            "A Bíblia não menciona"
+          ],
+          "correta": 3,
+          "nivel": "medio",
+          "tema": "curiosidades",
+          "referencia": "Gênesis 4:17",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual dos profetas menores era um pastor de ovelhas de Tecoa?",
+          "alternativas": [
+            "Oseias",
+            "Joel",
+            "Amós",
+            "Miqueias"
+          ],
+          "correta": 2,
+          "nivel": "medio",
+          "tema": "profetas",
+          "referencia": "Amós 1:1",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do profeta que foi contemporâneo do rei Davi e o repreendeu por seu pecado com Bate-Seba?",
+          "alternativas": [
+            "Samuel",
+            "Gad",
+            "Natã",
+            "Aías"
+          ],
+          "correta": 2,
+          "nivel": "medio",
+          "tema": "profetas",
+          "referencia": "2 Samuel 12:1",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome da esposa de Moisés?",
+          "alternativas": [
+            "Miriã",
+            "Joquebede",
+            "Zípora",
+            "Raabe"
+          ],
+          "correta": 2,
+          "nivel": "facil",
+          "tema": "personagens",
+          "referencia": "Êxodo 2:21",
+          "faixaEtaria": ["crianca", "adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do profeta que ficou conhecido como 'o profeta chorão'?",
+          "alternativas": [
+            "Isaías",
+            "Jeremias",
+            "Ezequiel",
+            "Daniel"
+          ],
+          "correta": 1,
+          "nivel": "medio",
+          "tema": "profetas",
+          "referencia": "Tradição Cristã, Livro de Lamentações",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual dos filhos de Noé foi amaldiçoado por ele?",
+          "alternativas": [
+            "Sem",
+            "Jafé",
+            "Cam",
+            "Nenhum deles"
+          ],
+          "correta": 2,
+          "nivel": "medio",
+          "tema": "patriarcas",
+          "referencia": "Gênesis 9:24-25",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do profeta que o livro de Judas cita como tendo profetizado sobre os ímpios?",
+          "alternativas": [
+            "Isaías",
+            "Moisés",
+            "Enoque",
+            "Elias"
+          ],
+          "correta": 2,
+          "nivel": "dificil",
+          "tema": "profetas",
+          "referencia": "Judas 1:14",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Qual é o significado da palavra hebraica 'Selah', frequentemente encontrada nos Salmos?",
+          "alternativas": [
+            "Amém",
+            "Aleluia",
+            "Uma pausa ou interlúdio musical",
+            "Para sempre"
+          ],
+          "correta": 2,
+          "nivel": "dificil",
+          "tema": "curiosidades",
+          "referencia": "Livro de Salmos",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do imperador romano a quem Paulo apelou para ser julgado?",
+          "alternativas": [
+            "Tibério",
+            "Cláudio",
+            "Nero (César)",
+            "Augusto"
+          ],
+          "correta": 2,
+          "nivel": "dificil",
+          "tema": "igreja primitiva",
+          "referencia": "Atos 25:10-12",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "O que a Bíblia diz que é a 'lâmpada para os nossos pés'?",
+          "alternativas": [
+            "A fé",
+            "A oração",
+            "A Palavra de Deus",
+            "O amor"
+          ],
+          "correta": 2,
+          "nivel": "facil",
+          "tema": "livros",
+          "referencia": "Salmo 119:105",
+          "faixaEtaria": ["crianca", "adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do lugar para onde os demônios expulsos por Jesus pediram para ser enviados?",
+          "alternativas": [
+            "Para o deserto",
+            "Para uma manada de porcos",
+            "Para o abismo",
+            "Para outra cidade"
+          ],
+          "correta": 1,
+          "nivel": "facil",
+          "tema": "milagres",
+          "referencia": "Marcos 5:12",
+          "faixaEtaria": ["crianca", "adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome da bisavó de Davi, que era moabita?",
+          "alternativas": [
+            "Sara",
+            "Rebeca",
+            "Raabe",
+            "Rute"
+          ],
+          "correta": 3,
+          "nivel": "facil",
+          "tema": "personagens",
+          "referencia": "Rute 4:17",
+          "faixaEtaria": ["crianca", "adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual destes homens foi o primeiro a ser chamado por Deus para deixar sua terra e ir para uma terra que Deus lhe mostraria?",
+          "alternativas": [
+            "Noé",
+            "Moisés",
+            "Ló",
+            "Abraão"
+          ],
+          "correta": 3,
+          "nivel": "facil",
+          "tema": "patriarcas",
+          "referencia": "Gênesis 12:1",
+          "faixaEtaria": ["crianca", "adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome da serva que atendeu à porta quando Pedro foi libertado da prisão, mas não o deixou entrar por causa de sua alegria e espanto?",
+          "alternativas": [
+            "Lídia",
+            "Tabita",
+            "Rode",
+            "Febe"
+          ],
+          "correta": 2,
+          "nivel": "dificil",
+          "tema": "igreja primitiva",
+          "referencia": "Atos 12:13-14",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do rei de Israel que teve o seu pedido atendido por Deus para que o sol retrocedesse dez graus?",
+          "alternativas": [
+            "Davi",
+            "Josias",
+            "Ezequias",
+            "Salomão"
+          ],
+          "correta": 2,
+          "nivel": "dificil",
+          "tema": "historia",
+          "referencia": "2 Reis 20:10-11",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Quem era o general do exército de Davi?",
+          "alternativas": [
+            "Abner",
+            "Joabe",
+            "Abisai",
+            "Benaia"
+          ],
+          "correta": 1,
+          "nivel": "medio",
+          "tema": "historia",
+          "referencia": "2 Samuel 8:16",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome da cidade em que Jesus curou um paralítico que foi baixado pelo telhado?",
+          "alternativas": [
+            "Nazaré",
+            "Jerusalém",
+            "Cafarnaum",
+            "Betânia"
+          ],
+          "correta": 2,
+          "nivel": "facil",
+          "tema": "milagres",
+          "referencia": "Marcos 2:1-5",
+          "faixaEtaria": ["crianca", "adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual destes não é um dos itens da Armadura de Deus descrita em Efésios 6?",
+          "alternativas": [
+            "Capacete da Salvação",
+            "Couraça da Justiça",
+            "Sandálias da Paz",
+            "Cajado da Fé"
+          ],
+          "correta": 3,
+          "nivel": "medio",
+          "tema": "epistolas",
+          "referencia": "Efésios 6:14-17",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome da mulher que ungiu os pés de Jesus com um perfume caro e os enxugou com seus cabelos?",
+          "alternativas": [
+            "Maria Madalena",
+            "Marta",
+            "Maria, irmã de Lázaro",
+            "Salomé"
+          ],
+          "correta": 2,
+          "nivel": "medio",
+          "tema": "evangelhos",
+          "referencia": "João 12:3",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome da cidade para onde Paulo estava sendo levado como prisioneiro quando seu navio naufragou?",
+          "alternativas": [
+            "Atenas",
+            "Corinto",
+            "Roma",
+            "Éfeso"
+          ],
+          "correta": 2,
+          "nivel": "medio",
+          "tema": "igreja primitiva",
+          "referencia": "Atos 27:1",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Quem era o publicano de baixa estatura que subiu em uma árvore para ver Jesus?",
+          "alternativas": [
+            "Mateus",
+            "Zaqueu",
+            "Levi",
+            "Bartimeu"
+          ],
+          "correta": 1,
+          "nivel": "facil",
+          "tema": "personagens",
+          "referencia": "Lucas 19:2-4",
+          "faixaEtaria": ["crianca", "adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do sumo sacerdote que ungiu Salomão como rei?",
+          "alternativas": [
+            "Abiatar",
+            "Zadoque",
+            "Eli",
+            "Finéias"
+          ],
+          "correta": 1,
+          "nivel": "dificil",
+          "tema": "historia",
+          "referencia": "1 Reis 1:39",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Qual dos profetas menores contém uma queixa a Deus sobre a injustiça e a aparente inação divina?",
+          "alternativas": [
+            "Ageu",
+            "Sofonias",
+            "Habacuque",
+            "Malaquias"
+          ],
+          "correta": 2,
+          "nivel": "dificil",
+          "tema": "profetas",
+          "referencia": "Habacuque 1:2-4",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do homem que foi o primeiro rei de Israel?",
+          "alternativas": [
+            "Davi",
+            "Salomão",
+            "Saul",
+            "Samuel"
+          ],
+          "correta": 2,
+          "nivel": "facil",
+          "tema": "historia",
+          "referencia": "1 Samuel 10:1",
+          "faixaEtaria": ["crianca", "adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do profeta que foi contemporâneo do rei Davi e o repreendeu por seu pecado com Bate-Seba?",
+          "alternativas": [
+            "Samuel",
+            "Gad",
+            "Natã",
+            "Aías"
+          ],
+          "correta": 2,
+          "nivel": "medio",
+          "tema": "profetas",
+          "referencia": "2 Samuel 12:1",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Na carta de Paulo aos Filipenses, quais eram os nomes das duas mulheres que ele exortou a concordarem no Senhor?",
+          "alternativas": [
+            "Trifena e Trifosa",
+            "Evódia e Síntique",
+            "Priscila e Lídia",
+            "Maria e Pérside"
+          ],
+          "correta": 1,
+          "nivel": "dificil",
+          "tema": "epistolas",
+          "referencia": "Filipenses 4:2",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Qual era o nome do sogro de Caim?",
+          "alternativas": [
+            "Adão",
+            "Sete",
+            "Lameque",
+            "A Bíblia não menciona"
+          ],
+          "correta": 3,
+          "nivel": "medio",
+          "tema": "curiosidades",
+          "referencia": "Gênesis 4:17",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual é a cidade natal de Davi?",
+          "alternativas": [
+            "Jerusalém",
+            "Hebrom",
+            "Belém",
+            "Jericó"
+          ],
+          "correta": 2,
+          "nivel": "facil",
+          "tema": "personagens",
+          "referencia": "1 Samuel 17:12",
+          "faixaEtaria": ["crianca", "adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do profeta que casou com uma mulher infiel chamada Gômer?",
+          "alternativas": [
+            "Amós",
+            "Oseias",
+            "Joel",
+            "Miqueias"
+          ],
+          "correta": 1,
+          "nivel": "dificil",
+          "tema": "profetas",
+          "referencia": "Oseias 1:3",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do diácono que foi o primeiro missionário aos samaritanos?",
+          "alternativas": [
+            "Estêvão",
+            "Filipe",
+            "Nicanor",
+            "Prócoro"
+          ],
+          "correta": 1,
+          "nivel": "medio",
+          "tema": "igreja primitiva",
+          "referencia": "Atos 8:5",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do profeta que o livro de Judas cita como tendo profetizado sobre os ímpios?",
+          "alternativas": [
+            "Isaías",
+            "Moisés",
+            "Enoque",
+            "Elias"
+          ],
+          "correta": 2,
+          "nivel": "dificil",
+          "tema": "profetas",
+          "referencia": "Judas 1:14",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do imperador romano a quem Paulo apelou para ser julgado?",
+          "alternativas": [
+            "Tibério",
+            "Cláudio",
+            "Nero (César)",
+            "Augusto"
+          ],
+          "correta": 2,
+          "nivel": "dificil",
+          "tema": "igreja primitiva",
+          "referencia": "Atos 25:10-12",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Qual o nome da esposa de Davi que era filha do rei Saul?",
+          "alternativas": [
+            "Bate-Seba",
+            "Abigail",
+            "Mical",
+            "Ainoã"
+          ],
+          "correta": 2,
+          "nivel": "medio",
+          "tema": "personagens",
+          "referencia": "1 Samuel 18:27",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do rei de Israel que teve o seu pedido atendido por Deus para que o sol retrocedesse dez graus?",
+          "alternativas": [
+            "Davi",
+            "Josias",
+            "Ezequias",
+            "Salomão"
+          ],
+          "correta": 2,
+          "nivel": "dificil",
+          "tema": "historia",
+          "referencia": "2 Reis 20:10-11",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Qual dos filhos de Noé foi amaldiçoado por ele?",
+          "alternativas": [
+            "Sem",
+            "Jafé",
+            "Cam",
+            "Nenhum deles"
+          ],
+          "correta": 2,
+          "nivel": "medio",
+          "tema": "patriarcas",
+          "referencia": "Gênesis 9:24-25",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome da cidade em que os discípulos foram chamados de 'cristãos' pela primeira vez?",
+          "alternativas": [
+            "Jerusalém",
+            "Antioquia",
+            "Roma",
+            "Éfeso"
+          ],
+          "correta": 1,
+          "nivel": "medio",
+          "tema": "igreja primitiva",
+          "referencia": "Atos 11:26",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do homem que liderou a reconstrução dos muros de Jerusalém?",
+          "alternativas": [
+            "Esdras",
+            "Zorobabel",
+            "Neemias",
+            "Ageu"
+          ],
+          "correta": 2,
+          "nivel": "medio",
+          "tema": "historia",
+          "referencia": "Neemias 2:17-18",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Quem era o pai de Matusalém, conhecido por ter 'andado com Deus' e não ter visto a morte?",
+          "alternativas": [
+            "Jarede",
+            "Lameque",
+            "Enoque",
+            "Sete"
+          ],
+          "correta": 2,
+          "nivel": "dificil",
+          "tema": "personagens",
+          "referencia": "Gênesis 5:22-24",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do homem que foi o primeiro mártir cristão?",
+          "alternativas": [
+            "Tiago",
+            "Pedro",
+            "Estêvão",
+            "Paulo"
+          ],
+          "correta": 2,
+          "nivel": "medio",
+          "tema": "igreja primitiva",
+          "referencia": "Atos 7:59",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual destes não é um dos rios mencionados que saíam do Jardim do Éden?",
+          "alternativas": [
+            "Pisom",
+            "Jordão",
+            "Giom",
+            "Tigre"
+          ],
+          "correta": 1,
+          "nivel": "dificil",
+          "tema": "pentateuco",
+          "referencia": "Gênesis 2:10-14",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do sumo sacerdote que ungiu Salomão como rei?",
+          "alternativas": [
+            "Abiatar",
+            "Zadoque",
+            "Eli",
+            "Finéias"
+          ],
+          "correta": 1,
+          "nivel": "dificil",
+          "tema": "historia",
+          "referencia": "1 Reis 1:39",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do governador romano que sucedeu Félix e ouviu a defesa de Paulo?",
+          "alternativas": [
+            "Pôncio Pilatos",
+            "Gálio",
+            "Festo",
+            "Sérgio Paulo"
+          ],
+          "correta": 2,
+          "nivel": "dificil",
+          "tema": "igreja primitiva",
+          "referencia": "Atos 24:27",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Qual o nome da serva que atendeu à porta quando Pedro foi libertado da prisão, mas não o deixou entrar por causa de sua alegria e espanto?",
+          "alternativas": [
+            "Lídia",
+            "Tabita",
+            "Rode",
+            "Febe"
+          ],
+          "correta": 2,
+          "nivel": "dificil",
+          "tema": "igreja primitiva",
+          "referencia": "Atos 12:13-14",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Qual dos profetas menores contém uma queixa a Deus sobre a injustiça e a aparente inação divina?",
+          "alternativas": [
+            "Ageu",
+            "Sofonias",
+            "Habacuque",
+            "Malaquias"
+          ],
+          "correta": 2,
+          "nivel": "dificil",
+          "tema": "profetas",
+          "referencia": "Habacuque 1:2-4",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do homem que foi o primeiro rei de Israel?",
+          "alternativas": [
+            "Davi",
+            "Salomão",
+            "Saul",
+            "Samuel"
+          ],
+          "correta": 2,
+          "nivel": "facil",
+          "tema": "historia",
+          "referencia": "1 Samuel 10:1",
+          "faixaEtaria": ["crianca", "adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do rei de Israel, casado com Jezabel, que promoveu a adoração a Baal?",
+          "alternativas": [
+            "Saul",
+            "Acabe",
+            "Josafá",
+            "Roboão"
+          ],
+          "correta": 1,
+          "nivel": "medio",
+          "tema": "historia",
+          "referencia": "1 Reis 16:30-31",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do rei que ficou louco e comeu grama como os bois?",
+          "alternativas": [
+            "Saul",
+            "Nabucodonosor",
+            "Herodes",
+            "Acabe"
+          ],
+          "correta": 1,
+          "nivel": "facil",
+          "tema": "historia",
+          "referencia": "Daniel 4:33",
+          "faixaEtaria": ["crianca", "adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome da bisavó de Davi, que era moabita?",
+          "alternativas": [
+            "Sara",
+            "Rebeca",
+            "Raabe",
+            "Rute"
+          ],
+          "correta": 3,
+          "nivel": "facil",
+          "tema": "personagens",
+          "referencia": "Rute 4:17",
+          "faixaEtaria": ["crianca", "adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do homem que liderou a reconstrução dos muros de Jerusalém?",
+          "alternativas": [
+            "Esdras",
+            "Zorobabel",
+            "Neemias",
+            "Ageu"
+          ],
+          "correta": 2,
+          "nivel": "medio",
+          "tema": "historia",
+          "referencia": "Neemias 2:17-18",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do apóstolo que era irmão de Tiago e filho de Zebedeu?",
+          "alternativas": [
+            "Pedro",
+            "André",
+            "João",
+            "Filipe"
+          ],
+          "correta": 2,
+          "nivel": "facil",
+          "tema": "personagens",
+          "referencia": "Mateus 4:21",
+          "faixaEtaria": ["crianca", "adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Quem era o pai de Matusalém, conhecido por ter 'andado com Deus' e não ter visto a morte?",
+          "alternativas": [
+            "Jarede",
+            "Lameque",
+            "Enoque",
+            "Sete"
+          ],
+          "correta": 2,
+          "nivel": "dificil",
+          "tema": "personagens",
+          "referencia": "Gênesis 5:22-24",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "O que a palavra 'Maranata', usada pelo apóstolo Paulo, significa?",
+          "alternativas": [
+            "Deus é fiel",
+            "A paz esteja convosco",
+            "O nosso Senhor vem",
+            "Graças a Deus"
+          ],
+          "correta": 2,
+          "nivel": "dificil",
+          "tema": "curiosidades",
+          "referencia": "1 Coríntios 16:22",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do profeta que o livro de Judas cita como tendo profetizado sobre os ímpios?",
+          "alternativas": [
+            "Isaías",
+            "Moisés",
+            "Enoque",
+            "Elias"
+          ],
+          "correta": 2,
+          "nivel": "dificil",
+          "tema": "profetas",
+          "referencia": "Judas 1:14",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do homem que foi o primeiro mártir cristão?",
+          "alternativas": [
+            "Tiago",
+            "Pedro",
+            "Estêvão",
+            "Paulo"
+          ],
+          "correta": 2,
+          "nivel": "medio",
+          "tema": "igreja primitiva",
+          "referencia": "Atos 7:59",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome da cidade para onde Paulo estava sendo levado como prisioneiro quando seu navio naufragou?",
+          "alternativas": [
+            "Atenas",
+            "Corinto",
+            "Roma",
+            "Éfeso"
+          ],
+          "correta": 2,
+          "nivel": "medio",
+          "tema": "igreja primitiva",
+          "referencia": "Atos 27:1",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do centurião romano cujo servo foi curado por Jesus?",
+          "alternativas": [
+            "Cornélio",
+            "Júlio",
+            "O nome não é mencionado",
+            "Longino"
+          ],
+          "correta": 2,
+          "nivel": "medio",
+          "tema": "milagres",
+          "referencia": "Mateus 8:5-13",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual destes não é um dos rios mencionados que saíam do Jardim do Éden?",
+          "alternativas": [
+            "Pisom",
+            "Jordão",
+            "Giom",
+            "Tigre"
+          ],
+          "correta": 1,
+          "nivel": "dificil",
+          "tema": "pentateuco",
+          "referencia": "Gênesis 2:10-14",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do homem que foi o primeiro rei de Israel?",
+          "alternativas": [
+            "Davi",
+            "Salomão",
+            "Saul",
+            "Samuel"
+          ],
+          "correta": 2,
+          "nivel": "facil",
+          "tema": "historia",
+          "referencia": "1 Samuel 10:1",
+          "faixaEtaria": ["crianca", "adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome da esposa de Davi que era filha do rei Saul?",
+          "alternativas": [
+            "Bate-Seba",
+            "Abigail",
+            "Mical",
+            "Ainoã"
+          ],
+          "correta": 2,
+          "nivel": "medio",
+          "tema": "personagens",
+          "referencia": "1 Samuel 18:27",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do profeta que foi contemporâneo do rei Davi e o repreendeu por seu pecado com Bate-Seba?",
+          "alternativas": [
+            "Samuel",
+            "Gad",
+            "Natã",
+            "Aías"
+          ],
+          "correta": 2,
+          "nivel": "medio",
+          "tema": "profetas",
+          "referencia": "2 Samuel 12:1",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do imperador romano a quem Paulo apelou para ser julgado?",
+          "alternativas": [
+            "Tibério",
+            "Cláudio",
+            "Nero (César)",
+            "Augusto"
+          ],
+          "correta": 2,
+          "nivel": "dificil",
+          "tema": "igreja primitiva",
+          "referencia": "Atos 25:10-12",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do diácono que foi o primeiro missionário aos samaritanos?",
+          "alternativas": [
+            "Estêvão",
+            "Filipe",
+            "Nicanor",
+            "Prócoro"
+          ],
+          "correta": 1,
+          "nivel": "medio",
+          "tema": "igreja primitiva",
+          "referencia": "Atos 8:5",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome da cidade em que os discípulos foram chamados de 'cristãos' pela primeira vez?",
+          "alternativas": [
+            "Jerusalém",
+            "Antioquia",
+            "Roma",
+            "Éfeso"
+          ],
+          "correta": 1,
+          "nivel": "medio",
+          "tema": "igreja primitiva",
+          "referencia": "Atos 11:26",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome da serva que atendeu à porta quando Pedro foi libertado da prisão, mas não o deixou entrar por causa de sua alegria e espanto?",
+          "alternativas": [
+            "Lídia",
+            "Tabita",
+            "Rode",
+            "Febe"
+          ],
+          "correta": 2,
+          "nivel": "dificil",
+          "tema": "igreja primitiva",
+          "referencia": "Atos 12:13-14",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Qual era o nome do sogro de Caim?",
+          "alternativas": [
+            "Adão",
+            "Sete",
+            "Lameque",
+            "A Bíblia não menciona"
+          ],
+          "correta": 3,
+          "nivel": "medio",
+          "tema": "curiosidades",
+          "referencia": "Gênesis 4:17",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do homem que liderou a reconstrução dos muros de Jerusalém?",
+          "alternativas": [
+            "Esdras",
+            "Zorobabel",
+            "Neemias",
+            "Ageu"
+          ],
+          "correta": 2,
+          "nivel": "medio",
+          "tema": "historia",
+          "referencia": "Neemias 2:17-18",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do rei de Israel que teve o seu pedido atendido por Deus para que o sol retrocedesse dez graus?",
+          "alternativas": [
+            "Davi",
+            "Josias",
+            "Ezequias",
+            "Salomão"
+          ],
+          "correta": 2,
+          "nivel": "dificil",
+          "tema": "historia",
+          "referencia": "2 Reis 20:10-11",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do profeta que o livro de Judas cita como tendo profetizado sobre os ímpios?",
+          "alternativas": [
+            "Isaías",
+            "Moisés",
+            "Enoque",
+            "Elias"
+          ],
+          "correta": 2,
+          "nivel": "dificil",
+          "tema": "profetas",
+          "referencia": "Judas 1:14",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do profeta que casou com uma mulher infiel chamada Gômer?",
+          "alternativas": [
+            "Amós",
+            "Oseias",
+            "Joel",
+            "Miqueias"
+          ],
+          "correta": 1,
+          "nivel": "dificil",
+          "tema": "profetas",
+          "referencia": "Oseias 1:3",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Qual o nome da esposa de Davi que era filha do rei Saul?",
+          "alternativas": [
+            "Bate-Seba",
+            "Abigail",
+            "Mical",
+            "Ainoã"
+          ],
+          "correta": 2,
+          "nivel": "medio",
+          "tema": "personagens",
+          "referencia": "1 Samuel 18:27",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do apóstolo que era irmão de Tiago e filho de Zebedeu?",
+          "alternativas": [
+            "Pedro",
+            "André",
+            "João",
+            "Filipe"
+          ],
+          "correta": 2,
+          "nivel": "facil",
+          "tema": "personagens",
+          "referencia": "Mateus 4:21",
+          "faixaEtaria": ["crianca", "adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do homem que foi o primeiro rei de Israel?",
+          "alternativas": [
+            "Davi",
+            "Salomão",
+            "Saul",
+            "Samuel"
+          ],
+          "correta": 2,
+          "nivel": "facil",
+          "tema": "historia",
+          "referencia": "1 Samuel 10:1",
+          "faixaEtaria": ["crianca", "adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do rei que ficou louco e comeu grama como os bois?",
+          "alternativas": [
+            "Saul",
+            "Nabucodonosor",
+            "Herodes",
+            "Acabe"
+          ],
+          "correta": 1,
+          "nivel": "facil",
+          "tema": "historia",
+          "referencia": "Daniel 4:33",
+          "faixaEtaria": ["crianca", "adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome da bisavó de Davi, que era moabita?",
+          "alternativas": [
+            "Sara",
+            "Rebeca",
+            "Raabe",
+            "Rute"
+          ],
+          "correta": 3,
+          "nivel": "facil",
+          "tema": "personagens",
+          "referencia": "Rute 4:17",
+          "faixaEtaria": ["crianca", "adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome da esposa de Jacó que era mãe de José e Benjamim?",
+          "alternativas": [
+            "Lia",
+            "Raquel",
+            "Bila",
+            "Zilpa"
+          ],
+          "correta": 1,
+          "nivel": "facil",
+          "tema": "patriarcas",
+          "referencia": "Gênesis 35:24",
+          "faixaEtaria": ["crianca", "adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome da cidade em que Jesus curou um paralítico que foi baixado pelo telhado?",
+          "alternativas": [
+            "Nazaré",
+            "Jerusalém",
+            "Cafarnaum",
+            "Betânia"
+          ],
+          "correta": 2,
+          "nivel": "facil",
+          "tema": "milagres",
+          "referencia": "Marcos 2:1-5",
+          "faixaEtaria": ["crianca", "adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do homem que foi levado cativo para a Babilônia e se tornou um alto oficial na corte do rei?",
+          "alternativas": [
+            "Jeremias",
+            "Ezequiel",
+            "Daniel",
+            "Neemias"
+          ],
+          "correta": 2,
+          "nivel": "facil",
+          "tema": "personagens",
+          "referencia": "Daniel 1:1-6",
+          "faixaEtaria": ["crianca", "adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do lugar para onde os demônios expulsos por Jesus pediram para ser enviados?",
+          "alternativas": [
+            "Para o deserto",
+            "Para uma manada de porcos",
+            "Para o abismo",
+            "Para outra cidade"
+          ],
+          "correta": 1,
+          "nivel": "facil",
+          "tema": "milagres",
+          "referencia": "Marcos 5:12",
+          "faixaEtaria": ["crianca", "adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do homem que foi o primeiro mártir cristão?",
+          "alternativas": [
+            "Tiago",
+            "Pedro",
+            "Estêvão",
+            "Paulo"
+          ],
+          "correta": 2,
+          "nivel": "medio",
+          "tema": "igreja primitiva",
+          "referencia": "Atos 7:59",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do profeta que ficou conhecido como 'o profeta chorão'?",
+          "alternativas": [
+            "Isaías",
+            "Jeremias",
+            "Ezequiel",
+            "Daniel"
+          ],
+          "correta": 1,
+          "nivel": "medio",
+          "tema": "profetas",
+          "referencia": "Tradição Cristã, Livro de Lamentações",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual dos filhos de Noé foi amaldiçoado por ele?",
+          "alternativas": [
+            "Sem",
+            "Jafé",
+            "Cam",
+            "Nenhum deles"
+          ],
+          "correta": 2,
+          "nivel": "medio",
+          "tema": "patriarcas",
+          "referencia": "Gênesis 9:24-25",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual era o nome do juiz de Israel que derrotou os midianitas com apenas 300 homens?",
+          "alternativas": [
+            "Sansão",
+            "Jefté",
+            "Gideão",
+            "Eúde"
+          ],
+          "correta": 2,
+          "nivel": "medio",
+          "tema": "personagens",
+          "referencia": "Juízes 7:7",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual era o nome do sogro de Caim?",
+          "alternativas": [
+            "Adão",
+            "Sete",
+            "Lameque",
+            "A Bíblia não menciona"
+          ],
+          "correta": 3,
+          "nivel": "medio",
+          "tema": "curiosidades",
+          "referencia": "Gênesis 4:17",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual dos evangelhos é considerado o mais antigo e o mais curto?",
+          "alternativas": [
+            "Mateus",
+            "Marcos",
+            "Lucas",
+            "João"
+          ],
+          "correta": 1,
+          "nivel": "medio",
+          "tema": "livros",
+          "referencia": "Estudos Bíblicos",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do rei de Israel, casado com Jezabel, que promoveu a adoração a Baal?",
+          "alternativas": [
+            "Saul",
+            "Acabe",
+            "Josafá",
+            "Roboão"
+          ],
+          "correta": 1,
+          "nivel": "medio",
+          "tema": "historia",
+          "referencia": "1 Reis 16:30-31",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome da ilha onde Paulo naufragou em sua viagem para Roma?",
+          "alternativas": [
+            "Creta",
+            "Chipre",
+            "Malta",
+            "Patmos"
+          ],
+          "correta": 2,
+          "nivel": "medio",
+          "tema": "igreja primitiva",
+          "referencia": "Atos 28:1",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do homem que foi o primeiro rei de Israel?",
+          "alternativas": [
+            "Davi",
+            "Saul",
+            "Salomão",
+            "Samuel"
+          ],
+          "correta": 1,
+          "nivel": "medio",
+          "tema": "historia",
+          "referencia": "1 Samuel 10:24",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do profeta que foi contemporâneo do rei Davi e o repreendeu por seu pecado com Bate-Seba?",
+          "alternativas": [
+            "Samuel",
+            "Gad",
+            "Natã",
+            "Aías"
+          ],
+          "correta": 2,
+          "nivel": "medio",
+          "tema": "profetas",
+          "referencia": "2 Samuel 12:1",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do centurião romano cujo servo foi curado por Jesus?",
+          "alternativas": [
+            "Cornélio",
+            "Júlio",
+            "O nome não é mencionado",
+            "Longino"
+          ],
+          "correta": 2,
+          "nivel": "medio",
+          "tema": "milagres",
+          "referencia": "Mateus 8:5-13",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome da cidade em que os discípulos foram chamados de 'cristãos' pela primeira vez?",
+          "alternativas": [
+            "Jerusalém",
+            "Antioquia",
+            "Roma",
+            "Éfeso"
+          ],
+          "correta": 1,
+          "nivel": "medio",
+          "tema": "igreja primitiva",
+          "referencia": "Atos 11:26",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do diácono que foi o primeiro missionário aos samaritanos?",
+          "alternativas": [
+            "Estêvão",
+            "Filipe",
+            "Nicanor",
+            "Prócoro"
+          ],
+          "correta": 1,
+          "nivel": "medio",
+          "tema": "igreja primitiva",
+          "referencia": "Atos 8:5",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual dos profetas menores era um pastor de ovelhas de Tecoa?",
+          "alternativas": [
+            "Oseias",
+            "Joel",
+            "Amós",
+            "Miqueias"
+          ],
+          "correta": 2,
+          "nivel": "medio",
+          "tema": "profetas",
+          "referencia": "Amós 1:1",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do lugar onde Jacó sonhou com uma escada que alcançava o céu?",
+          "alternativas": [
+            "Siquém",
+            "Hebrom",
+            "Betel",
+            "Peniel"
+          ],
+          "correta": 2,
+          "nivel": "medio",
+          "tema": "patriarcas",
+          "referencia": "Gênesis 28:19",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome da mulher que ungiu os pés de Jesus com um perfume caro e os enxugou com seus cabelos?",
+          "alternativas": [
+            "Maria Madalena",
+            "Marta",
+            "Maria, irmã de Lázaro",
+            "Salomé"
+          ],
+          "correta": 2,
+          "nivel": "medio",
+          "tema": "evangelhos",
+          "referencia": "João 12:3",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do rei de Israel que teve o seu pedido atendido por Deus para que o sol retrocedesse dez graus?",
+          "alternativas": [
+            "Davi",
+            "Josias",
+            "Ezequias",
+            "Salomão"
+          ],
+          "correta": 2,
+          "nivel": "dificil",
+          "tema": "historia",
+          "referencia": "2 Reis 20:10-11",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Qual dos apóstolos era um Zelote, um grupo judeu radicalmente oposto ao domínio romano?",
+          "alternativas": [
+            "Judas Iscariotes",
+            "Simão",
+            "Mateus",
+            "André"
+          ],
+          "correta": 1,
+          "nivel": "dificil",
+          "tema": "personagens",
+          "referencia": "Lucas 6:15",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Qual o nome da serva que atendeu à porta quando Pedro foi libertado da prisão, mas não o deixou entrar por causa de sua alegria e espanto?",
+          "alternativas": [
+            "Lídia",
+            "Tabita",
+            "Rode",
+            "Febe"
+          ],
+          "correta": 2,
+          "nivel": "dificil",
+          "tema": "igreja primitiva",
+          "referencia": "Atos 12:13-14",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do sumo sacerdote que ungiu Salomão como rei?",
+          "alternativas": [
+            "Abiatar",
+            "Zadoque",
+            "Eli",
+            "Finéias"
+          ],
+          "correta": 1,
+          "nivel": "dificil",
+          "tema": "historia",
+          "referencia": "1 Reis 1:39",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Qual dos profetas menores contém uma queixa a Deus sobre a injustiça e a aparente inação divina?",
+          "alternativas": [
+            "Ageu",
+            "Sofonias",
+            "Habacuque",
+            "Malaquias"
+          ],
+          "correta": 2,
+          "nivel": "dificil",
+          "tema": "profetas",
+          "referencia": "Habacuque 1:2-4",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do profeta que o livro de Judas cita como tendo profetizado sobre os ímpios?",
+          "alternativas": [
+            "Isaías",
+            "Moisés",
+            "Enoque",
+            "Elias"
+          ],
+          "correta": 2,
+          "nivel": "dificil",
+          "tema": "profetas",
+          "referencia": "Judas 1:14",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do governador romano que sucedeu Félix e ouviu a defesa de Paulo?",
+          "alternativas": [
+            "Pôncio Pilatos",
+            "Gálio",
+            "Festo",
+            "Sérgio Paulo"
+          ],
+          "correta": 2,
+          "nivel": "dificil",
+          "tema": "igreja primitiva",
+          "referencia": "Atos 24:27",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Qual o nome do imperador romano a quem Paulo apelou para ser julgado?",
+          "alternativas": [
+            "Tibério",
+            "Cláudio",
+            "Nero (César)",
+            "Augusto"
+          ],
+          "correta": 2,
+          "nivel": "dificil",
+          "tema": "igreja primitiva",
+          "referencia": "Atos 25:10-12",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "O que a palavra 'Maranata', usada pelo apóstolo Paulo, significa?",
+          "alternativas": [
+            "Deus é fiel",
+            "A paz esteja convosco",
+            "O nosso Senhor vem",
+            "Graças a Deus"
+          ],
+          "correta": 2,
+          "nivel": "dificil",
+          "tema": "curiosidades",
+          "referencia": "1 Coríntios 16:22",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "enunciado": "Qual o nome da cidade de Lídia, a vendedora de púrpura que se converteu?",
+          "alternativas": [
+            "Filipos",
+            "Éfeso",
+            "Tiatira",
+            "Corinto"
+          ],
+          "correta": 2,
+          "nivel": "dificil",
+          "tema": "personagens",
+          "referencia": "Atos 16:14",
+          "faixaEtaria": ["adulto"]
+        }
+      ]

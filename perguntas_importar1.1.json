@@ -1,0 +1,1907 @@
+[
+  {
+    "tema": "pentateuco",
+    "nivel": "medio",
+    "alternativas": [
+      "Uma serpente de bronze",
+      "Um cajado que floresceu",
+      "Pão e vinho",
+      "Doze pedras preciosas"
+    ],
+    "referencia": "Números 17:8",
+    "correta": 1,
+    "enunciado": "Qual foi o sinal que confirmou o sacerdócio de Arão e sua descendência?",
+    "faixaEtaria": ["adolescente", "adulto"]
+  },
+  {
+    "tema": "pentateuco",
+    "nivel": "dificil",
+    "alternativas": [
+      "Cidade de refúgio",
+      "Ano do Jubileu",
+      "Páscoa",
+      "Festa dos Tabernáculos"
+    ],
+    "referencia": "Levítico 25:10",
+    "correta": 1,
+    "enunciado": "Como se chamava o ano especial, a cada 50 anos, em que as dívidas eram perdoadas e as terras devolvidas às suas famílias originais?",
+    "faixaEtaria": ["adulto"]
+  },
+  {
+    "tema": "historia",
+    "nivel": "medio",
+    "alternativas": [
+      "Rei Acabe",
+      "Rei Davi",
+      "Rei Ezequias",
+      "Rei Josias"
+    ],
+    "referencia": "2 Crônicas 34:14-15",
+    "correta": 3,
+    "enunciado": "Durante o reinado de qual rei o 'Livro da Lei' foi encontrado no templo, levando a uma grande reforma religiosa?",
+    "faixaEtaria": ["adolescente", "adulto"]
+  },
+  {
+    "tema": "historia",
+    "nivel": "dificil",
+    "alternativas": [
+      "Senaqueribe",
+      "Tiglate-Pileser III",
+      "Nabucodonosor II",
+      "Ciro, o Grande"
+    ],
+    "referencia": "2 Reis 17:6",
+    "correta": 1,
+    "enunciado": "Qual rei assírio foi o responsável pela conquista de Samaria e pela deportação das dez tribos do Reino do Norte de Israel?",
+    "faixaEtaria": ["adulto"]
+  },
+  {
+    "tema": "personagens",
+    "nivel": "medio",
+    "alternativas": [
+      "Mical",
+      "Bate-Seba",
+      "Abigail",
+      "Ainoã"
+    ],
+    "referencia": "1 Samuel 25:32-33",
+    "correta": 2,
+    "enunciado": "Qual era o nome da esposa de Nabal, que interveio com sabedoria para evitar que Davi se vingasse de seu marido e que, mais tarde, se tornou esposa de Davi?",
+    "faixaEtaria": ["adolescente", "adulto"]
+  },
+  {
+    "tema": "personagens",
+    "nivel": "dificil",
+    "alternativas": [
+      "Geazi",
+      "Benaia",
+      "Adonias",
+      "Absalão"
+    ],
+    "referencia": "2 Reis 5:20-27",
+    "correta": 0,
+    "enunciado": "Qual o nome do servo de Eliseu que, por cobiça, pediu pagamento a Naamã e foi punido com lepra?",
+    "faixaEtaria": ["adulto"]
+  },
+  {
+    "tema": "profetas",
+    "nivel": "medio",
+    "alternativas": [
+      "Um vale de ossos secos",
+      "Sete castiçais de ouro",
+      "Quatro carros entre montanhas de bronze",
+      "Um rolo voador"
+    ],
+    "referencia": "Ezequiel 37:1-2",
+    "correta": 0,
+    "enunciado": "Qual profeta teve a visão da restauração de Israel simbolizada por um exército que se levantava de um lugar cheio de restos mortais?",
+    "faixaEtaria": ["adolescente", "adulto"]
+  },
+  {
+    "tema": "profetas",
+    "nivel": "dificil",
+    "alternativas": [
+      "Jonas",
+      "Naum",
+      "Habacuque",
+      "Sofonias"
+    ],
+    "referencia": "Habacuque 1:2-4, 3:17-19",
+    "correta": 2,
+    "enunciado": "Qual livro dos profetas menores é estruturado como um diálogo entre o profeta e Deus sobre a justiça divina, terminando com um hino de fé?",
+    "faixaEtaria": ["adulto"]
+  },
+  {
+    "tema": "evangelhos",
+    "nivel": "medio",
+    "alternativas": [
+      "Pedro",
+      "O Jovem Rico",
+      "Nicodemos",
+      "Bartimeu"
+    ],
+    "referencia": "João 3:1-2",
+    "correta": 2,
+    "enunciado": "Qual fariseu, membro do Sinédrio, procurou Jesus à noite para fazer-lhe perguntas sobre o novo nascimento?",
+    "faixaEtaria": ["adolescente", "adulto"]
+  },
+  {
+    "tema": "evangelhos",
+    "nivel": "dificil",
+    "alternativas": [
+      "A Parábola do Fariseu e do Publicano",
+      "A Parábola dos Trabalhadores da Vinha",
+      "A Parábola do Juiz Iníquo",
+      "A Parábola do Administrador Infiel"
+    ],
+    "referencia": "Lucas 16:1-8",
+    "correta": 3,
+    "enunciado": "Em qual parábola Jesus ensina sobre o uso sábio das riquezas terrenas, contando a história de um homem que reduziu as dívidas dos devedores de seu senhor?",
+    "faixaEtaria": ["adulto"]
+  },
+  {
+    "tema": "epistolas",
+    "nivel": "medio",
+    "alternativas": [
+      "Filemom",
+      "Timóteo",
+      "Tito",
+      "Onésimo"
+    ],
+    "referencia": "Filemom 1:10-12",
+    "correta": 3,
+    "enunciado": "Qual era o nome do escravo fugitivo em favor de quem Paulo escreveu uma carta pessoal, pedindo que fosse recebido de volta como um irmão amado?",
+    "faixaEtaria": ["adolescente", "adulto"]
+  },
+  {
+    "tema": "epistolas",
+    "nivel": "dificil",
+    "alternativas": [
+      "Hebreus",
+      "Gálatas",
+      "Colossenses",
+      "Romanos"
+    ],
+    "referencia": "Hebreus 7:1-3",
+    "correta": 0,
+    "enunciado": "Qual epístola apresenta Jesus como o Sumo Sacerdote superior, comparando-o a Melquisedeque, um rei e sacerdote misterioso do Antigo Testamento?",
+    "faixaEtaria": ["adulto"]
+  },
+  {
+    "tema": "livros",
+    "nivel": "medio",
+    "alternativas": [
+      "Salmos",
+      "Cânticos dos Cânticos (Cantar de Salomão)",
+      "Provérbios",
+      "Lamentações"
+    ],
+    "referencia": "Cânticos 1:1",
+    "correta": 1,
+    "enunciado": "Qual livro da Bíblia é um poema de amor que celebra o relacionamento entre um noivo e sua noiva, frequentemente interpretado como uma alegoria do amor de Deus por seu povo?",
+    "faixaEtaria": ["adolescente", "adulto"]
+  },
+  {
+    "tema": "igreja primitiva",
+    "nivel": "medio",
+    "alternativas": [
+      "Áquila e Priscila",
+      "Ananias e Safira",
+      "Filemom e Áfia",
+      "Jásper e Morgana"
+    ],
+    "referencia": "Atos 5:1-2",
+    "correta": 1,
+    "enunciado": "Qual casal da igreja primitiva morreu após mentir ao Espírito Santo sobre o valor da venda de uma propriedade?",
+    "faixaEtaria": ["adolescente", "adulto"]
+  },
+  {
+    "tema": "patriarcas",
+    "nivel": "dificil",
+    "alternativas": [
+      "Betuel",
+      "Naor",
+      "Labão",
+      "Terá"
+    ],
+    "referencia": "Gênesis 24:15, 29",
+    "correta": 2,
+    "enunciado": "Além de ser tio de Jacó, qual era o nome do irmão de Rebeca?",
+    "faixaEtaria": ["adulto"]
+  },
+  {
+    "tema": "milagres",
+    "nivel": "medio",
+    "alternativas": [
+      "Tabita (ou Dorcas)",
+      "Lídia",
+      "Eunice",
+      "Febe"
+    ],
+    "referencia": "Atos 9:36-41",
+    "correta": 0,
+    "enunciado": "Qual era o nome da discípula em Jope, conhecida por suas boas obras e esmolas, que foi ressuscitada por Pedro?",
+    "faixaEtaria": ["adolescente", "adulto"]
+  },
+  {
+    "tema": "curiosidades",
+    "nivel": "medio",
+    "alternativas": [
+      "Um publicano (coletor de impostos)",
+      "Um médico",
+      "Um fabricante de tendas",
+      "Um pescador"
+    ],
+    "referencia": "Atos 18:2-3",
+    "correta": 2,
+    "enunciado": "Além de seu ministério apostólico, qual era a profissão do apóstolo Paulo, que ele exercia para se sustentar?",
+    "faixaEtaria": ["adolescente", "adulto"]
+  },
+  {
+    "tema": "profecias",
+    "nivel": "medio",
+    "alternativas": [
+      "A estátua de Nabucodonosor",
+      "As setenta semanas",
+      "Os quatro cavaleiros",
+      "A visão dos ossos secos"
+    ],
+    "referencia": "Daniel 9:24",
+    "correta": 1,
+    "enunciado": "Qual profecia de Daniel fala sobre um período de tempo determinado para a vinda do Messias e a restauração de Jerusalém?",
+    "faixaEtaria": ["adolescente", "adulto"]
+  },
+  {
+    "tema": "pentateuco",
+    "nivel": "facil",
+    "alternativas": [
+      "Uma arca de madeira",
+      "Um cesto de junco",
+      "Uma pequena jangada",
+      "Uma caixa de pedra"
+    ],
+    "referencia": "Êxodo 2:3",
+    "correta": 1,
+    "enunciado": "Onde a mãe de Moisés o colocou para salvá-lo do decreto do Faraó?",
+    "faixaEtaria": ["crianca", "adolescente", "adulto"]
+  },
+  {
+    "tema": "evangelhos",
+    "nivel": "facil",
+    "alternativas": [
+      "Pão e peixe",
+      "Vinho e pão",
+      "Mel e gafanhotos",
+      "Frutas e nozes"
+    ],
+    "referencia": "Marcos 1:6",
+    "correta": 2,
+    "enunciado": "Qual era a alimentação de João Batista no deserto?",
+    "faixaEtaria": ["crianca", "adolescente", "adulto"]
+  },
+  {
+    "tema": "personagens",
+    "nivel": "facil",
+    "alternativas": [
+      "Sansão",
+      "Davi",
+      "Gideão",
+      "Josué"
+    ],
+    "referencia": "1 Samuel 17:49",
+    "correta": 1,
+    "enunciado": "Quem derrotou o gigante Golias com uma funda e uma pedra?",
+    "faixaEtaria": ["crianca", "adolescente", "adulto"]
+  },
+  {
+    "tema": "epistolas",
+    "nivel": "facil",
+    "alternativas": [
+      "Amor",
+      "Alegria",
+      "Paz",
+      "Fé"
+    ],
+    "referencia": "1 Coríntios 13:13",
+    "correta": 0,
+    "enunciado": "Segundo a primeira carta aos Coríntios, qual é o maior de todos os dons, que permanece para sempre?",
+    "faixaEtaria": ["adolescente", "adulto"]
+  },
+  
+    {
+      "tema": "livros",
+      "nivel": "dificil",
+      "alternativas": [
+        "Filemom",
+        "Tito",
+        "2 João",
+        "3 João"
+      ],
+      "referencia": "2 João 1:1",
+      "correta": 2,
+      "enunciado": "Qual epístola do Novo Testamento é endereçada à 'senhora eleita e aos seus filhos'?",
+      "faixaEtaria": ["adulto"]
+    },
+    {
+      "tema": "livros",
+      "nivel": "medio",
+      "alternativas": [
+        "Gálatas",
+        "Efésios",
+        "Filipenses",
+        "Colossenses"
+      ],
+      "referencia": "Gálatas 5:22-23",
+      "correta": 0,
+      "enunciado": "Em qual epístola o apóstolo Paulo lista detalhadamente o 'Fruto do Espírito'?",
+      "faixaEtaria": ["adolescente", "adulto"]
+    },
+    {
+      "tema": "personagens",
+      "nivel": "dificil",
+      "alternativas": [
+        "Jefté",
+        "Eúde",
+        "Otniel",
+        "Sangar"
+      ],
+      "referencia": "Juízes 3:15-21",
+      "correta": 1,
+      "enunciado": "Qual era o nome do juiz canhoto de Israel que libertou o povo ao assassinar Eglom, o rei obeso de Moabe?",
+      "faixaEtaria": ["adulto"]
+    },
+    {
+      "tema": "personagens",
+      "nivel": "facil",
+      "alternativas": [
+        "Daniel",
+        "Ezequiel",
+        "Jeremias",
+        "Jonas"
+      ],
+      "referencia": "Jonas 1:17",
+      "correta": 3,
+      "enunciado": "Qual profeta, ao desobedecer a Deus, foi engolido por um grande peixe?",
+      "faixaEtaria": ["crianca", "adolescente", "adulto"]
+    },
+    {
+      "tema": "milagres",
+      "nivel": "medio",
+      "alternativas": [
+        "Jerusalém",
+        "Cafarnaum",
+        "Caná da Galileia",
+        "Naim"
+      ],
+      "referencia": "João 2:1-11",
+      "correta": 2,
+      "enunciado": "Em que cidade Jesus realizou seu primeiro milagre, transformando água em vinho?",
+      "faixaEtaria": ["adolescente", "adulto"]
+    },
+    {
+      "tema": "profetas",
+      "nivel": "medio",
+      "alternativas": [
+        "Isaías",
+        "Eliseu",
+        "Jeremias",
+        "Elias"
+      ],
+      "referencia": "1 Reis 18:20-40",
+      "correta": 3,
+      "enunciado": "Qual profeta desafiou e derrotou 450 profetas de Baal no Monte Carmelo?",
+      "faixaEtaria": ["adolescente", "adulto"]
+    },
+    {
+      "tema": "patriarcas",
+      "nivel": "medio",
+      "alternativas": [
+        "10",
+        "11",
+        "12",
+        "13"
+      ],
+      "referencia": "Gênesis 35:22-26",
+      "correta": 2,
+      "enunciado": "Quantos filhos Jacó (Israel) teve, que se tornaram os patriarcas das tribos de Israel?",
+      "faixaEtaria": ["adolescente", "adulto"]
+    },
+    {
+      "tema": "historia",
+      "nivel": "medio",
+      "alternativas": [
+        "Artaxerxes",
+        "Ciro",
+        "Dario",
+        "Assuero"
+      ],
+      "referencia": "Esdras 1:1-2",
+      "correta": 1,
+      "enunciado": "Qual foi o rei da Pérsia que emitiu um decreto permitindo que os judeus cativos na Babilônia retornassem a Jerusalém para reconstruir o templo?",
+      "faixaEtaria": ["adolescente", "adulto"]
+    },
+    {
+      "tema": "pentateuco",
+      "nivel": "facil",
+      "alternativas": [
+        "A criação dos animais",
+        "A separação das águas e do céu",
+        "A criação do homem",
+        "A criação da luz"
+      ],
+      "referencia": "Gênesis 1:3-5",
+      "correta": 3,
+      "enunciado": "De acordo com o livro de Gênesis, o que Deus criou no primeiro dia?",
+      "faixaEtaria": ["crianca", "adolescente", "adulto"]
+    },
+    {
+      "tema": "evangelhos",
+      "nivel": "facil",
+      "alternativas": [
+        "10",
+        "70",
+        "12",
+        "3"
+      ],
+      "referencia": "Marcos 3:14-19",
+      "correta": 2,
+      "enunciado": "Quantos apóstolos Jesus escolheu para estarem com Ele e para enviá-los a pregar?",
+      "faixaEtaria": ["crianca", "adolescente", "adulto"]
+    },
+    {
+      "tema": "profecias",
+      "nivel": "dificil",
+      "alternativas": [
+        "Absinto",
+        "Fel",
+        "Mirra",
+        "Estrela da Manhã"
+      ],
+      "referencia": "Apocalipse 8:10-11",
+      "correta": 0,
+      "enunciado": "No livro de Apocalipse, qual o nome da grande estrela que cai do céu e torna amarga a terça parte das águas?",
+      "faixaEtaria": ["adulto"]
+    },
+    {
+      "tema": "igreja primitiva",
+      "nivel": "dificil",
+      "alternativas": [
+        "Gálio",
+        "Públio",
+        "Félix",
+        "Sérgio Paulo"
+      ],
+      "referencia": "Atos 13:7-12",
+      "correta": 3,
+      "enunciado": "Qual era o nome do procônsul romano em Chipre que se converteu ao cristianismo ao ver o poder de Deus através de Paulo contra o mágico Elimas?",
+      "faixaEtaria": ["adulto"]
+    },
+    {
+      "tema": "curiosidades",
+      "nivel": "medio",
+      "alternativas": [
+        "Ester e Judite",
+        "Rute e Ester",
+        "Sara e Rute",
+        "Débora e Ester"
+      ],
+      "referencia": "Livros de Rute e Ester",
+      "correta": 1,
+      "enunciado": "Quais são os dois únicos livros da Bíblia que levam nomes de mulheres?",
+      "faixaEtaria": ["adolescente", "adulto"]
+    },
+    {
+      "tema": "pentateuco",
+      "nivel": "medio",
+      "alternativas": [
+        "Uma pomba com um ramo de oliveira",
+        "Um arco-íris no céu",
+        "O sol brilhando novamente",
+        "Terra seca aparecendo"
+      ],
+      "referencia": "Gênesis 9:13",
+      "correta": 1,
+      "enunciado": "Qual foi o sinal da aliança que Deus fez com Noé, prometendo nunca mais destruir a Terra com um dilúvio?",
+      "faixaEtaria": ["crianca", "adolescente", "adulto"]
+    },
+    {
+      "tema": "epistolas",
+      "nivel": "medio",
+      "alternativas": [
+        "Não julgar para não ser julgado",
+        "Tudo é permitido, mas nem tudo convém",
+        "O amor ao dinheiro é a raiz de todos os males",
+        "Alegrai-vos sempre no Senhor"
+      ],
+      "referencia": "Filipenses 4:4",
+      "correta": 3,
+      "enunciado": "Qual tema recorrente e encorajamento principal o apóstolo Paulo dá na sua carta aos Filipenses, mesmo estando preso?",
+      "faixaEtaria": ["adolescente", "adulto"]
+    },
+      {
+        "tema": "pentateuco",
+        "nivel": "dificil",
+        "alternativas": [
+          "Miriã e Joquebede",
+          "Sifrá e Puá",
+          "Orfa e Rute",
+          "Ana e Penina"
+        ],
+        "referencia": "Êxodo 1:15-17",
+        "correta": 1,
+        "enunciado": "Quais os nomes das parteiras hebreias que temeram a Deus e desobedeceram à ordem do Faraó de matar os meninos recém-nascidos?",
+        "faixaEtaria": ["adulto"]
+      },
+      {
+        "tema": "pentateuco",
+        "nivel": "medio",
+        "alternativas": [
+          "Bênção da primogenitura",
+          "Um rebanho de ovelhas",
+          "Uma túnica de várias cores",
+          "Uma porção dobrada da herança"
+        ],
+        "referencia": "Gênesis 37:3",
+        "correta": 2,
+        "enunciado": "O que Jacó deu a seu filho José que provocou o ciúme de seus irmãos?",
+        "faixaEtaria": ["crianca", "adolescente", "adulto"]
+      },
+      {
+        "tema": "historia",
+        "nivel": "dificil",
+        "alternativas": [
+          "Tribo de Judá",
+          "Tribo de Benjamim",
+          "Tribo de Dã",
+          "Tribo de Efraim"
+        ],
+        "referencia": "1 Reis 12:21",
+        "correta": 1,
+        "enunciado": "Após a divisão do reino de Israel, a qual tribo pertencia o primeiro rei de Judá, Roboão, além da própria tribo de Judá?",
+        "faixaEtaria": ["adulto"]
+      },
+      {
+        "tema": "personagens",
+        "nivel": "medio",
+        "alternativas": [
+          "Simeão",
+          "Zacarias",
+          "Anás",
+          "Caifás"
+        ],
+        "referencia": "Lucas 1:18-20, 64",
+        "correta": 1,
+        "enunciado": "Qual o nome do sacerdote que ficou mudo após duvidar do anjo Gabriel e só pôde falar novamente após o nascimento de seu filho, João Batista?",
+        "faixaEtaria": ["adolescente", "adulto"]
+      },
+      {
+        "tema": "profetas",
+        "nivel": "facil",
+        "alternativas": [
+          "Um exército de gafanhotos",
+          "Uma grande seca",
+          "A destruição de Nínive",
+          "Uma praga de peixes"
+        ],
+        "referencia": "Joel 2:25",
+        "correta": 0,
+        "enunciado": "O profeta Joel descreve uma devastação causada por qual tipo de praga, usando-a como um chamado ao arrependimento?",
+        "faixaEtaria": ["adolescente", "adulto"]
+      },
+      {
+        "tema": "evangelhos",
+        "nivel": "facil",
+        "alternativas": [
+          "Carpinteiros",
+          "Cobradores de impostos",
+          "Pescadores",
+          "Pastores de ovelhas"
+        ],
+        "referencia": "Mateus 4:18-19",
+        "correta": 2,
+        "enunciado": "Qual era a profissão de Pedro e de seu irmão André antes de serem chamados por Jesus para se tornarem 'pescadores de homens'?",
+        "faixaEtaria": ["crianca", "adolescente", "adulto"]
+      },
+      {
+        "tema": "evangelhos",
+        "nivel": "medio",
+        "alternativas": [
+          "A parábola do Semeador",
+          "A parábola do Filho Pródigo",
+          "A parábola do Bom Samaritano",
+          "A parábola dos Talentos"
+        ],
+        "referencia": "Lucas 10:30-37",
+        "correta": 2,
+        "enunciado": "Em qual parábola Jesus ensina sobre o amor ao próximo, contando a história de um homem que foi ajudado por um estrangeiro após ser assaltado?",
+        "faixaEtaria": ["crianca", "adolescente", "adulto"]
+      },
+      {
+        "tema": "milagres",
+        "nivel": "dificil",
+        "alternativas": [
+          "Êutico",
+          "Onésimo",
+          "Trófimo",
+          "Gaio"
+        ],
+        "referencia": "Atos 20:9-12",
+        "correta": 0,
+        "enunciado": "Qual o nome do jovem que, ao cair do terceiro andar durante um longo sermão de Paulo em Trôade, foi dado como morto e ressuscitado pelo apóstolo?",
+        "faixaEtaria": ["adulto"]
+      },
+      {
+        "tema": "epistolas",
+        "nivel": "dificil",
+        "alternativas": [
+          "Gálatas",
+          "Hebreus",
+          "Tiago",
+          "Romanos"
+        ],
+        "referencia": "Tiago 2:26",
+        "correta": 2,
+        "enunciado": "Qual epístola enfatiza fortemente a relação entre fé e obras, declarando que 'a fé sem obras é morta'?",
+        "faixaEtaria": ["adulto"]
+      },
+      {
+        "tema": "patriarcas",
+        "nivel": "facil",
+        "alternativas": [
+          "Sodoma e Gomorra",
+          "Babel",
+          "Ur dos Caldeus",
+          "Harã"
+        ],
+        "referencia": "Gênesis 11:31",
+        "correta": 2,
+        "enunciado": "Qual era o nome da cidade natal de Abraão, de onde Deus o chamou para ir a uma nova terra?",
+        "faixaEtaria": ["crianca", "adolescente", "adulto"]
+      },
+      {
+        "tema": "curiosidades",
+        "nivel": "dificil",
+        "alternativas": [
+          "Rute",
+          "Cânticos",
+          "Lamentações",
+          "Ester"
+        ],
+        "referencia": "Livro de Ester",
+        "correta": 3,
+        "enunciado": "Qual livro do Antigo Testamento é o único que não menciona explicitamente o nome de Deus?",
+        "faixaEtaria": ["adulto"]
+      },
+      {
+        "tema": "igreja primitiva",
+        "nivel": "medio",
+        "alternativas": [
+          "Cornélio",
+          "O eunuco etíope",
+          "Sérgio Paulo",
+          "Lídia"
+        ],
+        "referencia": "Atos 8:27-38",
+        "correta": 1,
+        "enunciado": "Quem era o oficial da corte da rainha de Candace que foi batizado por Filipe após este lhe explicar uma passagem do profeta Isaías?",
+        "faixaEtaria": ["adolescente", "adulto"]
+      },
+      {
+        "tema": "profecias",
+        "nivel": "medio",
+        "alternativas": [
+          "Um tempo, tempos e metade de um tempo",
+          "Sete anos de fome",
+          "Setenta semanas de anos",
+          "Mil duzentos e sessenta dias"
+        ],
+        "referencia": "Gênesis 41:29-30",
+        "correta": 1,
+        "enunciado": "Que período de tempo José, no Egito, previu que ocorreria após sete anos de abundância?",
+        "faixaEtaria": ["adolescente", "adulto"]
+      },
+      {
+        "tema": "livros",
+        "nivel": "facil",
+        "alternativas": [
+          "Atos dos Apóstolos",
+          "Romanos",
+          "Apocalipse",
+          "Hebreus"
+        ],
+        "referencia": "Estrutura do Novo Testamento",
+        "correta": 0,
+        "enunciado": "Qual livro do Novo Testamento narra a história da igreja primitiva e as viagens missionárias do apóstolo Paulo?",
+        "faixaEtaria": ["crianca", "adolescente", "adulto"]
+      },
+        {
+          "tema": "livros",
+          "nivel": "dificil",
+          "alternativas": [
+            "2 Pedro",
+            "Tiago",
+            "Judas",
+            "Hebreus"
+          ],
+          "referencia": "Judas 1:14-15",
+          "correta": 2,
+          "enunciado": "Qual pequena epístola do Novo Testamento cita diretamente uma profecia do apócrifo Livro de Enoque?",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "tema": "livros",
+          "nivel": "medio",
+          "alternativas": [
+            "Oséias e Amós",
+            "Ageu e Zacarias",
+            "Joel e Malaquias",
+            "Jonas e Naum"
+          ],
+          "referencia": "Esdras 5:1",
+          "correta": 1,
+          "enunciado": "Quais dois profetas incentivaram o povo a retomar a reconstrução do Templo em Jerusalém após o exílio?",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "tema": "personagens",
+          "nivel": "facil",
+          "alternativas": [
+            "Jacó e Esaú",
+            "Moisés e Arão",
+            "Caim e Abel",
+            "Isaque e Ismael"
+          ],
+          "referencia": "Gênesis 4:1-2",
+          "correta": 2,
+          "enunciado": "Quais foram os nomes dos dois primeiros filhos de Adão e Eva?",
+          "faixaEtaria": ["crianca", "adolescente", "adulto"]
+        },
+        {
+          "tema": "epistolas",
+          "nivel": "medio",
+          "alternativas": [
+            "Tito",
+            "Lucas",
+            "Silas",
+            "Timóteo"
+          ],
+          "referencia": "1 Timóteo 1:2",
+          "correta": 3,
+          "enunciado": "A quem o apóstolo Paulo se refere em suas cartas como seu 'verdadeiro filho na fé'?",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "tema": "historia",
+          "nivel": "medio",
+          "alternativas": [
+            "Nabuzaradã",
+            "Aspenaz",
+            "Beltessazar",
+            "Nergal-Sarezer"
+          ],
+          "referencia": "2 Reis 25:8-10",
+          "correta": 0,
+          "enunciado": "Qual era o nome do capitão da guarda de Nabucodonosor que liderou a queima do Templo e a destruição dos muros de Jerusalém?",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "tema": "profecias",
+          "nivel": "dificil",
+          "alternativas": [
+            "Tiro",
+            "Babilônia",
+            "Nínive",
+            "Egito"
+          ],
+          "referencia": "Ezequiel 26:3-4",
+          "correta": 0,
+          "enunciado": "Contra qual cidade portuária fenícia o profeta Ezequiel profetizou que seria 'raspada até a rocha nua' e se tornaria um lugar para estender redes de pesca?",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "tema": "patriarcas",
+          "nivel": "medio",
+          "alternativas": [
+            "Um anjo",
+            "Seu irmão Esaú",
+            "Um sacerdote de Salém",
+            "Um homem misterioso até o amanhecer"
+          ],
+          "referencia": "Gênesis 32:24-28",
+          "correta": 3,
+          "enunciado": "Com quem Jacó lutou em Peniel, resultando na mudança de seu nome para Israel?",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "tema": "pentateuco",
+          "nivel": "facil",
+          "alternativas": [
+            "Pela fé",
+            "Pela obediência",
+            "Pela graça",
+            "Pela justiça"
+          ],
+          "referencia": "Gênesis 15:6",
+          "correta": 0,
+          "enunciado": "Como Abraão foi justificado diante de Deus, segundo o livro de Gênesis?",
+          "faixaEtaria": ["crianca", "adolescente", "adulto"]
+        },
+        {
+          "tema": "evangelhos",
+          "nivel": "dificil",
+          "alternativas": [
+            "A parábola da Dracma Perdida",
+            "A parábola do Semeador",
+            "A parábola do Trigo e do Joio",
+            "A parábola da Semente de Mostarda"
+          ],
+          "referencia": "Mateus 13:24-30",
+          "correta": 2,
+          "enunciado": "Em qual parábola Jesus explica que os justos e os ímpios crescerão juntos no mundo até o tempo da colheita (o fim dos tempos)?",
+          "faixaEtaria": ["adulto"]
+        },
+        {
+          "tema": "igreja primitiva",
+          "nivel": "facil",
+          "alternativas": [
+            "Cornélio",
+            "Barnabé",
+            "Saulo (Paulo)",
+            "Estêvão"
+          ],
+          "referencia": "Atos 9:1-5",
+          "correta": 2,
+          "enunciado": "Quem estava a caminho de Damasco para prender cristãos quando teve um encontro com Jesus ressuscitado?",
+          "faixaEtaria": ["crianca", "adolescente", "adulto"]
+        },
+        {
+          "tema": "curiosidades",
+          "nivel": "facil",
+          "alternativas": [
+            "Ovelhas",
+            "Jumentas",
+            "Pombas",
+            "Bois"
+          ],
+          "referencia": "Números 22:28",
+          "correta": 1,
+          "enunciado": "Que tipo de animal falou com o profeta Balaão?",
+          "faixaEtaria": ["crianca", "adolescente", "adulto"]
+        },
+        {
+          "tema": "milagres",
+          "nivel": "medio",
+          "alternativas": [
+            "No tanque de Siloé",
+            "No poço de Jacó",
+            "No tanque de Betesda",
+            "No rio Jordão"
+          ],
+          "referencia": "João 5:2-9",
+          "correta": 2,
+          "enunciado": "Onde Jesus curou um homem que estava paralítico há 38 anos, dizendo-lhe 'Levanta-te, toma o teu leito e anda'?",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "tema": "personagens",
+          "nivel": "medio",
+          "alternativas": [
+            "Jônatas",
+            "Absalão",
+            "Salomão",
+            "Amnom"
+          ],
+          "referencia": "2 Samuel 15",
+          "correta": 1,
+          "enunciado": "Qual filho de Davi liderou uma grande rebelião contra ele, conquistando o apoio do povo e forçando Davi a fugir de Jerusalém?",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "tema": "profetas",
+          "nivel": "medio",
+          "alternativas": [
+            "Miqueias",
+            "Isaías",
+            "Jeremias",
+            "Amós"
+          ],
+          "referencia": "Amós 7:14-15",
+          "correta": 3,
+          "enunciado": "Qual profeta, antes de seu chamado, era um pastor e cultivador de sicômoros (figos silvestres)?",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+        {
+          "tema": "curiosidades",
+          "nivel": "medio",
+          "alternativas": [
+            "Paulo",
+            "Jesus",
+            "Salomão",
+            "Davi"
+          ],
+          "referencia": "2 Samuel 23:1",
+          "correta": 3,
+          "enunciado": "Quem é chamado na Bíblia de 'o doce cantor de Israel'?",
+          "faixaEtaria": ["adolescente", "adulto"]
+        },
+          {
+            "tema": "profetas",
+            "nivel": "dificil",
+            "alternativas": [
+              "Bebendo água de um rio sagrado",
+              "Sendo tocado por um serafim com uma brasa viva do altar",
+              "Mergulhando em um tanque de purificação",
+              "Comendo um rolo de livro"
+            ],
+            "referencia": "Isaías 6:6-7",
+            "correta": 1,
+            "enunciado": "Na visão de seu chamado, como o profeta Isaías teve seus lábios purificados para que pudesse pregar em nome de Deus?",
+            "faixaEtaria": ["adulto"]
+          },
+          {
+            "tema": "igreja primitiva",
+            "nivel": "medio",
+            "alternativas": [
+              "Ananias e Safira",
+              "Filemom e Áfia",
+              "Andrônico e Júnia",
+              "Priscila e Áquila"
+            ],
+            "referencia": "Atos 18:24-26",
+            "correta": 3,
+            "enunciado": "Qual casal, fabricante de tendas, instruiu o eloquente pregador Apolo, explicando-lhe o caminho de Deus com mais precisão?",
+            "faixaEtaria": ["adolescente", "adulto"]
+          },
+          {
+            "tema": "curiosidades",
+            "nivel": "medio",
+            "alternativas": [
+              "73",
+              "54",
+              "66",
+              "81"
+            ],
+            "referencia": "Cânon Bíblico Protestante",
+            "correta": 2,
+            "enunciado": "Quantos livros compõem o cânon protestante da Bíblia (39 no Antigo Testamento e 27 no Novo Testamento)?",
+            "faixaEtaria": ["adolescente", "adulto"]
+          },
+          {
+            "tema": "evangelhos",
+            "nivel": "medio",
+            "alternativas": [
+              "Trinta moedas de ouro",
+              "Cem denários",
+              "Trinta moedas de prata",
+              "Um talento de prata"
+            ],
+            "referencia": "Mateus 26:14-15",
+            "correta": 2,
+            "enunciado": "Por qual valor Judas Iscariotes concordou em trair Jesus, entregando-o aos principais sacerdotes?",
+            "faixaEtaria": ["adolescente", "adulto"]
+          },
+          {
+            "tema": "personagens",
+            "nivel": "dificil",
+            "alternativas": [
+              "Simei",
+              "Aitofel",
+              "Husai",
+              "Ziba"
+            ],
+            "referencia": "2 Samuel 16:5-8",
+            "correta": 0,
+            "enunciado": "Qual parente do rei Saul amaldiçoou e atirou pedras em Davi quando este fugia de Absalão?",
+            "faixaEtaria": ["adulto"]
+          },
+          {
+            "tema": "pentateuco",
+            "nivel": "medio",
+            "alternativas": [
+              "O Tabernáculo",
+              "O Bezerro de Ouro",
+              "A Arca da Aliança",
+              "O Altar de Incenso"
+            ],
+            "referencia": "Êxodo 32:4",
+            "correta": 1,
+            "enunciado": "Que ídolo o povo de Israel construiu e adorou no deserto enquanto Moisés estava no Monte Sinai recebendo a Lei?",
+            "faixaEtaria": ["crianca", "adolescente", "adulto"]
+          },
+          {
+            "tema": "historia",
+            "nivel": "facil",
+            "alternativas": [
+              "O Dilúvio",
+              "A destruição de Sodoma e Gomorra",
+              "A Torre de Babel",
+              "A queda dos muros de Jericó"
+            ],
+            "referencia": "Gênesis 11:4-9",
+            "correta": 2,
+            "enunciado": "Qual evento bíblico explica a origem das diferentes línguas, quando Deus confundiu a fala dos homens que construíam uma torre para alcançar o céu?",
+            "faixaEtaria": ["crianca", "adolescente", "adulto"]
+          },
+          {
+            "tema": "epistolas",
+            "nivel": "facil",
+            "alternativas": [
+              "Romanos",
+              "Gálatas",
+              "2 Timóteo",
+              "Hebreus"
+            ],
+            "referencia": "2 Timóteo 3:16",
+            "correta": 2,
+            "enunciado": "Em qual epístola Paulo afirma que 'Toda a Escritura é inspirada por Deus e útil para o ensino'?",
+            "faixaEtaria": ["adolescente", "adulto"]
+          },
+          {
+            "tema": "patriarcas",
+            "nivel": "medio",
+            "alternativas": [
+              "A morte de sua esposa, Sara",
+              "A fome na terra de Canaã",
+              "A necessidade de encontrar uma esposa para seu filho, Isaque",
+              "Uma ordem direta de Faraó"
+            ],
+            "referencia": "Gênesis 24:2-4",
+            "correta": 2,
+            "enunciado": "Qual foi o motivo que levou Abraão a enviar seu servo de volta à sua terra natal, a Mesopotâmia?",
+            "faixaEtaria": ["adolescente", "adulto"]
+          },
+          {
+            "tema": "milagres",
+            "nivel": "facil",
+            "alternativas": [
+              "Cinco mil homens",
+              "Mil homens",
+              "Dez mil homens",
+              "Quinhentos homens"
+            ],
+            "referencia": "João 6:10",
+            "correta": 0,
+            "enunciado": "Na multiplicação dos pães e peixes, quantos homens foram alimentados, além de mulheres e crianças?",
+            "faixaEtaria": ["crianca", "adolescente", "adulto"]
+          },
+          {
+            "tema": "livros",
+            "nivel": "facil",
+            "alternativas": [
+              "Eclesiastes",
+              "Jó",
+              "Salmos",
+              "Provérbios"
+            ],
+            "referencia": "Jó 1:1",
+            "correta": 1,
+            "enunciado": "Qual livro poético narra a história de um homem justo que perde tudo, mas mantém sua fé, debatendo com seus amigos sobre a razão de seu sofrimento?",
+            "faixaEtaria": ["adolescente", "adulto"]
+          },
+          {
+            "tema": "profecias",
+            "nivel": "medio",
+            "alternativas": [
+              "Isaías",
+              "Daniel",
+              "Miqueias",
+              "Zacarias"
+            ],
+            "referencia": "Miqueias 5:2",
+            "correta": 2,
+            "enunciado": "Qual profeta especificou que o Messias nasceria na pequena cidade de Belém Efrata?",
+            "faixaEtaria": ["adolescente", "adulto"]
+          },
+          {
+            "tema": "curiosidades",
+            "nivel": "dificil",
+            "alternativas": [
+              "A circuncisão",
+              "O batismo",
+              "Um voto de nazireu",
+              "Um sacrifício de comunhão"
+            ],
+            "referencia": "Números 6:1-4",
+            "correta": 2,
+            "enunciado": "Como era chamado o voto especial de consagração a Deus, feito por pessoas como Sansão e Samuel, que incluía não cortar o cabelo e abster-se de vinho?",
+            "faixaEtaria": ["adulto"]
+          },
+          {
+            "tema": "evangelhos",
+            "nivel": "medio",
+            "alternativas": [
+              "'Meu Deus, meu Deus, por que me desamparaste?'",
+              "'Pai, em tuas mãos entrego o meu espírito.'",
+              "'Está consumado.'",
+              "'Tenho sede.'"
+            ],
+            "referencia": "Lucas 23:46",
+            "correta": 1,
+            "enunciado": "Qual foi a última frase dita por Jesus na cruz, segundo o Evangelho de Lucas?",
+            "faixaEtaria": ["adolescente", "adulto"]
+          },
+            {
+              "tema": "historia",
+              "nivel": "dificil",
+              "alternativas": [
+                "A construção de um palácio luxuoso",
+                "A alta carga de impostos sobre o povo",
+                "A idolatria de Salomão, influenciado por suas esposas estrangeiras",
+                "Uma disputa militar com o Egito"
+              ],
+              "referencia": "1 Reis 11:31-33",
+              "correta": 2,
+              "enunciado": "Qual foi o principal motivo divino para a divisão do reino de Israel após a morte de Salomão, conforme profetizado por Aías?",
+              "faixaEtaria": ["adulto"]
+            },
+            {
+              "tema": "personagens",
+              "nivel": "dificil",
+              "alternativas": [
+                "Diótrefes",
+                "Figelo",
+                "Hermógenes",
+                "Alexandre, o latoeiro"
+              ],
+              "referencia": "2 Timóteo 4:14",
+              "correta": 3,
+              "enunciado": "Em sua última carta a Timóteo, a quem Paulo adverte sobre ter lhe causado 'grandes males', pedindo que o Senhor lhe desse a paga segundo as suas obras?",
+              "faixaEtaria": ["adulto"]
+            },
+            {
+              "tema": "livros",
+              "nivel": "medio",
+              "alternativas": [
+                "Eclesiastes",
+                "Salmos",
+                "Jó",
+                "Provérbios"
+              ],
+              "referencia": "Provérbios 1:1",
+              "correta": 3,
+              "enunciado": "Qual livro do Antigo Testamento é uma coleção de ditados e conselhos sobre sabedoria, sendo a maior parte atribuída a Salomão?",
+              "faixaEtaria": ["crianca", "adolescente", "adulto"]
+            },
+            {
+              "tema": "evangelhos",
+              "nivel": "facil",
+              "alternativas": [
+                "Amar a Deus sobre todas as coisas",
+                "Fazer aos outros o que quereis que eles vos façam",
+                "Vigiar e orar",
+                "Dar a César o que é de César"
+              ],
+              "referencia": "Mateus 7:12",
+              "correta": 1,
+              "enunciado": "No Sermão da Montanha, qual é a 'Regra de Ouro' que Jesus ensinou?",
+              "faixaEtaria": ["crianca", "adolescente", "adulto"]
+            },
+            {
+              "tema": "pentateuco",
+              "nivel": "dificil",
+              "alternativas": [
+                "Corá, Datã e Abirão",
+                "Nadabe e Abiú",
+                "Eldade e Medade",
+                "Hofni e Finéias"
+              ],
+              "referencia": "Números 16:1-3",
+              "correta": 0,
+              "enunciado": "Quais levitas lideraram uma grande rebelião contra a autoridade de Moisés e Arão no deserto, sendo engolidos pela terra?",
+              "faixaEtaria": ["adulto"]
+            },
+            {
+              "tema": "epistolas",
+              "nivel": "medio",
+              "alternativas": [
+                "O amor",
+                "A esperança",
+                "A fé",
+                "A paciência"
+              ],
+              "referencia": "Hebreus 11:1",
+              "correta": 2,
+              "enunciado": "De acordo com a Epístola aos Hebreus, o que é 'o firme fundamento das coisas que se esperam, e a prova das coisas que não se veem'?",
+              "faixaEtaria": ["adolescente", "adulto"]
+            },
+            {
+              "tema": "igreja primitiva",
+              "nivel": "facil",
+              "alternativas": [
+                "A venda de uma propriedade",
+                "A escolha do sucessor de Judas",
+                "A distribuição de alimentos às viúvas",
+                "A primeira viagem missionária"
+              ],
+              "referencia": "Atos 6:1-3",
+              "correta": 2,
+              "enunciado": "Qual foi o problema administrativo que levou à escolha dos primeiros sete diáconos na igreja em Jerusalém?",
+              "faixaEtaria": ["adolescente", "adulto"]
+            },
+            {
+              "tema": "profetas",
+              "nivel": "medio",
+              "alternativas": [
+                "Jeremias",
+                "Daniel",
+                "Ezequiel",
+                "Isaías"
+              ],
+              "referencia": "Daniel 2",
+              "correta": 1,
+              "enunciado": "Qual profeta interpretou o sonho do rei Nabucodonosor sobre uma grande estátua feita de diferentes metais, representando reinos futuros?",
+              "faixaEtaria": ["adolescente", "adulto"]
+            },
+            {
+              "tema": "milagres",
+              "nivel": "medio",
+              "alternativas": [
+                "Um cego de nascença",
+                "Um surdo-mudo",
+                "A sogra de Pedro",
+                "A filha de Jairo"
+              ],
+              "referencia": "Marcos 1:30-31",
+              "correta": 2,
+              "enunciado": "Qual parente de um dos apóstolos Jesus curou de uma febre alta, logo no início de seu ministério na Galileia?",
+              "faixaEtaria": ["crianca", "adolescente", "adulto"]
+            },
+            {
+              "tema": "patriarcas",
+              "nivel": "facil",
+              "alternativas": [
+                "Isaque",
+                "Jacó",
+                "José",
+                "Abraão"
+              ],
+              "referencia": "Gênesis 41:39-41",
+              "correta": 2,
+              "enunciado": "Qual dos patriarcas se tornou governador de todo o Egito, ficando abaixo apenas do Faraó?",
+              "faixaEtaria": ["crianca", "adolescente", "adulto"]
+            },
+            {
+              "tema": "curiosidades",
+              "nivel": "facil",
+              "alternativas": [
+                "O Monte das Oliveiras",
+                "O Monte Sinai",
+                "O Monte Carmelo",
+                "O Monte Ararate"
+              ],
+              "referencia": "Gênesis 8:4",
+              "correta": 3,
+              "enunciado": "Em qual montanha a arca de Noé repousou após o Dilúvio?",
+              "faixaEtaria": ["crianca", "adolescente", "adulto"]
+            },
+            {
+              "tema": "personagens",
+              "nivel": "medio",
+              "alternativas": [
+                "Otniel",
+                "Eúde",
+                "Jefté",
+                "Gideão"
+              ],
+              "referencia": "Juízes 11:30-31",
+              "correta": 2,
+              "enunciado": "Qual juiz de Israel fez um voto precipitado de que, se vencesse os amonitas, sacrificaria a primeira coisa que saísse de sua casa para recebê-lo, resultando no sacrifício de sua filha?",
+              "faixaEtaria": ["adolescente", "adulto"]
+            },
+            {
+              "tema": "profecias",
+              "nivel": "facil",
+              "alternativas": [
+                "A Estrela de Belém",
+                "Um anjo aparecendo aos pastores",
+                "A fuga para o Egito",
+                "A visita dos magos"
+              ],
+              "referencia": "Mateus 2:13-15",
+              "correta": 2,
+              "enunciado": "Qual evento da infância de Jesus cumpriu a profecia: 'Do Egito chamei o meu Filho'?",
+              "faixaEtaria": ["adolescente", "adulto"]
+            },
+              {
+                "tema": "curiosidades",
+                "nivel": "dificil",
+                "alternativas": [
+                  "Gênesis 1 e Salmo 117",
+                  "Salmo 119 e Salmo 117",
+                  "Isaías 6 e 2 João",
+                  "Salmo 119 e Obadias 1"
+                ],
+                "referencia": "Salmo 119 e Salmo 117",
+                "correta": 1,
+                "enunciado": "Respectivamente, qual é o capítulo mais longo e o capítulo mais curto da Bíblia?",
+                "faixaEtaria": ["adulto"]
+              },
+              {
+                "tema": "milagres",
+                "nivel": "dificil",
+                "alternativas": [
+                  "Paulo",
+                  "João",
+                  "Pedro",
+                  "Tiago"
+                ],
+                "referencia": "Atos 5:15",
+                "correta": 2,
+                "enunciado": "Segundo o livro de Atos, qual apóstolo tinha uma reputação de cura tão grande que as pessoas colocavam os enfermos nas ruas para que ao menos sua sombra os cobrisse?",
+                "faixaEtaria": ["adulto"]
+              },
+              {
+                "tema": "epistolas",
+                "nivel": "dificil",
+                "alternativas": [
+                  "Apoteose",
+                  "Kenosis",
+                  "Theosis",
+                  "Parousia"
+                ],
+                "referencia": "Filipenses 2:6-7",
+                "correta": 1,
+                "enunciado": "Na epístola aos Filipenses, Paulo descreve que Jesus 'esvaziou-se a si mesmo, tomando a forma de servo'. Como é conhecido este conceito teológico do autoesvaziamento de Cristo?",
+                "faixaEtaria": ["adulto"]
+              },
+              {
+                "tema": "pentateuco",
+                "nivel": "medio",
+                "alternativas": [
+                  "Aser e Gade",
+                  "Nadabe e Abiú",
+                  "Josué e Calebe",
+                  "Dã e Naftali"
+                ],
+                "referencia": "Números 14:6-9",
+                "correta": 2,
+                "enunciado": "Dos doze espias enviados a Canaã, quais foram os dois únicos que trouxeram um relatório favorável, confiando na promessa de Deus?",
+                "faixaEtaria": ["adolescente", "adulto"]
+              },
+              {
+                "tema": "personagens",
+                "nivel": "facil",
+                "alternativas": [
+                  "Isabel",
+                  "Maria Madalena",
+                  "Marta",
+                  "Maria"
+                ],
+                "referencia": "Lucas 1:30-31",
+                "correta": 3,
+                "enunciado": "Qual era o nome da mãe de Jesus?",
+                "faixaEtaria": ["crianca", "adolescente", "adulto"]
+              },
+              {
+                "tema": "historia",
+                "nivel": "medio",
+                "alternativas": [
+                  "O Reino do Norte (Israel)",
+                  "O Reino do Sul (Judá)",
+                  "O império da Babilônia",
+                  "O império da Pérsia"
+                ],
+                "referencia": "2 Reis 17:22-23",
+                "correta": 0,
+                "enunciado": "Qual dos dois reinos de Israel foi conquistado primeiro, sendo levado cativo pela Assíria?",
+                "faixaEtaria": ["adolescente", "adulto"]
+              },
+              {
+                "tema": "evangelhos",
+                "nivel": "medio",
+                "alternativas": [
+                  "A ovelha perdida",
+                  "O filho pródigo",
+                  "O bom samaritano",
+                  "O semeador"
+                ],
+                "referencia": "Lucas 15:11-32",
+                "correta": 1,
+                "enunciado": "Qual parábola narra a história de um pai que celebra com uma grande festa o retorno de seu filho que havia gastado toda a sua herança?",
+                "faixaEtaria": ["crianca", "adolescente", "adulto"]
+              },
+              {
+                "tema": "livros",
+                "nivel": "medio",
+                "alternativas": [
+                  "Salmos",
+                  "Juízes",
+                  "Lamentações",
+                  "Eclesiastes"
+                ],
+                "referencia": "Eclesiastes 1:2",
+                "correta": 3,
+                "enunciado": "Qual livro da Bíblia, atribuído a Salomão, explora a futilidade da vida 'debaixo do sol' e começa com a famosa frase 'Vaidade de vaidades! Tudo é vaidade'?",
+                "faixaEtaria": ["adolescente", "adulto"]
+              },
+              {
+                "tema": "profetas",
+                "nivel": "facil",
+                "alternativas": [
+                  "Isaías",
+                  "Jeremias",
+                  "Ezequiel",
+                  "Malaquias"
+                ],
+                "referencia": "Malaquias 3:10",
+                "correta": 3,
+                "enunciado": "Qual profeta repreendeu o povo por roubar a Deus nos dízimos e ofertas, prometendo bênçãos sem medida aos que fossem fiéis?",
+                "faixaEtaria": ["adolescente", "adulto"]
+              },
+              {
+                "tema": "igreja primitiva",
+                "nivel": "medio",
+                "alternativas": [
+                  "Atenas",
+                  "Corinto",
+                  "Éfeso",
+                  "Tessalônica"
+                ],
+                "referencia": "Atos 17:22-23",
+                "correta": 0,
+                "enunciado": "Em qual cidade grega o apóstolo Paulo pregou no Areópago, mencionando um altar 'AO DEUS DESCONHECIDO'?",
+                "faixaEtaria": ["adolescente", "adulto"]
+              },
+              {
+                "tema": "personagens",
+                "nivel": "medio",
+                "alternativas": [
+                  "O rei Saul",
+                  "Jônatas",
+                  "Abner",
+                  "Samuel"
+                ],
+                "referencia": "1 Samuel 20",
+                "correta": 1,
+                "enunciado": "Quem era o filho de Saul e o melhor amigo de Davi, que o ajudou a escapar da ira de seu pai?",
+                "faixaEtaria": ["adolescente", "adulto"]
+              },
+              {
+                "tema": "pentateuco",
+                "nivel": "facil",
+                "alternativas": [
+                  "A arca e os animais",
+                  "A torre de Babel",
+                  "O tabernáculo",
+                  "Os muros de Jericó"
+                ],
+                "referencia": "Êxodo 25:8-9",
+                "correta": 2,
+                "enunciado": "O que Deus ordenou que Moisés construísse no deserto para que Ele pudesse habitar no meio do povo de Israel?",
+                "faixaEtaria": ["crianca", "adolescente", "adulto"]
+              },
+              {
+                "tema": "profecias",
+                "nivel": "dificil",
+                "alternativas": [
+                  "Isaías",
+                  "Jeremias",
+                  "Zacarias",
+                  "Ezequiel"
+                ],
+                "referencia": "Zacarias 9:9",
+                "correta": 2,
+                "enunciado": "Qual profeta previu que o Rei de Sião viria 'justo e humilde, e montado sobre um jumento, sobre um jumentinho, filho de jumenta'?",
+                "faixaEtaria": ["adulto"]
+              },
+                {
+                  "tema": "historia",
+                  "nivel": "dificil",
+                  "alternativas": [
+                    "Hadadezer, rei de Zobá",
+                    "Senaqueribe, rei da Assíria",
+                    "Ben-Hadade, rei da Síria",
+                    "Hirão, rei de Tiro"
+                  ],
+                  "referencia": "1 Reis 5:1",
+                  "correta": 3,
+                  "enunciado": "Qual rei estrangeiro, amigo de Davi, aliou-se a Salomão e forneceu madeira de cedro e artesãos para a construção do Templo?",
+                  "faixaEtaria": ["adulto"]
+                },
+                {
+                  "tema": "pentateuco",
+                  "nivel": "medio",
+                  "alternativas": [
+                    "Apenas as tábuas da Lei",
+                    "Um rolo da Torá e as tábuas da Lei",
+                    "As tábuas da Lei, um vaso com maná e a vara de Arão que floresceu",
+                    "As vestes do sumo sacerdote e o peitoral"
+                  ],
+                  "referencia": "Hebreus 9:4",
+                  "correta": 2,
+                  "enunciado": "Segundo a descrição no Novo Testamento, o que havia dentro da Arca da Aliança?",
+                  "faixaEtaria": ["adolescente", "adulto"]
+                },
+                {
+                  "tema": "epistolas",
+                  "nivel": "medio",
+                  "alternativas": [
+                    "Romanos",
+                    "Gálatas",
+                    "1 Timóteo",
+                    "Hebreus"
+                  ],
+                  "referencia": "1 Timóteo 3:1-13",
+                  "correta": 2,
+                  "enunciado": "Em qual epístola pastoral Paulo detalha as qualificações necessárias para os bispos (ou presbíteros) e diáconos da igreja?",
+                  "faixaEtaria": ["adolescente", "adulto"]
+                },
+                {
+                  "tema": "evangelhos",
+                  "nivel": "facil",
+                  "alternativas": [
+                    "Rio Nilo",
+                    "Rio Eufrates",
+                    "Rio Jordão",
+                    "Rio Tigre"
+                  ],
+                  "referencia": "Mateus 3:13",
+                  "correta": 2,
+                  "enunciado": "Em qual rio Jesus foi batizado por João Batista?",
+                  "faixaEtaria": ["crianca", "adolescente", "adulto"]
+                },
+                {
+                  "tema": "personagens",
+                  "nivel": "medio",
+                  "alternativas": [
+                    "Da tribo de Judá",
+                    "Da tribo de Levi",
+                    "Da tribo de Benjamim",
+                    "Da tribo de Efraim"
+                  ],
+                  "referencia": "1 Samuel 9:1-2",
+                  "correta": 2,
+                  "enunciado": "De qual tribo de Israel pertencia Saul, o primeiro rei?",
+                  "faixaEtaria": ["adolescente", "adulto"]
+                },
+                {
+                  "tema": "livros",
+                  "nivel": "dificil",
+                  "alternativas": [
+                    "Isaías",
+                    "Jeremias",
+                    "Ezequiel",
+                    "Daniel"
+                  ],
+                  "referencia": "Livro de Lamentações (tradição)",
+                  "correta": 1,
+                  "enunciado": "A qual profeta é tradicionalmente atribuída a autoria do livro de Lamentações, que chora a destruição de Jerusalém?",
+                  "faixaEtaria": ["adulto"]
+                },
+                {
+                  "tema": "patriarcas",
+                  "nivel": "dificil",
+                  "alternativas": [
+                    "Judá",
+                    "Rúben",
+                    "Simeão",
+                    "Levi"
+                  ],
+                  "referencia": "Gênesis 37:21-22",
+                  "correta": 1,
+                  "enunciado": "Qual dos filhos de Jacó, sendo o mais velho, convenceu os outros irmãos a não matarem José, mas sim a jogá-lo em um poço?",
+                  "faixaEtaria": ["adulto"]
+                },
+                {
+                  "tema": "milagres",
+                  "nivel": "medio",
+                  "alternativas": [
+                    "A cura do servo do centurião",
+                    "A ressurreição do filho da viúva de Naim",
+                    "A purificação de dez leprosos",
+                    "A cura de Bartimeu"
+                  ],
+                  "referencia": "Lucas 7:11-15",
+                  "correta": 1,
+                  "enunciado": "Qual milagre Jesus realizou ao interromper um cortejo fúnebre e devolver a vida ao único filho de uma viúva?",
+                  "faixaEtaria": ["adolescente", "adulto"]
+                },
+                {
+                  "tema": "curiosidades",
+                  "nivel": "medio",
+                  "alternativas": [
+                    "Uma pomba e um cordeiro",
+                    "Um bode e um novilho",
+                    "Um peixe e um pão",
+                    "Um peixe e uma moeda"
+                  ],
+                  "referencia": "Mateus 17:27",
+                  "correta": 3,
+                  "enunciado": "O que Pedro encontrou na boca de um peixe, a mando de Jesus, para pagar o imposto do templo por eles dois?",
+                  "faixaEtaria": ["adolescente", "adulto"]
+                },
+                {
+                  "tema": "profetas",
+                  "nivel": "dificil",
+                  "alternativas": [
+                    "Isaías",
+                    "Jeremias",
+                    "Oséias",
+                    "Naum"
+                  ],
+                  "referencia": "Naum 1:1",
+                  "correta": 3,
+                  "enunciado": "Qual profeta escreveu um livro inteiramente dedicado à profecia da destruição de Nínive, a capital da Assíria, cerca de um século após o arrependimento da cidade com Jonas?",
+                  "faixaEtaria": ["adulto"]
+                },
+                {
+                  "tema": "profecias",
+                  "nivel": "medio",
+                  "alternativas": [
+                    "Gogue e Magogue",
+                    "Armagedom",
+                    "O Vale da Decisão",
+                    "O Vale de Megido"
+                  ],
+                  "referencia": "Ezequiel 38:2",
+                  "correta": 0,
+                  "enunciado": "Em Ezequiel, qual é o nome do líder da terra do norte que virá para atacar Israel nos últimos dias?",
+                  "faixaEtaria": ["adolescente", "adulto"]
+                },
+                {
+                  "tema": "igreja primitiva",
+                  "nivel": "dificil",
+                  "alternativas": [
+                    "Diótrefes",
+                    "Demétrio",
+                    "Gaio",
+                    "Figelo"
+                  ],
+                  "referencia": "3 João 1:9",
+                  "correta": 0,
+                  "enunciado": "Na terceira epístola de João, quem é o homem repreendido por 'gostar de ter a primazia' e não acolher os irmãos?",
+                  "faixaEtaria": ["adulto"]
+                },
+                {
+                  "tema": "pentateuco",
+                  "nivel": "facil",
+                  "alternativas": [
+                    "Sete dias",
+                    "Doze dias",
+                    "Trinta dias",
+                    "Quarenta dias e quarenta noites"
+                  ],
+                  "referencia": "Êxodo 24:18",
+                  "correta": 3,
+                  "enunciado": "Quanto tempo Moisés permaneceu no Monte Sinai quando recebeu as tábuas da Lei de Deus?",
+                  "faixaEtaria": ["crianca", "adolescente", "adulto"]
+                },
+                {
+                  "tema": "personagens",
+                  "nivel": "facil",
+                  "alternativas": [
+                    "Davi",
+                    "Salomão",
+                    "Josué",
+                    "Moisés"
+                  ],
+                  "referencia": "Êxodo 34:29-30",
+                  "correta": 3,
+                  "enunciado": "O rosto de qual líder de Israel resplandecia tanto após falar com Deus que ele precisava usar um véu?",
+                  "faixaEtaria": ["crianca", "adolescente", "adulto"]
+                },
+                {
+                  "tema": "evangelhos",
+                  "nivel": "dificil",
+                  "alternativas": [
+                    "Os saduceus",
+                    "Os fariseus",
+                    "Os herodianos",
+                    "Os essênios"
+                  ],
+                  "referencia": "Atos 23:8",
+                  "correta": 0,
+                  "enunciado": "Qual grupo religioso judaico proeminente nos Evangelhos não acreditava na ressurreição, em anjos ou em espíritos?",
+                  "faixaEtaria": ["adulto"]
+                },
+                {
+                  "tema": "historia",
+                  "nivel": "medio",
+                  "alternativas": [
+                    "Absalão",
+                    "Salomão",
+                    "Adonias",
+                    "Amnom"
+                  ],
+                  "referencia": "1 Reis 1:5",
+                  "correta": 2,
+                  "enunciado": "Qual filho de Davi tentou tomar o trono para si quando seu pai já estava velho, mas foi frustrado pela coroação de Salomão?",
+                  "faixaEtaria": ["adolescente", "adulto"]
+                },
+                {
+                  "tema": "epistolas",
+                  "nivel": "facil",
+                  "alternativas": [
+                    "Fé, esperança e amor",
+                    "Poder, amor e moderação",
+                    "Alegria, paz e paciência",
+                    "Justiça, paz e alegria"
+                  ],
+                  "referencia": "1 Coríntios 13:13",
+                  "correta": 0,
+                  "enunciado": "Segundo Paulo em 1 Coríntios, quais são as três coisas que permanecem?",
+                  "faixaEtaria": ["adolescente", "adulto"]
+                },
+                {
+                  "tema": "milagres",
+                  "nivel": "facil",
+                  "alternativas": [
+                    "Tocou em suas vestes",
+                    "Gritou por seu nome",
+                    "Ofereceu-lhe dinheiro",
+                    "Pediu a um apóstolo"
+                  ],
+                  "referencia": "Marcos 5:27-29",
+                  "correta": 0,
+                  "enunciado": "O que a mulher que sofria de uma hemorragia há doze anos fez para ser curada por Jesus?",
+                  "faixaEtaria": ["crianca", "adolescente", "adulto"]
+                },
+                {
+                  "tema": "livros",
+                  "nivel": "facil",
+                  "alternativas": [
+                    "Hebreus",
+                    "Romanos",
+                    "Apocalipse",
+                    "Atos"
+                  ],
+                  "referencia": "Apocalipse 1:1",
+                  "correta": 2,
+                  "enunciado": "Qual é o último livro da Bíblia, que contém revelações proféticas sobre o fim dos tempos?",
+                  "faixaEtaria": ["adolescente", "adulto"]
+                },
+                {
+                  "tema": "patriarcas",
+                  "nivel": "medio",
+                  "alternativas": [
+                    "Seus sonhos sobre feixes de trigo e estrelas",
+                    "Sua força física superior",
+                    "Sua habilidade de caça",
+                    "Sua recusa em adorar os deuses da família"
+                  ],
+                  "referencia": "Gênesis 37:5-11",
+                  "correta": 0,
+                  "enunciado": "Além da túnica colorida, o que mais em José provocou a ira e o ciúme de seus irmãos?",
+                  "faixaEtaria": ["adolescente", "adulto"]
+                },
+                {
+                  "tema": "curiosidades",
+                  "nivel": "dificil",
+                  "alternativas": [
+                    "Ovelha",
+                    "Boi",
+                    "Cabra",
+                    "Jumento"
+                  ],
+                  "referencia": "Juízes 15:15-16",
+                  "correta": 3,
+                  "enunciado": "Com a queixada de qual animal Sansão matou mil filisteus?",
+                  "faixaEtaria": ["adulto"]
+                },
+                {
+                  "tema": "personagens",
+                  "nivel": "dificil",
+                  "alternativas": [
+                    "Jônatas",
+                    "Mefibosete",
+                    "Isbosete",
+                    "Ziba"
+                  ],
+                  "referencia": "2 Samuel 9:6-7",
+                  "correta": 1,
+                  "enunciado": "Qual era o nome do filho aleijado de Jônatas, a quem Davi honrou e restaurou as terras por amor a seu pai?",
+                  "faixaEtaria": ["adulto"]
+                },
+                {
+                  "tema": "igreja primitiva",
+                  "nivel": "medio",
+                  "alternativas": [
+                    "Lídia",
+                    "Febe",
+                    "Dorcas (Tabita)",
+                    "Priscila"
+                  ],
+                  "referencia": "Romanos 16:1-2",
+                  "correta": 1,
+                  "enunciado": "Quem era a diaconisa da igreja de Cencreia que Paulo recomendou à igreja em Roma, elogiando-a por sua ajuda a muitos?",
+                  "faixaEtaria": ["adolescente", "adulto"]
+                },
+                {
+                  "tema": "pentateuco",
+                  "nivel": "medio",
+                  "alternativas": [
+                    "Gênesis",
+                    "Êxodo",
+                    "Levítico",
+                    "Deuteronômio"
+                  ],
+                  "referencia": "Levítico 1-7",
+                  "correta": 2,
+                  "enunciado": "Qual livro do Pentateuco é primariamente focado nas leis sobre sacrifícios, pureza e o sacerdócio?",
+                  "faixaEtaria": ["adolescente", "adulto"]
+                },
+                {
+                  "tema": "profetas",
+                  "nivel": "medio",
+                  "alternativas": [
+                    "Um cinto de linho que apodreceu",
+                    "Um jugo de madeira e ferro",
+                    "Um campo que ele comprou",
+                    "Um odre de vinho quebrado"
+                  ],
+                  "referencia": "Jeremias 27:2",
+                  "correta": 1,
+                  "enunciado": "Que objeto o profeta Jeremias usou em seu próprio pescoço como um sinal para que as nações se submetessem ao rei da Babilônia?",
+                  "faixaEtaria": ["adolescente", "adulto"]
+                },
+                {
+                  "tema": "evangelhos",
+                  "nivel": "medio",
+                  "alternativas": [
+                    "Porque era publicano",
+                    "Porque era um líder dos fariseus",
+                    "Porque temia ser expulso da sinagoga",
+                    "Porque Jesus só atendia à noite"
+                  ],
+                  "referencia": "João 3:1-2",
+                  "correta": 2,
+                  "enunciado": "Por que motivo Nicodemos, um dos principais dos judeus, procurou Jesus à noite?",
+                  "faixaEtaria": ["adolescente", "adulto"]
+                },
+                {
+                  "tema": "historia",
+                  "nivel": "facil",
+                  "alternativas": [
+                    "O Êxodo do Egito",
+                    "A conquista de Canaã",
+                    "O Exílio Babilônico",
+                    "A construção do Templo"
+                  ],
+                  "referencia": "Daniel 1:1-2",
+                  "correta": 2,
+                  "enunciado": "Como é chamado o período em que os judeus do Reino de Judá foram levados como cativos para a Babilônia?",
+                  "faixaEtaria": ["crianca", "adolescente", "adulto"]
+                },
+                {
+                  "tema": "epistolas",
+                  "nivel": "dificil",
+                  "alternativas": [
+                    "Gálatas",
+                    "Efésios",
+                    "Hebreus",
+                    "Colossenses"
+                  ],
+                  "referencia": "Hebreus 6:4-6",
+                  "correta": 2,
+                  "enunciado": "Qual epístola contém a difícil advertência sobre ser 'impossível' renovar para arrependimento aqueles que, uma vez iluminados, caíram da fé?",
+                  "faixaEtaria": ["adulto"]
+                },
+                {
+                  "tema": "personagens",
+                  "nivel": "medio",
+                  "alternativas": [
+                    "Acabe",
+                    "Manassés",
+                    "Josias",
+                    "Ezequias"
+                  ],
+                  "referencia": "2 Crônicas 33:12-13",
+                  "correta": 1,
+                  "enunciado": "Qual rei de Judá, conhecido por sua extrema maldade e idolatria, arrependeu-se no cativeiro e foi restaurado ao seu trono por Deus?",
+                  "faixaEtaria": ["adolescente", "adulto"]
+                },
+                {
+                  "tema": "profecias",
+                  "nivel": "facil",
+                  "alternativas": [
+                    "Um leão",
+                    "Um dragão vermelho",
+                    "Uma besta que saiu do mar",
+                    "Um cavalo branco"
+                  ],
+                  "referencia": "Apocalipse 12:3",
+                  "correta": 1,
+                  "enunciado": "No livro de Apocalipse, qual figura é descrita com sete cabeças e dez chifres, tentando devorar o filho da mulher vestida de sol?",
+                  "faixaEtaria": ["adolescente", "adulto"]
+                }
+              ]

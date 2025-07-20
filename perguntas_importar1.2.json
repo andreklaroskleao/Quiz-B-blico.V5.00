@@ -1,0 +1,422 @@
+[
+  {
+    "tema": "personagens",
+    "nivel": "dificil",
+    "alternativas": [
+      "Abisai, irmão de Joabe",
+      "Benaia, filho de Joiada",
+      "Eleazar, filho de Dodô",
+      "Sama, filho de Agé"
+    ],
+    "referencia": "2 Samuel 23:20-21",
+    "correta": 1,
+    "enunciado": "Qual dos 'três valentes' de Davi era famoso por ter matado um leão numa cova em dia de neve e também um gigante egípcio?",
+    "faixaEtaria": ["adulto"]
+  },
+  {
+    "tema": "curiosidades",
+    "nivel": "dificil",
+    "alternativas": [
+      "Cem siclos",
+      "Duzentos siclos, segundo o peso real",
+      "Vinte siclos",
+      "Quinhentos siclos"
+    ],
+    "referencia": "2 Samuel 14:26",
+    "correta": 1,
+    "enunciado": "Segundo o relato bíblico, qual era o peso do cabelo de Absalão, que ele cortava todo fim de ano?",
+    "faixaEtaria": ["adulto"]
+  },
+  {
+    "tema": "profecias",
+    "nivel": "dificil",
+    "alternativas": [
+      "Salmo 1",
+      "Salmo 23",
+      "Salmo 91",
+      "Salmo 22"
+    ],
+    "referencia": "Salmo 22:18",
+    "correta": 3,
+    "enunciado": "Qual Salmo contém a profecia messiânica 'Repartem entre si as minhas vestes, e lançam sortes sobre a minha túnica', cumprida na crucificação?",
+    "faixaEtaria": ["adulto"]
+  },
+  {
+    "tema": "igreja primitiva",
+    "nivel": "medio",
+    "alternativas": [
+      "Uma doença ocular",
+      "Perseguição constante",
+      "Um mensageiro de Satanás para o esbofetear",
+      "A traição de amigos"
+    ],
+    "referencia": "2 Coríntios 12:7",
+    "correta": 2,
+    "enunciado": "Na sua segunda carta aos Coríntios, o que Paulo afirma que lhe foi dado para que não se exaltasse, chamando-o de 'um espinho na carne'?",
+    "faixaEtaria": ["adolescente", "adulto"]
+  },
+  {
+    "tema": "pentateuco",
+    "nivel": "medio",
+    "alternativas": [
+      "Tamar",
+      "Raabe",
+      "Lia",
+      "Dina"
+    ],
+    "referencia": "Gênesis 34:1-2",
+    "correta": 3,
+    "enunciado": "Qual era o nome da única filha de Jacó, cuja desonra em Siquém levou seus irmãos a uma vingança violenta?",
+    "faixaEtaria": ["adolescente", "adulto"]
+  },
+  {
+    "tema": "historia",
+    "nivel": "medio",
+    "alternativas": [
+      "Gideão",
+      "Abimeleque",
+      "Jefté",
+      "Sansão"
+    ],
+    "referencia": "Juízes 9:5",
+    "correta": 1,
+    "enunciado": "Qual filho de Gideão matou setenta de seus próprios irmãos para se tornar rei sobre Siquém?",
+    "faixaEtaria": ["adolescente", "adulto"]
+  },
+  {
+    "tema": "evangelhos",
+    "nivel": "facil",
+    "alternativas": [
+      "Pedro",
+      "João",
+      "Tiago",
+      "Mateus"
+    ],
+    "referencia": "Mateus 9:9",
+    "correta": 3,
+    "enunciado": "Qual dos doze apóstolos era um publicano, ou seja, um coletor de impostos, antes de seguir Jesus?",
+    "faixaEtaria": ["crianca", "adolescente", "adulto"]
+  },
+  {
+    "tema": "milagres",
+    "nivel": "dificil",
+    "alternativas": [
+      "Os lenços e aventais que Paulo usava",
+      "A água do tanque de Siloé",
+      "A sombra de João",
+      "Terra do túmulo de Eliseu"
+    ],
+    "referencia": "Atos 19:11-12",
+    "correta": 0,
+    "enunciado": "Além da sombra de Pedro, que outros objetos, após terem contato com o apóstolo Paulo, eram levados aos enfermos e os curavam?",
+    "faixaEtaria": ["adulto"]
+  },
+  {
+    "tema": "epistolas",
+    "nivel": "medio",
+    "alternativas": [
+      "Pedro",
+      "Paulo",
+      "João",
+      "Tiago"
+    ],
+    "referencia": "1 João 2:1",
+    "correta": 2,
+    "enunciado": "Qual autor de epístolas se refere aos seus leitores carinhosamente como 'meus filhinhos'?",
+    "faixaEtaria": ["adolescente", "adulto"]
+  },
+  {
+    "tema": "patriarcas",
+    "nivel": "medio",
+    "alternativas": [
+      "A morte de Ló",
+      "A destruição de Sodoma e Gomorra",
+      "A esterilidade de sua esposa",
+      "A captura de seu sobrinho Ló"
+    ],
+    "referencia": "Gênesis 14:14-16",
+    "correta": 3,
+    "enunciado": "Qual evento levou Abraão a armar seus servos e ir à guerra contra quatro reis?",
+    "faixaEtaria": ["adolescente", "adulto"]
+  },
+  {
+    "tema": "livros",
+    "nivel": "dificil",
+    "alternativas": [
+      "Dez Mandamentos",
+      "Levirato (casamento com a viúva do irmão)",
+      "Jubileu",
+      "Cidades de refúgio"
+    ],
+    "referencia": "Deuteronômio 25:5-6",
+    "correta": 1,
+    "enunciado": "Como se chama a lei do Antigo Testamento que obrigava um homem a se casar com a viúva de seu irmão, se este morresse sem filhos, para dar continuidade ao nome do falecido?",
+    "faixaEtaria": ["adulto"]
+  },
+  {
+    "tema": "profetas",
+    "nivel": "medio",
+    "alternativas": [
+      "70 anos",
+      "40 anos",
+      "120 anos",
+      "490 anos"
+    ],
+    "referencia": "Jeremias 29:10",
+    "correta": 0,
+    "enunciado": "Quantos anos o profeta Jeremias previu que duraria o cativeiro do povo de Judá na Babilônia?",
+    "faixaEtaria": ["adolescente", "adulto"]
+  },
+  {
+    "tema": "igreja primitiva",
+    "nivel": "facil",
+    "alternativas": [
+      "Fogo do céu",
+      "Um terremoto que abriu as portas da prisão",
+      "Um anjo que os libertou",
+      "A conversão do carcereiro"
+    ],
+    "referencia": "Atos 16:25-26",
+    "correta": 1,
+    "enunciado": "O que aconteceu enquanto Paulo e Silas oravam e cantavam hinos a Deus na prisão em Filipos?",
+    "faixaEtaria": ["crianca", "adolescente", "adulto"]
+  },
+  {
+    "tema": "personagens",
+    "nivel": "medio",
+    "alternativas": [
+      "Jezabel",
+      "Dalila",
+      "Vasti",
+      "Atalia"
+    ],
+    "referencia": "2 Reis 11:1",
+    "correta": 3,
+    "enunciado": "Qual rainha de Judá, após a morte de seu filho, tentou exterminar toda a descendência real para reinar em seu lugar?",
+    "faixaEtaria": ["adolescente", "adulto"]
+  },
+  {
+    "tema": "evangelhos",
+    "nivel": "medio",
+    "alternativas": [
+      "A parábola do Fariseu e do Publicano",
+      "A parábola dos Dois Devedores",
+      "A parábola do Credor Incompassivo",
+      "A parábola dos Talentos"
+    ],
+    "referencia": "Mateus 18:23-35",
+    "correta": 2,
+    "enunciado": "Em qual parábola Jesus ensina sobre o perdão, contando a história de um servo que, após ter sua enorme dívida perdoada pelo rei, recusou-se a perdoar uma pequena dívida de seu conservo?",
+    "faixaEtaria": ["adolescente", "adulto"]
+  },
+  {
+    "tema": "historia",
+    "nivel": "facil",
+    "alternativas": [
+      "A divisão do Mar Vermelho",
+      "A queda dos muros de Jericó",
+      "A derrota de Golias",
+      "A travessia do Rio Jordão"
+    ],
+    "referencia": "Josué 6:20",
+    "correta": 1,
+    "enunciado": "Qual foi o primeiro grande obstáculo militar que os israelitas superaram ao entrar em Canaã, cujas muralhas caíram após marcharem ao seu redor por sete dias?",
+    "faixaEtaria": ["crianca", "adolescente", "adulto"]
+  },
+  {
+    "tema": "pentateuco",
+    "nivel": "dificil",
+    "alternativas": [
+      "O Urim e o Tumim",
+      "As doze pedras preciosas",
+      "O candelabro de ouro (Menorá)",
+      "O altar de incenso"
+    ],
+    "referencia": "Êxodo 28:30",
+    "correta": 0,
+    "enunciado": "Quais eram os nomes dos objetos guardados no peitoral do sumo sacerdote, usados para consultar a vontade de Deus?",
+    "faixaEtaria": ["adulto"]
+  },
+  {
+    "tema": "curiosidades",
+    "nivel": "medio",
+    "alternativas": [
+      "Um",
+      "Dois",
+      "Sete",
+      "Doze"
+    ],
+    "referencia": "Marcos 6:7",
+    "correta": 1,
+    "enunciado": "De quantos em quantos Jesus enviou os doze apóstolos em sua primeira missão de pregação?",
+    "faixaEtaria": ["adolescente", "adulto"]
+  },
+  {
+    "tema": "epistolas",
+    "nivel": "facil",
+    "alternativas": [
+      "Um soldado",
+      "Um atleta",
+      "Um lavrador",
+      "Todas as alternativas anteriores"
+    ],
+    "referencia": "2 Timóteo 2:3-6",
+    "correta": 3,
+    "enunciado": "Em 2 Timóteo, a quais figuras Paulo compara o obreiro cristão para ilustrar sofrimento, disciplina e trabalho árduo?",
+    "faixaEtaria": ["adolescente", "adulto"]
+  },
+  {
+    "tema": "profecias",
+    "nivel": "medio",
+    "alternativas": [
+      "A ressurreição dos mortos",
+      "A destruição do Templo de Jerusalém",
+      "A vinda do Espírito Santo no Pentecostes",
+      "O nascimento de João Batista"
+    ],
+    "referencia": "Mateus 24:1-2",
+    "correta": 1,
+    "enunciado": "Qual evento futuro, que ocorreu em 70 d.C., Jesus profetizou detalhadamente a seus discípulos, dizendo que 'não ficaria pedra sobre pedra'?",
+    "faixaEtaria": ["adolescente", "adulto"]
+  },
+  {
+    "tema": "livros",
+    "nivel": "medio",
+    "alternativas": [
+      "Gênesis",
+      "Êxodo",
+      "Números",
+      "Deuteronômio"
+    ],
+    "referencia": "Deuteronômio 1:1-5",
+    "correta": 3,
+    "enunciado": "Qual livro do Pentateuco consiste em uma série de discursos de Moisés ao povo de Israel antes de entrarem na Terra Prometida, recapitulando a lei?",
+    "faixaEtaria": ["adolescente", "adulto"]
+  },
+  {
+    "tema": "personagens",
+    "nivel": "facil",
+    "alternativas": [
+      "Herodes, o Grande",
+      "Herodes Antipas",
+      "Herodes Agripa I",
+      "Herodes Filipe"
+    ],
+    "referencia": "Mateus 14:6-10",
+    "correta": 1,
+    "enunciado": "Qual rei Herodes ordenou a decapitação de João Batista após fazer uma promessa à sua enteada, Salomé?",
+    "faixaEtaria": ["adolescente", "adulto"]
+  },
+  {
+    "tema": "milagres",
+    "nivel": "medio",
+    "alternativas": [
+      "Uma figueira",
+      "Uma videira",
+      "Um sicômoro",
+      "Uma oliveira"
+    ],
+    "referencia": "Marcos 11:12-14, 20",
+    "correta": 0,
+    "enunciado": "Que tipo de árvore Jesus amaldiçoou por não ter frutos, fazendo com que ela secasse até a raiz?",
+    "faixaEtaria": ["adolescente", "adulto"]
+  },
+  {
+    "tema": "patriarcas",
+    "nivel": "facil",
+    "alternativas": [
+      "Isaque",
+      "José",
+      "Jacó",
+      "Abraão"
+    ],
+    "referencia": "Gênesis 27",
+    "correta": 2,
+    "enunciado": "Qual patriarca, com a ajuda de sua mãe Rebeca, enganou seu pai cego para roubar a bênção da primogenitura de seu irmão?",
+    "faixaEtaria": ["crianca", "adolescente", "adulto"]
+  },
+  {
+    "tema": "historia",
+    "nivel": "dificil",
+    "alternativas": [
+      "Nabucodonosor da Babilônia",
+      "Ciro da Pérsia",
+      "Alexandre, o Grande, da Grécia",
+      "Augusto de Roma"
+    ],
+    "referencia": "Daniel 8:20-21 (interpretação histórica)",
+    "correta": 2,
+    "enunciado": "Na visão de Daniel do carneiro e do bode, qual líder histórico é representado pelo 'bode que vinha do ocidente' e quebrou os chifres do carneiro (o império Medo-Persa)?",
+    "faixaEtaria": ["adulto"]
+  },
+  {
+    "tema": "profetas",
+    "nivel": "facil",
+    "alternativas": [
+      "Um anjo o alimentou",
+      "Encontrou um oásis",
+      "Corvos lhe trouxeram pão e carne",
+      "Bebeu água de uma rocha"
+    ],
+    "referencia": "1 Reis 17:6",
+    "correta": 2,
+    "enunciado": "Como o profeta Elias foi sustentado por Deus junto ao ribeiro de Querite durante a seca?",
+    "faixaEtaria": ["crianca", "adolescente", "adulto"]
+  },
+  {
+    "tema": "igreja primitiva",
+    "nivel": "medio",
+    "alternativas": [
+      "A cidade de Listra",
+      "A ilha de Malta",
+      "A cidade de Éfeso",
+      "A cidade de Atenas"
+    ],
+    "referencia": "Atos 28:3-6",
+    "correta": 1,
+    "enunciado": "Onde o apóstolo Paulo foi picado por uma víbora, mas não sofreu mal nenhum, espantando os habitantes locais?",
+    "faixaEtaria": ["adolescente", "adulto"]
+  },
+  {
+    "tema": "evangelhos",
+    "nivel": "dificil",
+    "alternativas": [
+      "O porteiro",
+      "O parente do sumo sacerdote",
+      "A criada do sumo sacerdote",
+      "Um dos guardas do templo"
+    ],
+    "referencia": "João 18:26",
+    "correta": 1,
+    "enunciado": "Na terceira negação de Pedro, quem o acusou, dizendo: 'Não te vi eu no horto com ele?', tornando a acusação mais pessoal e difícil de negar?",
+    "faixaEtaria": ["adulto"]
+  },
+  {
+    "tema": "pentateuco",
+    "nivel": "medio",
+    "alternativas": [
+      "Para serem escravos",
+      "Para serem cidades-santuário para os levitas",
+      "Para serem postos militares avançados",
+      "Para serem centros de comércio"
+    ],
+    "referencia": "Números 35:6",
+    "correta": 1,
+    "enunciado": "Qual era o propósito das seis 'cidades de refúgio' estabelecidas em Israel?",
+    "faixaEtaria": ["adolescente", "adulto"]
+  },
+  {
+    "tema": "epistolas",
+    "nivel": "medio",
+    "alternativas": [
+      "Irmão de Jesus",
+      "Pai de Judas (não o Iscariotes)",
+      "Filho de Zebedeu e irmão de João",
+      "Filho de Alfeu"
+    ],
+    "referencia": "Atos 12:2",
+    "correta": 2,
+    "enunciado": "Quem era o apóstolo Tiago que foi o primeiro dos doze a ser martirizado, morto à espada por ordem do rei Herodes Agripa I?",
+    "faixaEtaria": ["adolescente", "adulto"]
+  }
+]
