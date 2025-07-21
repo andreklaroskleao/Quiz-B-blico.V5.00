@@ -1156,7 +1156,7 @@ async function leaveWaitingRoom(voluntaryExit = true) {
     activeCompetitionId = null;
     competitionData = null;
     switchScreen('initial-screen'); // Volta para a tela inicial
-});
+};
 
 if (playAgainCompetitionBtn) {
     playAgainCompetitionBtn.addEventListener('click', async () => {
