@@ -79,6 +79,8 @@
                 <div id="quiz-progress-container">
                     <div id="quiz-progress-bar"></div>
                 </div>
+                <!-- Adição do timer para a competição -->
+                <div id="competition-timer" class="hidden" style="text-align: center; font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem;">Tempo: <span id="time-left">00:00</span></div>
                 <h3 id="question-text"></h3>
                 <div id="options-container" class="options-container"></div>
                 <div id="feedback-container">
@@ -87,6 +89,8 @@
                 </div>
                 <div class="quiz-actions">
                     <button id="leave-quiz-btn" class="btn btn-secondary">Sair do Quiz</button>
+                    <!-- Novo botão para finalizar tentativa -->
+                    <button id="finish-attempt-btn" class="btn hidden" style="background-color: var(--warning-color);">Finalizar Tentativa</button>
                     <button id="next-btn" class="btn hidden">Próxima</button>
                 </div>
             </section>
@@ -98,6 +102,37 @@
                 <div id="motivational-message"></div>
                 <button id="restart-btn" class="btn">Voltar ao Início</button>
             </section>
+
+            <!-- Nova tela de resultados da competição -->
+            <section id="competition-result-screen" class="screen hidden">
+                <a href="/index.html" class="btn btn-secondary back-link"><i class="fas fa-arrow-left"></i> Voltar ao Início</a>
+                <header class="ranking-header">
+                    <h2 id="competition-result-title">Resultados da Competição</h2>
+                    <p>Código da Sala: <span id="competition-result-code"></span></p>
+                </header>
+                <section class="general-ranking">
+                    <div class="table-wrapper">
+                        <table class="ranking-table">
+                            <thead>
+                                <tr>
+                                    <th class="rank">#</th>
+                                    <th>Jogador</th>
+                                    <th class="score">Pontos</th>
+                                    <th>Equipe</th>
+                                </tr>
+                            </thead>
+                            <tbody id="competition-ranking-tbody">
+                                <tr><td colspan="4">Carregando resultados...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                <div class="competition-result-actions">
+                    <button id="play-again-competition-btn" class="btn hidden">Jogar Novamente</button>
+                    <button id="return-to-lobby-btn" class="btn btn-secondary">Voltar ao Lobby</button>
+                </div>
+            </section>
+
         </main>
     </div>
     
@@ -253,33 +288,6 @@
         </div>
     </div>
 </div>
-
-    <div id="competition-result-screen" class="modal">
-        <div class="modal-content" style="max-width: 800px;">
-            <header class="ranking-header">
-                <h2 id="competition-result-title"><i class="fas fa-trophy"></i> Resultados da Competição</h2>
-                <p id="competition-result-code"></p>
-            </header>
-            <div class="table-wrapper">
-                <table class="ranking-table">
-                    <thead>
-                        <tr>
-                            <th class="rank">#</th>
-                            <th>Jogador</th>
-                            <th class="score">Pontuação</th>
-                            <th>Equipe</th>
-                        </tr>
-                    </thead>
-                    <tbody id="competition-ranking-tbody">
-                        </tbody>
-                </table>
-            </div>
-            <div class="waiting-room-actions" style="margin-top: 1.5rem;">
-                <button id="play-again-competition-btn" class="btn hidden"><i class="fas fa-redo-alt"></i> Jogar Novamente</button>
-                <button id="return-to-lobby-btn" class="btn btn-secondary"><i class="fas fa-door-open"></i> Voltar para o Lobby</button>
-            </div>
-        </div>
-    </div>
     <script type="module" src="app.js"></script>
 </body>
 </html>
