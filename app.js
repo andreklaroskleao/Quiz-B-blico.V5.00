@@ -90,14 +90,14 @@ let currentUser = null;
 let currentUserAgeGroup = "adulto";
 let questions = [];
 let currentQuestionIndex = 0;
-let score = 0;
-let correctAnswersCount = 0;
-let currentGroupId = null;
-let quizAtualDifficulty = 'facil';
-let activeCompetitionId = null;
+let score = 0; // Pontuação para o quiz atual do usuário, seja individual ou em competição
+let correctAnswersCount = 0; // Contagem de respostas corretas para o quiz atual
+let currentGroupId = null; // ID do grupo se for um quiz de grupo
+let quizAtualDifficulty = 'facil'; // Dificuldade do quiz atual
+let activeCompetitionId = null; // ID da competição ativa
 let competitionData = null; // Para armazenar os dados da competição ativa
-let unsubscribeCompetition = null;
-let unsubscribeChat = null;
+let unsubscribeCompetition = null; // Listener do Firestore para a competição
+let unsubscribeChat = null; // Listener do Firestore para o chat da competição
 
 // --- Dados da Bíblia ---
 const bibleBooks = {
@@ -563,8 +563,10 @@ async function handleAnswer(e) {
             [`${participantPath}.respostas`]: arrayUnion({
                 questionIndex: currentQuestionIndex,
                 answeredCorrectly: isCorrect,
-                selectedOption: selectedIndex,
-                timestamp: serverTimestamp()
+                selectedOption: selectedIndex
+                // Removido serverTimestamp() daqui para evitar o erro.
+                // Se o timestamp for essencial, ele precisaria ser gerado no cliente
+                // como new Date().toISOString() ou o arrayUnion precisaria de outra estrutura.
             })
         });
     }
@@ -775,7 +777,7 @@ if (createCompetitionBtn) createCompetitionBtn.addEventListener('click', async (
         let allAvailableQuestions = primarySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
 
         if (allAvailableQuestions.length < numQuestions) {
-            console.warn(`Apenas ${allAvailableQuestions.length} perguntas encontradas para ${difficulty}/${currentUserAgeGroup}. Buscando em todas as faixas etárias.`);
+            console.warn(`Poucas perguntas para ${difficulty}/${currentUserAgeGroup}. Buscando em todas as faixas etárias.`);
             const fallbackQuery = query(collection(db, "perguntas"), where("nivel", "==", difficulty));
             const fallbackSnapshot = await getDocs(fallbackQuery);
             
@@ -895,7 +897,11 @@ teamAmareloBox.addEventListener('click', () => selectTeam('amarelo'));
 
 function showWaitingRoom(isCreator) {
     switchScreen('waiting-room-modal'); // Garante que o modal esteja visível
-    if(startCompetitionBtn) startCompetitionBtn.classList.toggle('hidden', !isCreator);
+
+    // Esconde/mostra o botão de iniciar competição apenas para o criador
+    if(startCompetitionBtn) {
+        startCompetitionBtn.classList.toggle('hidden', !isCreator);
+    }
 
     if (unsubscribeCompetition) unsubscribeCompetition();
 
@@ -939,12 +945,19 @@ function showWaitingRoom(isCreator) {
         // Lógica para habilitar o botão de início
         if(isCreator && startCompetitionBtn) {
             const playerCount = participantesArray.length;
-            if(playerCount >= competitionData.minParticipantes) {
+            // Verifica se todos os participantes têm um time atribuído, se a competição for de times
+            const allPlayersHaveTeam = participantesArray.every(p => p.team !== null);
+
+            if(playerCount >= competitionData.minParticipantes && allPlayersHaveTeam) {
                 startCompetitionBtn.disabled = false;
                 startRequirementMessage.classList.add('hidden');
             } else {
                 startCompetitionBtn.disabled = true;
-                startRequirementMessage.textContent = `São necessários pelo menos ${competitionData.minParticipantes} jogadores para começar. Atuais: ${playerCount}.`;
+                let message = `São necessários pelo menos ${competitionData.minParticipantes} jogadores para começar. Atuais: ${playerCount}.`;
+                if (!allPlayersHaveTeam) {
+                    message += " Todos os jogadores devem escolher uma equipe.";
+                }
+                startRequirementMessage.textContent = message;
                 startRequirementMessage.classList.remove('hidden');
             }
         }
@@ -1135,15 +1148,16 @@ async function leaveWaitingRoom(voluntaryExit = true) {
                 batch.delete(doc.ref);
             });
             batch.delete(competitionRef); // Adiciona a exclusão do documento principal
-            await batch.commit();
+            await batch.commit(); 
         } else {
             return; // O criador cancelou a saída
         }
     } else if (voluntaryExit && !isCreator) {
         // Se um participante normal sai, ele é removido da lista
         const competitionRef = doc(db, 'competicoes', activeCompetitionId);
+        // Use deleteField para remover o participante específico
         await updateDoc(competitionRef, {
-            [`participantes.${currentUser.uid}`]: null // Define o participante como null para removê-lo
+            [`participantes.${currentUser.uid}`]: deleteField() 
         });
     }
 
