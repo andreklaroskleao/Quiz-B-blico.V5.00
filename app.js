@@ -84,6 +84,11 @@ const competitionRankingTbody = document.getElementById('competition-ranking-tbo
 const playAgainCompetitionBtn = document.getElementById('play-again-competition-btn');
 const returnToLobbyBtn = document.getElementById('return-to-lobby-btn');
 
+// Novos elementos para o timer e botão de finalizar tentativa
+const competitionTimerDiv = document.getElementById('competition-timer');
+const timeLeftSpan = document.getElementById('time-left');
+const finishAttemptBtn = document.getElementById('finish-attempt-btn');
+
 
 // --- Estado do Quiz e Usuário ---
 let currentUser = null;
@@ -98,6 +103,10 @@ let activeCompetitionId = null; // ID da competição ativa
 let competitionData = null; // Para armazenar os dados da competição ativa
 let unsubscribeCompetition = null; // Listener do Firestore para a competição
 let unsubscribeChat = null; // Listener do Firestore para o chat da competição
+let quizTimer = null; // Variável para o timer da competição
+let timeLeft = 0; // Tempo restante para o quiz da competição
+let competitionResultsUnsubscribe = null; // Listener para atualização em tempo real dos resultados
+
 
 // --- Dados da Bíblia ---
 const bibleBooks = {
@@ -269,6 +278,10 @@ onAuthStateChanged(auth, async (user) => {
         sessionStorage.removeItem('activeCompetitionId');
         if (unsubscribeCompetition) unsubscribeCompetition();
         if (unsubscribeChat) unsubscribeChat();
+        if (quizTimer) clearInterval(quizTimer); // Limpa o timer do quiz ao deslogar
+        quizTimer = null;
+        if (competitionResultsUnsubscribe) competitionResultsUnsubscribe(); // Limpa o listener de resultados
+        competitionResultsUnsubscribe = null;
         activeCompetitionId = null;
         competitionData = null;
         switchScreen('initial-screen');
@@ -468,6 +481,10 @@ async function startQuiz(difficulty) {
     currentQuestionIndex = 0;
     if (nextBtn) nextBtn.classList.add('hidden');
     if (progressBar) progressBar.style.width = '0%';
+    // Esconde o timer e o botão de finalizar tentativa para quizzes individuais/grupo
+    if (competitionTimerDiv) competitionTimerDiv.classList.add('hidden');
+    if (finishAttemptBtn) finishAttemptBtn.classList.add('hidden');
+
     try {
         const q = query(
             collection(db, "perguntas"), 
@@ -504,11 +521,9 @@ async function startQuiz(difficulty) {
 }
 
 function displayQuestion() {
-    // A lógica de finalização da competição foi movida para handleAnswer para verificar todos os jogadores.
-    // Esta função agora apenas exibe a próxima pergunta.
     if (currentQuestionIndex >= questions.length) {
         // Se todas as perguntas do quiz individual foram respondidas, mostra os resultados.
-        // Para competição, a finalização é acionada após a última resposta de todos os jogadores.
+        // Para competição, a finalização é acionada após a última resposta de todos os jogadores ou pelo timer.
         if (!activeCompetitionId) {
             showResults();
         }
@@ -521,6 +536,11 @@ function displayQuestion() {
     if (feedback) feedback.innerHTML = '';
     if (reference) reference.innerHTML = '';
     if (nextBtn) nextBtn.classList.add('hidden');
+    // Mostra o botão "Finalizar Tentativa" apenas se estiver em competição
+    if (finishAttemptBtn) {
+        finishAttemptBtn.classList.toggle('hidden', !activeCompetitionId);
+    }
+
     questions[currentQuestionIndex].alternativas.forEach((alt, index) => {
         const button = document.createElement('button');
         button.textContent = alt;
@@ -574,6 +594,14 @@ async function handleAnswer(e) {
 
         // Verifica se esta é a última pergunta para o usuário atual
         if (currentQuestionIndex + 1 === questions.length) {
+            // Se o usuário terminou todas as perguntas, ele não precisa mais do timer local.
+            if (quizTimer) {
+                clearInterval(quizTimer);
+                quizTimer = null;
+            }
+            // Esconde o botão de finalizar tentativa
+            if (finishAttemptBtn) finishAttemptBtn.classList.add('hidden');
+
             // Busca os dados mais recentes da competição para verificar se todos os participantes terminaram
             const latestCompetitionDoc = await getDoc(competitionRef);
             if (latestCompetitionDoc.exists()) {
@@ -584,6 +612,7 @@ async function handleAnswer(e) {
                 let allParticipantsFinished = true;
                 for (const uid in participants) {
                     // Considera apenas participantes que não são nulos (ou seja, ainda estão no jogo)
+                    // E verifica se a quantidade de respostas é igual ao número total de perguntas
                     if (participants[uid] && participants[uid].respostas.length < numQuestionsInCompetition) {
                         allParticipantsFinished = false;
                         break;
@@ -602,6 +631,20 @@ if (nextBtn) nextBtn.addEventListener('click', () => {
     currentQuestionIndex++;
     displayQuestion();
 });
+
+// Listener para o novo botão "Finalizar Tentativa"
+if (finishAttemptBtn) {
+    finishAttemptBtn.addEventListener('click', async () => {
+        if (confirm("Deseja finalizar sua tentativa agora? Sua pontuação será calculada com as respostas enviadas até o momento.")) {
+            if (quizTimer) {
+                clearInterval(quizTimer); // Para o timer imediatamente
+                quizTimer = null;
+            }
+            if (finishAttemptBtn) finishAttemptBtn.classList.add('hidden'); // Esconde o botão
+            await endCompetitionForcefully(); // Força a finalização da tentativa do jogador
+        }
+    });
+}
 
 async function showResults() {
     switchScreen('result-screen');
@@ -701,6 +744,10 @@ if (leaveQuizBtn) {
             switchScreen('initial-screen');
             if (mainMenu) mainMenu.classList.remove('hidden');
             if (welcomeMessage) welcomeMessage.classList.add('hidden');
+            if (quizTimer) clearInterval(quizTimer); // Limpa o timer do quiz
+            quizTimer = null;
+            if (competitionResultsUnsubscribe) competitionResultsUnsubscribe(); // Limpa o listener de resultados
+            competitionResultsUnsubscribe = null;
         }
     });
 }
@@ -713,6 +760,10 @@ if (restartBtn) restartBtn.addEventListener('click', () => {
     switchScreen('initial-screen');
     if (mainMenu) mainMenu.classList.remove('hidden');
     if (welcomeMessage) welcomeMessage.classList.add('hidden');
+    if (quizTimer) clearInterval(quizTimer); // Limpa o timer do quiz
+    quizTimer = null;
+    if (competitionResultsUnsubscribe) competitionResultsUnsubscribe(); // Limpa o listener de resultados
+    competitionResultsUnsubscribe = null;
 });
 
 function populateBookSelect() {
@@ -1066,15 +1117,47 @@ function startCompetitionQuiz(competitionQuestions) {
 
     if (nextBtn) nextBtn.classList.add('hidden');
     if (progressBar) progressBar.style.width = '0%';
+    if (competitionTimerDiv) competitionTimerDiv.classList.remove('hidden'); // Mostra o timer
+    if (finishAttemptBtn) finishAttemptBtn.classList.remove('hidden'); // Mostra o botão de finalizar tentativa
+
 
     if (questions.length > 0) {
         switchScreen('quiz-screen');
+        // Define o tempo limite com base no número de perguntas (1 minuto por pergunta)
+        timeLeft = competitionQuestions.length * 60; 
+        startQuizTimer(); // Inicia o timer
         displayQuestion();
     } else {
         alert("Erro: Nenhuma pergunta foi carregada para a competição.");
         switchScreen('initial-screen');
         sessionStorage.removeItem('activeCompetitionId'); // Limpa a sessão
         activeCompetitionId = null;
+    }
+}
+
+function startQuizTimer() {
+    updateTimerDisplay(); // Atualiza o display imediatamente
+
+    if (quizTimer) clearInterval(quizTimer); // Limpa qualquer timer existente
+
+    quizTimer = setInterval(async () => {
+        timeLeft--;
+        updateTimerDisplay();
+
+        if (timeLeft <= 0) {
+            clearInterval(quizTimer);
+            quizTimer = null;
+            alert("Tempo esgotado! A competição será finalizada.");
+            await endCompetitionForcefully(); // Força a finalização quando o tempo acaba
+        }
+    }, 1000); // Atualiza a cada segundo
+}
+
+function updateTimerDisplay() {
+    const minutes = Math.floor(timeLeft / 60);
+    const seconds = timeLeft % 60;
+    if (timeLeftSpan) {
+        timeLeftSpan.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
     }
 }
 
@@ -1099,52 +1182,113 @@ async function endCompetition() {
     }
 }
 
+async function endCompetitionForcefully() {
+    if (!activeCompetitionId || !currentUser) return;
+
+    const competitionRef = doc(db, 'competicoes', activeCompetitionId);
+    const participantPath = `participantes.${currentUser.uid}`;
+
+    try {
+        // Busca os dados mais recentes da competição para obter numPerguntas
+        const currentCompDoc = await getDoc(competitionRef);
+        if (currentCompDoc.exists()) {
+            const currentCompData = currentCompDoc.data();
+            const numQuestionsInCompetition = currentCompData.numPerguntas;
+            const currentUserResponses = currentCompData.participantes[currentUser.uid]?.respostas || [];
+
+            // Se o usuário não respondeu a todas as perguntas, preenche as respostas restantes
+            // para que o contador de respostas seja igual ao total de perguntas.
+            // Isso garante que ele seja considerado "finalizado" para o cálculo do ranking.
+            if (currentUserResponses.length < numQuestionsInCompetition) {
+                const missingResponsesCount = numQuestionsInCompetition - currentUserResponses.length;
+                const dummyResponses = Array(missingResponsesCount).fill({ answeredCorrectly: false, selectedOption: -1, questionIndex: -1 });
+                
+                // Cria um novo array combinando as respostas existentes com as respostas "dummy"
+                const updatedResponses = [...currentUserResponses, ...dummyResponses];
+
+                await updateDoc(competitionRef, {
+                    [`${participantPath}.respostas`]: updatedResponses
+                });
+            }
+        }
+    } catch (error) {
+        console.error("Erro ao forçar finalização do participante:", error);
+    }
+
+    // Em seguida, aciona o fim global da competição (que verificará se todos terminaram)
+    await endCompetition();
+}
+
+
 async function showCompetitionResults(competitionData) {
     switchScreen('competition-result-screen');
     if (competitionResultCode) competitionResultCode.textContent = `Código da Sala: ${competitionData.codigoConvite}`;
     
-    if (competitionRankingTbody) {
-        competitionRankingTbody.innerHTML = '';
-
-        const participants = Object.values(competitionData.participantes || {}).filter(p => p !== null);
-        // Ordena os participantes pela pontuação em ordem decrescente
-        participants.sort((a, b) => b.pontuacao - a.pontuacao);
-
-        let rank = 1;
-        for (const participant of participants) {
-            const row = document.createElement('tr');
-            let rankClass = '';
-            let borderClass = '';
-
-            // Lógica para as bordas e classes de ranking
-            if (rank === 1) { rankClass = 'rank-1'; borderClass = 'borda_competicao_ouro'; }
-            else if (rank === 2) { rankClass = 'rank-2'; borderClass = 'borda_competicao_prata'; }
-            else if (rank === 3) { rankClass = 'rank-3'; borderClass = 'borda_competicao_bronze'; }
-            else if (rank === 4) { rankClass = 'rank-4'; borderClass = 'borda_competicao_honra'; }
-            
-            row.innerHTML = `
-                <td class="rank ${rankClass}">${rank}</td>
-                <td class="member-info">
-                    <div style="display: flex; align-items: center; gap: 10px;">
-                        <div class="profile-photo-container ${borderClass}" style="width: 40px; height: 40px; padding: 2px;">
-                            <img src="${participant.fotoURL || 'https://placehold.co/40x40'}" alt="Foto de ${participant.nome}" style="width: 100%; height: 100%;">
-                        </div>
-                        <span>${participant.nome}</span>
-                    </div>
-                </td>
-                <td class="score">${participant.pontuacao}</td>
-                <td>${participant.team ? (participant.team === 'azul' ? 'Azul' : 'Amarelo') : 'N/A'}</td>
-            `;
-            competitionRankingTbody.appendChild(row);
-
-            // Conceder conquistas de competição (apenas para o usuário logado)
-            if (currentUser && participant.uid === currentUser.uid) {
-                const userRef = doc(db, 'usuarios', currentUser.uid);
-                await checkAndAwardAchievements(userRef, participant.pontuacao, participant.respostas.filter(r => r.answeredCorrectly).length, rank);
-            }
-            rank++;
-        }
+    // Limpa o timer do quiz se estiver ativo
+    if (quizTimer) {
+        clearInterval(quizTimer);
+        quizTimer = null;
     }
+    // Esconde o timer e o botão de finalizar tentativa
+    if (competitionTimerDiv) competitionTimerDiv.classList.add('hidden');
+    if (finishAttemptBtn) finishAttemptBtn.classList.add('hidden');
+
+    // Limpa o listener de resultados anterior, se houver
+    if (competitionResultsUnsubscribe) competitionResultsUnsubscribe();
+
+    // Configura um listener em tempo real para o documento da competição para atualizar os resultados
+    const competitionRef = doc(db, 'competicoes', activeCompetitionId);
+    competitionResultsUnsubscribe = onSnapshot(competitionRef, async (docSnapshot) => { // Adicionado async aqui
+        if (!docSnapshot.exists()) {
+            console.error("Competição não encontrada durante a atualização de resultados.");
+            if (competitionResultsUnsubscribe) competitionResultsUnsubscribe();
+            competitionResultsUnsubscribe = null; // Garante que a variável seja limpa
+            return;
+        }
+        const latestCompetitionData = docSnapshot.data();
+        if (competitionRankingTbody) {
+            competitionRankingTbody.innerHTML = '';
+
+            const participants = Object.values(latestCompetitionData.participantes || {}).filter(p => p !== null);
+            // Ordena os participantes pela pontuação em ordem decrescente
+            participants.sort((a, b) => b.pontuacao - a.pontuacao);
+
+            let rank = 1;
+            for (const participant of participants) {
+                const row = document.createElement('tr');
+                let rankClass = '';
+                let borderClass = '';
+
+                // Lógica para as bordas e classes de ranking
+                if (rank === 1) { rankClass = 'rank-1'; borderClass = 'borda_competicao_ouro'; }
+                else if (rank === 2) { rankClass = 'rank-2'; borderClass = 'borda_competicao_prata'; }
+                else if (rank === 3) { rankClass = 'rank-3'; borderClass = 'borda_competicao_bronze'; }
+                else if (rank === 4) { rankClass = 'rank-4'; borderClass = 'borda_competicao_honra'; }
+                
+                row.innerHTML = `
+                    <td class="rank ${rankClass}">${rank}</td>
+                    <td class="member-info">
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <div class="profile-photo-container ${borderClass}" style="width: 40px; height: 40px; padding: 2px;">
+                                <img src="${participant.fotoURL || 'https://placehold.co/40x40'}" alt="Foto de ${participant.nome}" style="width: 100%; height: 100%;">
+                            </div>
+                            <span>${participant.nome}</span>
+                        </div>
+                    </td>
+                    <td class="score">${participant.pontuacao}</td>
+                    <td>${participant.team ? (participant.team === 'azul' ? 'Azul' : 'Amarelo') : 'N/A'}</td>
+                `;
+                competitionRankingTbody.appendChild(row);
+
+                // Conceder conquistas de competição (apenas para o usuário logado)
+                if (currentUser && participant.uid === currentUser.uid) {
+                    const userRef = doc(db, 'usuarios', currentUser.uid);
+                    await checkAndAwardAchievements(userRef, participant.pontuacao, participant.respostas.filter(r => r.answeredCorrectly).length, rank);
+                }
+                rank++;
+            }
+        }
+    });
 
     // Apenas o criador pode "Jogar Novamente"
     if (playAgainCompetitionBtn) {
@@ -1190,6 +1334,10 @@ async function leaveWaitingRoom(voluntaryExit = true) {
     // Limpa os listeners e estados
     if (unsubscribeCompetition) unsubscribeCompetition();
     if (unsubscribeChat) unsubscribeChat();
+    if (quizTimer) clearInterval(quizTimer); // Limpa o timer do quiz
+    quizTimer = null;
+    if (competitionResultsUnsubscribe) competitionResultsUnsubscribe(); // Limpa o listener de resultados
+    competitionResultsUnsubscribe = null;
 
     sessionStorage.removeItem('activeCompetitionId');
     activeCompetitionId = null;
@@ -1242,7 +1390,7 @@ if (playAgainCompetitionBtn) {
 }
 
 if (returnToLobbyBtn) {
-    returnToLobbyBtn.addEventListener('click', async () => { // Adicionado async
+    returnToLobbyBtn.addEventListener('click', async () => {
         if (activeCompetitionId && currentUser) {
             const competitionRef = doc(db, 'competicoes', activeCompetitionId);
             const competitionDoc = await getDoc(competitionRef); // Busca o estado mais recente
@@ -1250,6 +1398,18 @@ if (returnToLobbyBtn) {
             if (competitionDoc.exists()) {
                 const currentCompetitionState = competitionDoc.data();
                 const isCreator = currentUser.uid === currentCompetitionState.criadorUid;
+
+                // Limpa o timer do quiz se estiver ativo
+                if (quizTimer) {
+                    clearInterval(quizTimer);
+                    quizTimer = null;
+                }
+                // Esconde o timer e o botão de finalizar tentativa
+                if (competitionTimerDiv) competitionTimerDiv.classList.add('hidden');
+                if (finishAttemptBtn) finishAttemptBtn.classList.add('hidden');
+                // Limpa o listener de resultados
+                if (competitionResultsUnsubscribe) competitionResultsUnsubscribe();
+                competitionResultsUnsubscribe = null;
 
                 if (currentCompetitionState.estado === 'finalizada' && !isCreator) {
                     // Se um não-criador tenta voltar ao lobby de uma competição finalizada,
@@ -1301,15 +1461,11 @@ if (closeDonateModalBtn) {
 
 if (copyPixKeyBtn) {
     copyPixKeyBtn.addEventListener('click', () => {
-        navigator.clipboard.writeText(pixKeyText.value).then(() => {
-            copyPixKeyBtn.textContent = 'Copiado!';
-            setTimeout(() => {
-                copyPixKeyBtn.textContent = 'Copiar';
-            }, 2000);
-        }).catch(err => {
-            console.error('Erro ao copiar a chave PIX:', err);
-            alert('Não foi possível copiar a chave.');
-        });
+        document.execCommand('copy', false, pixKeyText.value); // Usando document.execCommand para compatibilidade com iframe
+        copyPixKeyBtn.textContent = 'Copiado!';
+        setTimeout(() => {
+            copyPixKeyBtn.textContent = 'Copiar';
+        }, 2000);
     });
 }
 
