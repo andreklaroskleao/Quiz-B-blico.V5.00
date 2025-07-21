@@ -180,23 +180,86 @@ body { font-family: var(--font-family-body); background: var(--gray-color); colo
 .table-wrapper { width: 100%; overflow-x: auto; }
 
 /* --- SALA DE ESPERA DA COMPETIÇÃO --- */
-#waiting-room-modal .modal-content { text-align: left; }
-.waiting-room-body { display: flex; flex-direction: column; gap: 2rem; margin: 1.5rem 0; }
-.team-selection-container { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-.team-box { border: 2px solid #e0e0e0; border-radius: 12px; padding: 1rem; cursor: pointer; transition: all 0.3s ease; }
+#waiting-room-modal .modal-content {
+    text-align: left;
+    max-width: 90%; /* Ajustado para mobile */
+    max-height: 95vh; /* Garante que caiba verticalmente */
+    overflow-y: auto; /* Permite scroll se o conteúdo for muito grande */
+    padding: 1rem; /* Reduz padding em telas menores */
+}
+
+#waiting-room-modal .modal-content h3 {
+    font-size: 1.8rem; /* Ajuste para caber melhor */
+}
+
+.waiting-room-body {
+    display: flex;
+    flex-direction: column; /* Colunas empilhadas por padrão */
+    gap: 1.5rem; /* Reduz o gap */
+    margin: 1rem 0; /* Reduz margem */
+}
+.team-selection-container {
+    display: flex;
+    flex-direction: column; /* Empilha as equipes por padrão no mobile */
+    gap: 1rem; /* Reduz o gap */
+}
+.team-box {
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 0.8rem; /* Reduz padding */
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
 .team-box:hover { border-color: var(--accent-color); transform: translateY(-5px); }
 .team-box.selected { border-width: 3px; }
 .team-box#team-azul.selected { border-color: #42a5f5; box-shadow: 0 0 15px rgba(66, 165, 245, 0.5); }
 .team-box#team-amarelo.selected { border-color: #ffca28; box-shadow: 0 0 15px rgba(255, 202, 40, 0.5); }
-.team-box h5 { text-align: center; margin-bottom: 1rem; font-size: 1.2rem; }
-.team-box ul { list-style: none; padding: 0; min-height: 120px; }
-.team-box ul li { display: flex; align-items: center; gap: 10px; padding: 8px; border-radius: 6px; }
+.team-box h5 { text-align: center; margin-bottom: 0.8rem; font-size: 1.1rem; }
+.team-box ul { list-style: none; padding: 0; min-height: 80px; /* Altura mínima ajustada */ max-height: 150px; overflow-y: auto; }
+.team-box ul li { display: flex; align-items: center; gap: 8px; /* Reduz o gap */ padding: 6px; border-radius: 6px; }
 .team-box ul li:nth-child(odd) { background-color: var(--gray-color); }
-.team-box ul li img { width: 30px; height: 30px; border-radius: 50%; }
-.waiting-room-chat { border-left: 1px solid #e0e0e0; padding-left: 2rem; }
-.waiting-room-chat .chat-messages { height: 250px; }
-#chat-input-waiting-room { flex-grow: 1; padding: 12px; border-radius: 50px; border: 1px solid #ccc; font-size: 0.9rem; }
-.waiting-room-actions { display: flex; justify-content: center; gap: 1rem; margin-top: 1rem; }
+.team-box ul li img { width: 25px; height: 25px; border-radius: 50%; }
+.waiting-room-chat {
+    border-left: none; /* Remove a borda no mobile */
+    padding-left: 0;
+    margin-top: 1.5rem; /* Adiciona margem superior para separar */
+    border-top: 1px solid #e0e0e0; /* Adiciona uma borda superior para separar */
+    padding-top: 1.5rem;
+}
+.waiting-room-chat .chat-messages { height: 200px; /* Reduz a altura do chat */ }
+#chat-input-waiting-room { flex-grow: 1; padding: 10px; border-radius: 50px; border: 1px solid #ccc; font-size: 0.85rem; }
+.waiting-room-actions { display: flex; justify-content: center; gap: 0.8rem; /* Reduz o gap */ margin-top: 1rem; flex-wrap: wrap;}
+
+/* --- RESULTADOS DA COMPETIÇÃO (NOVO MODAL) --- */
+#competition-result-screen .modal-content {
+    max-width: 90%; /* Ajustado para mobile */
+    max-height: 95vh; /* Garante que caiba verticalmente */
+    overflow-y: auto; /* Permite scroll se o conteúdo for muito grande */
+    padding: 1rem; /* Reduz padding em telas menores */
+}
+
+#competition-result-screen .ranking-header h2 {
+    font-size: 1.8rem; /* Ajusta o tamanho da fonte do título */
+    margin-bottom: 0.5rem;
+}
+
+#competition-result-screen .ranking-table th,
+#competition-result-screen .ranking-table td {
+    padding: 8px; /* Reduz o padding das células da tabela */
+    font-size: 0.9rem; /* Ajusta o tamanho da fonte da tabela */
+}
+
+#competition-result-screen .ranking-table .member-info {
+    flex-direction: column; /* Empilha o nome e a foto em telas pequenas */
+    align-items: flex-start;
+    gap: 5px;
+}
+
+#competition-result-screen .ranking-table .member-info img {
+    width: 30px; /* Ajusta o tamanho da foto */
+    height: 30px;
+}
+
 
 /* --- MEDIA QUERIES --- */
 @media (min-width: 768px) { 
@@ -205,9 +268,42 @@ body { font-family: var(--font-family-body); background: var(--gray-color); colo
     .stats-grid { grid-template-columns: repeat(4, 1fr); } 
     .achievements-grid { grid-template-columns: 1fr 1fr; } 
     .group-actions { flex-direction: row; justify-content: center; } 
-    .waiting-room-body { flex-direction: row; }
+    
+    /* Reverte para layout de coluna no tablet/desktop */
+    .waiting-room-body { flex-direction: row; gap: 2rem; margin: 1.5rem 0; }
     .waiting-room-main { flex: 3; }
-    .waiting-room-chat { flex: 2; }
+    .waiting-room-chat { 
+        flex: 2; 
+        border-left: 1px solid #e0e0e0; /* Adiciona a borda de volta */
+        padding-left: 2rem;
+        margin-top: 0; /* Remove a margem superior */
+        border-top: none; /* Remove a borda superior */
+        padding-top: 0;
+    }
+    .waiting-room-chat .chat-messages { height: 250px; } /* Retorna à altura original */
+    .team-selection-container {
+        flex-direction: row; /* Retorna para 2 colunas */
+        gap: 1.5rem;
+    }
+    .team-box {
+        padding: 1rem; /* Retorna ao padding original */
+    }
+    .team-box h5 { margin-bottom: 1rem; font-size: 1.2rem; }
+    .team-box ul { min-height: 120px; }
+    .team-box ul li { gap: 10px; padding: 8px;}
+    .team-box ul li img { width: 30px; height: 30px;}
+
+    /* Modais de competição no desktop */
+    #waiting-room-modal .modal-content,
+    #competition-result-screen .modal-content {
+        max-width: 900px; /* Max-width para desktop */
+        padding: 25px; /* Padding original */
+    }
+    #competition-result-screen .ranking-table .member-info {
+        flex-direction: row; /* Retorna ao layout de linha */
+        align-items: center;
+        gap: 10px;
+    }
 }
 @media (min-width: 992px) {
     .main-menu { grid-template-columns: repeat(3, 1fr); }
