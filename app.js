@@ -989,6 +989,36 @@ function listenToChat() {
     });
 }
 
+if(chatFormWaitingRoom) {
+    chatFormWaitingRoom.addEventListener('submit', async (e) => {
+        e.preventDefault(); // Impede o comportamento padrão do formulário
+        e.stopImmediatePropagation(); // Impede que outros listeners do mesmo evento sejam chamados
+
+        const messageText = chatInputWaitingRoom.value.trim();
+        if(messageText.length === 0 || !currentUser || !activeCompetitionId) return;
+
+        chatInputWaitingRoom.value = ''; // Limpa o input imediatamente
+        chatInputWaitingRoom.disabled = true; // Desabilita para evitar múltiplos envios enquanto processa
+
+        try {
+            const messagesRef = collection(db, 'competicoes', activeCompetitionId, 'messages');
+            await addDoc(messagesRef, {
+                text: messageText,
+                uid: currentUser.uid,
+                senderName: currentUser.displayName,
+                timestamp: serverTimestamp()
+            });
+        } catch(error) {
+            console.error("Erro ao enviar mensagem:", error);
+            alert("Não foi possível enviar a sua mensagem. Tente novamente."); // Alerta o usuário
+            chatInputWaitingRoom.value = messageText; // Retorna a mensagem ao input se falhar
+        } finally {
+            chatInputWaitingRoom.disabled = false; // Reabilita o input
+            chatInputWaitingRoom.focus(); // Coloca o foco de volta no input
+        }
+    });
+}
+
 function startCompetitionQuiz(competitionQuestions) {
     score = 0; // Pontuação para o quiz atual do usuário na competição
     correctAnswersCount = 0;
@@ -1105,7 +1135,7 @@ async function leaveWaitingRoom(voluntaryExit = true) {
                 batch.delete(doc.ref);
             });
             batch.delete(competitionRef); // Adiciona a exclusão do documento principal
-            await batch.commit(); 
+            await batch.commit();
         } else {
             return; // O criador cancelou a saída
         }
