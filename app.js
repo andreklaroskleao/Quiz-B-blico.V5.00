@@ -1384,7 +1384,8 @@ if (playAgainCompetitionBtn) {
                 participantes: resetParticipants,
                 dataTermino: null // Limpa a data de término
             });
-            // O onSnapshot em showWaitingRoom irá detectar a mudança e reabrir a sala de espera
+            // Após redefinir o estado, explicitamente leva o criador de volta à sala de espera
+            showWaitingRoom(true); 
         } catch (error) {
             console.error("Erro ao reiniciar competição:", error);
             alert("Não foi possível reiniciar a competição.");
