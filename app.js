@@ -1,6 +1,6 @@
 import { auth, db } from './firebase.js';
 import { GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-import { doc, getDoc, setDoc, updateDoc, increment, arrayUnion, collection, query, where, getDocs, addDoc, serverTimestamp, orderBy, limit, onSnapshot, writeBatch, deleteField } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+import { doc, getDoc, setDoc, updateDoc, increment, arrayUnion, collection, query, where, getDocs, addDoc, serverTimestamp, orderBy, limit, onSnapshot, writeBatch } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 // --- Elementos da UI ---
 const loginBtn = document.getElementById('login-btn');
@@ -83,7 +83,6 @@ const competitionResultCode = document.getElementById('competition-result-code')
 const competitionRankingTbody = document.getElementById('competition-ranking-tbody');
 const playAgainCompetitionBtn = document.getElementById('play-again-competition-btn');
 const returnToLobbyBtn = document.getElementById('return-to-lobby-btn');
-const groupCompetitionCard = document.getElementById('group-competition-card');
 
 
 // --- Estado do Quiz e Usuário ---
@@ -96,7 +95,7 @@ let correctAnswersCount = 0;
 let currentGroupId = null;
 let quizAtualDifficulty = 'facil';
 let activeCompetitionId = null;
-let competitionData = null;
+let competitionData = null; // Para armazenar os dados da competição ativa
 let unsubscribeCompetition = null;
 let unsubscribeChat = null;
 
@@ -105,8 +104,31 @@ const bibleBooks = {
     "Gênesis": 50, "Êxodo": 40, "Levítico": 27, "Números": 36, "Deuteronômio": 34, "Josué": 24, "Juízes": 21, "Rute": 4, "1 Samuel": 31, "2 Samuel": 24, "1 Reis": 22, "2 Reis": 25, "1 Crônicas": 29, "2 Crônicas": 36, "Esdras": 10, "Neemias": 13, "Ester": 10, "Jó": 42, "Salmos": 150, "Provérbios": 31, "Eclesiastes": 12, "Cantares": 8, "Isaías": 66, "Jeremias": 52, "Lamentações": 5, "Ezequiel": 48, "Daniel": 12, "Oseias": 14, "Joel": 3, "Amós": 9, "Obadias": 1, "Jonas": 4, "Miqueias": 7, "Naum": 3, "Habacuque": 3, "Sofonias": 3, "Ageu": 2, "Zacarias": 14, "Malaquias": 4, "Mateus": 28, "Marcos": 16, "Lucas": 24, "João": 21, "Atos": 28, "Romanos": 16, "1 Coríntios": 16, "2 Coríntios": 13, "Gálatas": 6, "Efésios": 6, "Filipenses": 4, "Colossenses": 4, "1 Tessalonicenses": 5, "2 Tessalonicenses": 3, "1 Timóteo": 6, "2 Timóteo": 4, "Tito": 3, "Filemom": 1, "Hebreus": 13, "Tiago": 5, "1 Pedro": 5, "2 Pedro": 3, "1 João": 5, "2 João": 1, "3 João": 1, "Judas": 1, "Apocalipse": 22
 };
 
-// --- Funções Auxiliares (movidas para o topo) ---
+// --- Inicialização ---
+document.addEventListener('DOMContentLoaded', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const groupIdFromUrl = urlParams.get('groupId');
+    const difficultyFromUrl = urlParams.get('difficulty');
+    const competitionIdFromUrl = urlParams.get('competitionId'); // Nova: para deep linking em competições
 
+    if (groupIdFromUrl) {
+        sessionStorage.setItem('currentGroupId', groupIdFromUrl);
+        if (difficultyFromUrl) {
+            sessionStorage.setItem('currentGroupDifficulty', difficultyFromUrl);
+        }
+    } else if (competitionIdFromUrl) { // Se houver competitionId na URL, tentamos carregar a competição
+        sessionStorage.setItem('activeCompetitionId', competitionIdFromUrl);
+    }
+
+
+    if (window.history.replaceState) {
+        const cleanUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
+        window.history.replaceState({path: cleanUrl}, '', cleanUrl);
+    }
+    populateBookSelect();
+});
+
+// --- Funções ---
 function getAgeGroup(birthDateString) {
     if (!birthDateString) return "adulto";
     const birthDate = new Date(birthDateString);
@@ -119,6 +141,22 @@ function getAgeGroup(birthDateString) {
     if (age >= 6 && age <= 10) return "crianca";
     if (age >= 11 && age <= 16) return "adolescente";
     return "adulto";
+}
+
+function switchScreen(newScreenId) {
+    document.querySelectorAll('.screen, .modal').forEach(screen => { // Inclui .modal para garantir que todos os modais sejam escondidos
+        if (screen && !screen.classList.contains('hidden') && screen.id !== 'dob-modal') { // Mantém dob-modal visível se necessário
+            screen.classList.add('hidden');
+            screen.classList.remove('visible'); // Remove a classe 'visible' para modais
+        }
+    });
+    const screenToShow = document.getElementById(newScreenId);
+    if (screenToShow) {
+        screenToShow.classList.remove('hidden');
+        if (screenToShow.classList.contains('modal')) { // Adiciona 'visible' se for um modal
+            screenToShow.classList.add('visible');
+        }
+    }
 }
 
 async function updateUiforGroupMode() {
@@ -142,126 +180,6 @@ async function updateUiforGroupMode() {
     }
 }
 
-async function awardAchievement(uid, achievementKey) {
-    if (!uid || !achievementKey) return;
-    const userRef = doc(db, 'usuarios', uid);
-    try {
-        const userDoc = await getDoc(userRef);
-        if (userDoc.exists() && !userDoc.data().conquistas?.includes(achievementKey)) {
-            await updateDoc(userRef, {
-                conquistas: arrayUnion(achievementKey)
-            });
-            console.log(`Conquista '${achievementKey}' concedida!`);
-        }
-    } catch(error) {
-        console.error(`Erro ao conceder conquista ${achievementKey}:`, error);
-    }
-}
-
-// --- Funções de Controle de Tela ---
-function switchScreen(newScreenId) {
-    document.querySelectorAll('.screen, .modal').forEach(screen => {
-        if (screen && !screen.classList.contains('hidden') && screen.id !== 'dob-modal') {
-            screen.classList.add('hidden');
-            screen.classList.remove('visible');
-        }
-    });
-    const screenToShow = document.getElementById(newScreenId);
-    if (screenToShow) {
-        screenToShow.classList.remove('hidden');
-        if (screenToShow.classList.contains('modal')) {
-            screenToShow.classList.add('visible');
-        }
-    }
-
-    // Lógica adicional para mostrar/esconder o mainMenu e welcomeMessage
-    if (newScreenId === 'initial-screen') {
-        if (mainMenu) mainMenu.classList.remove('hidden');
-        if (currentUser && welcomeMessage) {
-            welcomeMessage.classList.add('hidden');
-        } else if (!currentUser && welcomeMessage) {
-            welcomeMessage.classList.remove('hidden');
-        }
-        // Garante que o estado do grupo ou competição seja atualizado na UI
-        if (currentUser) {
-            updateUiforGroupMode();
-            loadUserGroups(currentUser.uid); // Recarrega os grupos ao voltar para o menu
-        }
-        // *******************************************************
-        // CHAMADA CRÍTICA: RE-ANEXAR LISTENERS DO MENU PRINCIPAL
-        setupMainMenuListeners();
-        // *******************************************************
-    } else {
-        // Se não é a tela inicial, esconde o menu principal e a mensagem de boas-vindas
-        if (mainMenu) mainMenu.classList.add('hidden');
-        if (welcomeMessage) welcomeMessage.classList.add('hidden');
-    }
-}
-
-// --- Função para configurar os listeners do Menu Principal ---
-function setupMainMenuListeners() {
-    // Garantir que os elementos existem antes de adicionar listeners para evitar erros
-    if (donateCard) {
-        // Remove listener existente antes de adicionar para evitar duplicação
-        donateCard.removeEventListener('click', showDonateModal); 
-        donateCard.addEventListener('click', showDonateModal);
-    }
-    if (competitionCard) {
-        competitionCard.removeEventListener('click', showCompetitionLobbyModal);
-        competitionCard.addEventListener('click', showCompetitionLobbyModal);
-    }
-    if (groupCompetitionCard) { // Assumindo que este é o card para gerenciar grupos
-        // Se este card não tem um listener direto para uma ação "abrir", não precisa de setup aqui.
-        // Se "Criar Grupo" é um botão DENTRO deste card, seu listener já está em setup de modais.
-    }
-    if (rankingCard) {
-        rankingCard.removeEventListener('click', goToRankingPage);
-        rankingCard.addEventListener('click', goToRankingPage);
-    }
-    if (bibleCard) {
-        bibleCard.removeEventListener('click', showBibleModal);
-        bibleCard.addEventListener('click', showBibleModal);
-    }
-    if (createGroupBtn) { // Botão dentro do card de grupos
-        createGroupBtn.removeEventListener('click', showCreateGroupModal);
-        createGroupBtn.addEventListener('click', showCreateGroupModal);
-    }
-}
-
-// Funções auxiliares para os event listeners (para facilitar o removeEventListener)
-function showDonateModal() { donateModal.classList.add('visible'); }
-function showCompetitionLobbyModal() { competitionLobbyModal.classList.add('visible'); }
-function goToRankingPage() { window.location.href = 'ranking.html'; }
-function showBibleModal() { bibleModal.classList.add('visible'); }
-function showCreateGroupModal() { createGroupModal.classList.add('visible'); }
-
-
-// --- Inicialização ---
-document.addEventListener('DOMContentLoaded', () => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const groupIdFromUrl = urlParams.get('groupId');
-    const difficultyFromUrl = urlParams.get('difficulty');
-    const competitionIdFromUrl = urlParams.get('competitionId');
-
-    if (groupIdFromUrl) {
-        sessionStorage.setItem('currentGroupId', groupIdFromUrl);
-        if (difficultyFromUrl) {
-            sessionStorage.setItem('currentGroupDifficulty', difficultyFromUrl);
-        }
-    } else if (competitionIdFromUrl) {
-        sessionStorage.setItem('activeCompetitionId', competitionIdFromUrl);
-    }
-
-    if (window.history.replaceState) {
-        const cleanUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
-        window.history.replaceState({path: cleanUrl}, '', cleanUrl);
-    }
-    populateBookSelect();
-    // Chamar setupMainMenuListeners aqui também para o carregamento inicial da página
-    setupMainMenuListeners(); // Certifica que os listeners são anexados no carregamento inicial
-});
-
-// --- Autenticação ---
 const provider = new GoogleAuthProvider();
 if (loginBtn) loginBtn.addEventListener('click', () => signInWithPopup(auth, provider).catch(console.error));
 if (logoutBtn) logoutBtn.addEventListener('click', (e) => { e.preventDefault(); signOut(auth).catch(console.error); });
@@ -297,11 +215,12 @@ onAuthStateChanged(auth, async (user) => {
             if (currentUserAgeGroup === "crianca") {
                 document.body.classList.add('tema-crianca');
             }
-            if(dobModal) dobModal.classList.remove('visible');
+            if(dobModal) dobModal.classList.remove('visible'); // Esconde o modal se a data já existe
         } else {
-            if(dobModal) dobModal.classList.add('visible');
+            if(dobModal) dobModal.classList.add('visible'); // Mostra o modal se a data não existe
         }
 
+        // Nova lógica para carregar competição de sessão/URL
         const competitionIdFromSession = sessionStorage.getItem('activeCompetitionId');
         if (competitionIdFromSession) {
             activeCompetitionId = competitionIdFromSession;
@@ -313,23 +232,28 @@ onAuthStateChanged(auth, async (user) => {
                 if (competitionData.estado === 'aguardando') {
                     showWaitingRoom(currentUser.uid === competitionData.criadorUid);
                 } else if (competitionData.estado === 'em_andamento') {
+                    // Se o usuário recarregou e a competição está em andamento, redireciona para o quiz
                     startCompetitionQuiz(competitionData.perguntas);
                 } else if (competitionData.estado === 'finalizada') {
-                    showCompetitionResults(competitionData);
+                    showCompetitionResults(competitionData); // Se já finalizada, mostra os resultados
                 }
             } else {
                 console.error("Competição da sessão não encontrada.");
-                sessionStorage.removeItem('activeCompetitionId');
-                switchScreen('initial-screen');
+                sessionStorage.removeItem('activeCompetitionId'); // Limpa a sessão se a competição não existe
+                if (mainMenu) mainMenu.classList.remove('hidden');
+                if (welcomeMessage) welcomeMessage.classList.add('hidden');
+                await loadUserGroups(user.uid); 
             }
-        } else {
+        } else { // Lógica original para grupos e menu inicial
             const groupIdFromSession = sessionStorage.getItem('currentGroupId');
             const groupDifficultyFromSession = sessionStorage.getItem('currentGroupDifficulty');
             if (groupIdFromSession && groupDifficultyFromSession) {
                 await updateUiforGroupMode();
                 startQuiz(groupDifficultyFromSession);
             } else {
-                switchScreen('initial-screen');
+                if (mainMenu) mainMenu.classList.remove('hidden');
+                if (welcomeMessage) welcomeMessage.classList.add('hidden');
+                await loadUserGroups(user.uid); 
             }
         }
     } else {
@@ -337,9 +261,12 @@ onAuthStateChanged(auth, async (user) => {
         if (loginBtn) loginBtn.classList.remove('hidden');
         if (userInfoDiv) userInfoDiv.classList.add('hidden');
         if (logoutBtn) logoutBtn.classList.add('hidden');
+        if (mainMenu) mainMenu.classList.add('hidden');
+        if (welcomeMessage) welcomeMessage.classList.remove('hidden');
+        if (adminLink) adminLink.classList.add('hidden');
+        if (profileLink) profileLink.classList.add('hidden');
+        // Limpa estados de competição ao deslogar
         sessionStorage.removeItem('activeCompetitionId');
-        sessionStorage.removeItem('currentGroupId');
-        sessionStorage.removeItem('currentGroupDifficulty');
         if (unsubscribeCompetition) unsubscribeCompetition();
         if (unsubscribeChat) unsubscribeChat();
         activeCompetitionId = null;
@@ -452,7 +379,23 @@ async function loadUserGroups(userId) {
 }
 
 
-if (createGroupBtn) createGroupBtn.addEventListener('click', showCreateGroupModal); // Removido duplicidade, agora chamado por setupMainMenuListeners
+async function awardAchievement(uid, achievementKey) {
+    if (!uid || !achievementKey) return;
+    const userRef = doc(db, 'usuarios', uid);
+    try {
+        const userDoc = await getDoc(userRef);
+        if (userDoc.exists() && !userDoc.data().conquistas?.includes(achievementKey)) {
+            await updateDoc(userRef, {
+                conquistas: arrayUnion(achievementKey)
+            });
+            console.log(`Conquista '${achievementKey}' concedida!`);
+        }
+    } catch(error) {
+        console.error(`Erro ao conceder conquista ${achievementKey}:`, error);
+    }
+}
+
+if (createGroupBtn) createGroupBtn.addEventListener('click', () => createGroupModal.classList.add('visible'));
 if (cancelGroupBtn) cancelGroupBtn.addEventListener('click', () => createGroupModal.classList.remove('visible'));
 if (saveGroupBtn) saveGroupBtn.addEventListener('click', async () => {
     if (!groupNameInput || !groupDifficultySelect) return;
@@ -504,10 +447,12 @@ if (saveGroupBtn) saveGroupBtn.addEventListener('click', async () => {
 if (backToMenuBtn) backToMenuBtn.addEventListener('click', () => {
     sessionStorage.removeItem('currentGroupId');
     sessionStorage.removeItem('currentGroupDifficulty');
-    switchScreen('initial-screen');
+    updateUiforGroupMode();
 });
 
-if (rankingCard) rankingCard.addEventListener('click', goToRankingPage); // Removido duplicidade, agora chamado por setupMainMenuListeners
+if (rankingCard) rankingCard.addEventListener('click', () => {
+    window.location.href = 'ranking.html';
+});
 
 if (difficultySelection) difficultySelection.addEventListener('click', (e) => {
     if (e.target.matches('.btn[data-difficulty]')) {
@@ -561,7 +506,7 @@ async function startQuiz(difficulty) {
 function displayQuestion() {
     if (currentQuestionIndex >= questions.length) {
         if (activeCompetitionId) {
-            endCompetition();
+            endCompetition(); // Nova: para finalizar a competição
         } else {
             showResults();
         }
@@ -595,19 +540,20 @@ async function handleAnswer(e) {
     if (isCorrect) {
         selectedButton.classList.add('correct');
         if (feedback) feedback.textContent = 'Resposta Correta!';
-        questionScore = 10;
+        questionScore = 10; // Cada pergunta vale 10 pontos
         correctAnswersCount++;
     } else {
         selectedButton.classList.add('wrong');
         if (feedback) feedback.textContent = 'Resposta Errada!';
         optionsContainer.children[question.correta].classList.add('correct');
     }
-    score += questionScore;
+    score += questionScore; // Acumula pontuação para o quiz individual/grupo
 
     if (reference) reference.textContent = `Referência: ${question.referencia}`;
     if (nextBtn) nextBtn.classList.remove('hidden');
     if (progressBar) progressBar.style.width = `${((currentQuestionIndex + 1) / questions.length) * 100}%`;
 
+    // Lógica para competição
     if (activeCompetitionId && currentUser) {
         const competitionRef = doc(db, 'competicoes', activeCompetitionId);
         const participantPath = `participantes.${currentUser.uid}`;
@@ -617,7 +563,8 @@ async function handleAnswer(e) {
             [`${participantPath}.respostas`]: arrayUnion({
                 questionIndex: currentQuestionIndex,
                 answeredCorrectly: isCorrect,
-                selectedOption: selectedIndex
+                selectedOption: selectedIndex,
+                timestamp: serverTimestamp()
             })
         });
     }
@@ -675,6 +622,7 @@ async function checkAndAwardAchievements(userRef, currentQuizScore, currentQuizC
     let newAchievements = [];
     const stats = userData.stats;
 
+    // Conquistas baseadas em quizzes individuais/grupo
     if (!userAchievements.has("iniciante_da_fe") && (stats.quizzesJogadosTotal || 0) >= 1) newAchievements.push("iniciante_da_fe");
     if (!userAchievements.has("peregrino_fiel") && (stats.quizzesJogadosTotal || 0) >= 10) newAchievements.push("peregrino_fiel");
     if (!userAchievements.has("discipulo_dedicado") && (stats.quizzesJogadosTotal || 0) >= 50) newAchievements.push("discipulo_dedicado");
@@ -686,7 +634,7 @@ async function checkAndAwardAchievements(userRef, currentQuizScore, currentQuizC
     if (!userAchievements.has("mestre_da_palavra") && (stats.respostasCertasTotal || 0) >= 100) newAchievements.push("mestre_da_palavra");
     if (!userAchievements.has("escriba_habil") && (stats.respostasCertasTotal || 0) >= 500) newAchievements.push("escriba_habil");
     if (!userAchievements.has("doutor_da_lei") && (stats.respostasCertasTotal || 0) >= 1000) newAchievements.push("doutor_da_lei");
-    if (!userAchievements.has("quase_la") && currentQuizScore >= 90 && currentQuizScore < 100) newAchievements.push("quase_la");
+    if (!userAchievements.has("quase_la") && currentQuizScore >= 90 && currentQuizScore < 100) newAchievements.push("quase_la"); // Ajustado para ser 'quase lá'
     if (!userAchievements.has("perfeccionista") && currentQuizScore === 100) newAchievements.push("perfeccionista");
     if (!userAchievements.has("impecavel") && currentQuizCorrectAnswers === questions.length && questions.length > 0) newAchievements.push("impecavel");
     if (!userAchievements.has("explorador_facil") && (stats.pontuacaoFacil || 0) >= 1000) newAchievements.push("explorador_facil");
@@ -694,6 +642,7 @@ async function checkAndAwardAchievements(userRef, currentQuizScore, currentQuizC
     if (!userAchievements.has("estrategista_dificil") && (stats.pontuacaoDificil || 0) >= 1000) newAchievements.push("estrategista_dificil");
     if (currentGroupId && !userAchievements.has("competidor")) newAchievements.push("competidor");
 
+    // Conquistas baseadas no ranking da competição
     if (competitionRank !== null) {
         if (competitionRank === 1 && !userAchievements.has('competicao_ouro')) newAchievements.push('competicao_ouro');
         if (competitionRank === 2 && !userAchievements.has('competicao_prata')) newAchievements.push('competicao_prata');
@@ -713,13 +662,17 @@ async function checkAndAwardAchievements(userRef, currentQuizScore, currentQuizC
 if (leaveQuizBtn) {
     leaveQuizBtn.addEventListener('click', () => {
         if (confirm("Tem certeza de que deseja sair do quiz? O seu progresso nesta partida não será salvo.")) {
+            // Se estiver em competição, também precisa sair da competição
             if (activeCompetitionId) {
-                leaveWaitingRoom();
+                leaveWaitingRoom(); // Esta função já cuida da remoção do participante/fechamento da sala
             }
             sessionStorage.removeItem('currentGroupId');
             sessionStorage.removeItem('currentGroupDifficulty');
-            sessionStorage.removeItem('activeCompetitionId');
+            sessionStorage.removeItem('activeCompetitionId'); // Garante que a competição seja limpa
+            updateUiforGroupMode();
             switchScreen('initial-screen');
+            if (mainMenu) mainMenu.classList.remove('hidden');
+            if (welcomeMessage) welcomeMessage.classList.add('hidden');
         }
     });
 }
@@ -728,7 +681,10 @@ if (restartBtn) restartBtn.addEventListener('click', () => {
     sessionStorage.removeItem('currentGroupId');
     sessionStorage.removeItem('currentGroupDifficulty');
     sessionStorage.removeItem('activeCompetitionId');
+    updateUiforGroupMode();
     switchScreen('initial-screen');
+    if (mainMenu) mainMenu.classList.remove('hidden');
+    if (welcomeMessage) welcomeMessage.classList.add('hidden');
 });
 
 function populateBookSelect() {
@@ -774,14 +730,15 @@ async function loadChapterText() {
         bibleTextDisplay.innerHTML = `<p style="color: red;">Erro ao carregar o capítulo. Tente novamente.</p>`;
     }
 }
-if (bibleCard) bibleCard.addEventListener('click', showBibleModal); // Removido duplicidade
+if (bibleCard) bibleCard.addEventListener('click', () => { if (bibleModal) bibleModal.classList.add('visible'); });
 if (closeBibleBtn) closeBibleBtn.addEventListener('click', () => { if (bibleModal) bibleModal.classList.remove('visible'); });
 if (bibleBookSelect) bibleBookSelect.addEventListener('change', populateChapterSelect);
 if (loadChapterBtn) loadChapterBtn.addEventListener('click', loadChapterText);
 
 // --- Lógica da Competição ---
-if (competitionCard) competitionCard.addEventListener('click', showCompetitionLobbyModal); // Removido duplicidade
-
+if (competitionCard) competitionCard.addEventListener('click', () => {
+    if(competitionLobbyModal) competitionLobbyModal.classList.add('visible');
+});
 if (closeLobbyBtn) closeLobbyBtn.addEventListener('click', () => {
     if(competitionLobbyModal) competitionLobbyModal.classList.remove('visible');
 });
@@ -810,7 +767,7 @@ if (createCompetitionBtn) createCompetitionBtn.addEventListener('click', async (
         const inviteCode = Math.random().toString(36).substring(2, 7).toUpperCase();
         
         const primaryQuery = query(
-            collection(db, "perguntas"), 
+            collection(db, "perguntas"),
             where("nivel", "==", difficulty),
             where("faixaEtaria", "array-contains", currentUserAgeGroup)
         );
@@ -818,7 +775,7 @@ if (createCompetitionBtn) createCompetitionBtn.addEventListener('click', async (
         let allAvailableQuestions = primarySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
 
         if (allAvailableQuestions.length < numQuestions) {
-            console.warn(`Poucas perguntas para ${difficulty}/${currentUserAgeGroup}. Buscando em todas as faixas etárias.`);
+            console.warn(`Apenas ${allAvailableQuestions.length} perguntas encontradas para ${difficulty}/${currentUserAgeGroup}. Buscando em todas as faixas etárias.`);
             const fallbackQuery = query(collection(db, "perguntas"), where("nivel", "==", difficulty));
             const fallbackSnapshot = await getDocs(fallbackQuery);
             
@@ -855,7 +812,7 @@ if (createCompetitionBtn) createCompetitionBtn.addEventListener('click', async (
             dataCriacao: serverTimestamp()
         });
         activeCompetitionId = competitionRef.id;
-        sessionStorage.setItem('activeCompetitionId', activeCompetitionId);
+        sessionStorage.setItem('activeCompetitionId', activeCompetitionId); // Salva na sessão
         showWaitingRoom(true);
 
     } catch (error) {
@@ -888,6 +845,7 @@ if (joinCompetitionBtn) joinCompetitionBtn.addEventListener('click', async () =>
         const competitionDoc = competitionSnapshot.docs[0];
         const competitionRef = doc(db, 'competicoes', competitionDoc.id);
 
+        // Verifica se o usuário já está no jogo
         if (competitionDoc.data().participantes && competitionDoc.data().participantes[currentUser.uid]) {
             alert("Você já está nesta sala!");
             activeCompetitionId = competitionDoc.id;
@@ -936,30 +894,29 @@ teamAzulBox.addEventListener('click', () => selectTeam('azul'));
 teamAmareloBox.addEventListener('click', () => selectTeam('amarelo'));
 
 function showWaitingRoom(isCreator) {
-    switchScreen('waiting-room-modal');
-
-    if(startCompetitionBtn) {
-        startCompetitionBtn.classList.toggle('hidden', !isCreator);
-    }
+    switchScreen('waiting-room-modal'); // Garante que o modal esteja visível
+    if(startCompetitionBtn) startCompetitionBtn.classList.toggle('hidden', !isCreator);
 
     if (unsubscribeCompetition) unsubscribeCompetition();
 
     unsubscribeCompetition = onSnapshot(doc(db, 'competicoes', activeCompetitionId), (docSnapshot) => {
         if (!docSnapshot.exists()) {
             alert("A sala de competição foi fechada pelo criador.");
-            leaveWaitingRoom(false);
+            leaveWaitingRoom(false); // Não tenta remover de novo, apenas limpa
             return;
         }
 
-        competitionData = docSnapshot.data();
+        competitionData = docSnapshot.data(); // Atualiza os dados da competição
         if(inviteCodeDisplay) inviteCodeDisplay.textContent = competitionData.codigoConvite;
         
+        // Limpa listas
         teamAzulList.innerHTML = '';
         teamAmareloList.innerHTML = '';
 
         const participantes = competitionData.participantes || {};
-        const participantesArray = Object.values(participantes).filter(p => p !== null);
+        const participantesArray = Object.values(participantes).filter(p => p !== null); // Filtra participantes nulos
         
+        // Ordena participantes para exibição consistente
         participantesArray.sort((a, b) => a.nome.localeCompare(b.nome));
 
         participantesArray.forEach((player) => {
@@ -969,6 +926,8 @@ function showWaitingRoom(isCreator) {
                 teamAzulList.appendChild(playerElement);
             } else if (player.team === 'amarelo') {
                 teamAmareloList.appendChild(playerElement);
+            } else {
+                 // Pode adicionar a uma seção de "Aguardando equipe" se houver uma no HTML
             }
         });
 
@@ -977,20 +936,15 @@ function showWaitingRoom(isCreator) {
         teamAmareloBox.classList.toggle('selected', myTeam === 'amarelo');
 
 
+        // Lógica para habilitar o botão de início
         if(isCreator && startCompetitionBtn) {
             const playerCount = participantesArray.length;
-            const allPlayersHaveTeam = participantesArray.every(p => p.team !== null);
-
-            if(playerCount >= competitionData.minParticipantes && allPlayersHaveTeam) {
+            if(playerCount >= competitionData.minParticipantes) {
                 startCompetitionBtn.disabled = false;
                 startRequirementMessage.classList.add('hidden');
             } else {
                 startCompetitionBtn.disabled = true;
-                let message = `São necessários pelo menos ${competitionData.minParticipantes} jogadores para começar. Atuais: ${playerCount}.`;
-                if (!allPlayersHaveTeam) {
-                    message += " Todos os jogadores devem escolher uma equipe.";
-                }
-                startRequirementMessage.textContent = message;
+                startRequirementMessage.textContent = `São necessários pelo menos ${competitionData.minParticipantes} jogadores para começar. Atuais: ${playerCount}.`;
                 startRequirementMessage.classList.remove('hidden');
             }
         }
@@ -1001,6 +955,7 @@ function showWaitingRoom(isCreator) {
             alert("A competição vai começar!");
             startCompetitionQuiz(competitionData.perguntas);
         } else if (competitionData.estado === 'finalizada') {
+            // Se a competição for finalizada enquanto em sala de espera, mostra resultados
             if (unsubscribeCompetition) unsubscribeCompetition();
             showCompetitionResults(competitionData);
         }
@@ -1036,14 +991,14 @@ function listenToChat() {
 
 if(chatFormWaitingRoom) {
     chatFormWaitingRoom.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        e.stopImmediatePropagation();
+        e.preventDefault(); // Impede o comportamento padrão do formulário
+        e.stopImmediatePropagation(); // Impede que outros listeners do mesmo evento sejam chamados
 
         const messageText = chatInputWaitingRoom.value.trim();
         if(messageText.length === 0 || !currentUser || !activeCompetitionId) return;
 
-        chatInputWaitingRoom.value = '';
-        chatInputWaitingRoom.disabled = true;
+        chatInputWaitingRoom.value = ''; // Limpa o input imediatamente
+        chatInputWaitingRoom.disabled = true; // Desabilita para evitar múltiplos envios enquanto processa
 
         try {
             const messagesRef = collection(db, 'competicoes', activeCompetitionId, 'messages');
@@ -1055,20 +1010,20 @@ if(chatFormWaitingRoom) {
             });
         } catch(error) {
             console.error("Erro ao enviar mensagem:", error);
-            alert("Não foi possível enviar a sua mensagem. Tente novamente.");
-            chatInputWaitingRoom.value = messageText;
+            alert("Não foi possível enviar a sua mensagem. Tente novamente."); // Alerta o usuário
+            chatInputWaitingRoom.value = messageText; // Retorna a mensagem ao input se falhar
         } finally {
-            chatInputWaitingRoom.disabled = false;
-            chatInputWaitingRoom.focus();
+            chatInputWaitingRoom.disabled = false; // Reabilita o input
+            chatInputWaitingRoom.focus(); // Coloca o foco de volta no input
         }
     });
 }
 
 function startCompetitionQuiz(competitionQuestions) {
-    score = 0;
+    score = 0; // Pontuação para o quiz atual do usuário na competição
     correctAnswersCount = 0;
     currentQuestionIndex = 0;
-    questions = competitionQuestions;
+    questions = competitionQuestions; // As perguntas da competição são carregadas aqui
 
     if (nextBtn) nextBtn.classList.add('hidden');
     if (progressBar) progressBar.style.width = '0%';
@@ -1079,7 +1034,7 @@ function startCompetitionQuiz(competitionQuestions) {
     } else {
         alert("Erro: Nenhuma pergunta foi carregada para a competição.");
         switchScreen('initial-screen');
-        sessionStorage.removeItem('activeCompetitionId');
+        sessionStorage.removeItem('activeCompetitionId'); // Limpa a sessão
         activeCompetitionId = null;
     }
 }
@@ -1090,10 +1045,15 @@ async function endCompetition() {
     const competitionRef = doc(db, 'competicoes', activeCompetitionId);
     
     try {
+        // Atualiza o estado da competição para 'finalizada'
         await updateDoc(competitionRef, {
             estado: 'finalizada',
             dataTermino: serverTimestamp()
         });
+        
+        // A onSnapshot em showWaitingRoom (ou um novo listener) lidará com a transição
+        // para showCompetitionResults quando o estado for 'finalizada'.
+        // Não chamamos showCompetitionResults diretamente aqui para que a UI seja reativa ao Firestore.
     } catch (error) {
         console.error("Erro ao finalizar competição:", error);
         alert("Ocorreu um erro ao finalizar a competição.");
@@ -1108,6 +1068,7 @@ async function showCompetitionResults(competitionData) {
         competitionRankingTbody.innerHTML = '';
 
         const participants = Object.values(competitionData.participantes || {}).filter(p => p !== null);
+        // Ordena os participantes pela pontuação em ordem decrescente
         participants.sort((a, b) => b.pontuacao - a.pontuacao);
 
         let rank = 1;
@@ -1116,6 +1077,7 @@ async function showCompetitionResults(competitionData) {
             let rankClass = '';
             let borderClass = '';
 
+            // Lógica para as bordas e classes de ranking
             if (rank === 1) { rankClass = 'rank-1'; borderClass = 'borda_competicao_ouro'; }
             else if (rank === 2) { rankClass = 'rank-2'; borderClass = 'borda_competicao_prata'; }
             else if (rank === 3) { rankClass = 'rank-3'; borderClass = 'borda_competicao_bronze'; }
@@ -1136,6 +1098,7 @@ async function showCompetitionResults(competitionData) {
             `;
             competitionRankingTbody.appendChild(row);
 
+            // Conceder conquistas de competição (apenas para o usuário logado)
             if (currentUser && participant.uid === currentUser.uid) {
                 const userRef = doc(db, 'usuarios', currentUser.uid);
                 await checkAndAwardAchievements(userRef, participant.pontuacao, participant.respostas.filter(r => r.answeredCorrectly).length, rank);
@@ -1144,6 +1107,7 @@ async function showCompetitionResults(competitionData) {
         }
     }
 
+    // Apenas o criador pode "Jogar Novamente"
     if (playAgainCompetitionBtn) {
         playAgainCompetitionBtn.classList.toggle('hidden', currentUser.uid !== competitionData.criadorUid);
     }
@@ -1156,31 +1120,34 @@ if(startCompetitionBtn) startCompetitionBtn.addEventListener('click', async () =
     await updateDoc(competitionRef, { estado: 'em_andamento' });
 });
 
-if(leaveWaitingRoomBtn) leaveWaitingRoomBtn.addEventListener('click', () => leaveWaitingRoom(true));
+if(leaveWaitingRoomBtn) leaveWaitingRoomBtn.addEventListener('click', () => leaveWaitingRoom(true)); // Passa true para indicar que é uma saída voluntária
 async function leaveWaitingRoom(voluntaryExit = true) {
     const isCreator = competitionData && currentUser.uid === competitionData.criadorUid;
 
     if (voluntaryExit && isCreator) {
         if(confirm("Você é o criador da sala. Sair irá fechar a sala para todos. Deseja continuar?")) {
             const competitionRef = doc(db, 'competicoes', activeCompetitionId);
+            // Deletar a subcoleção 'messages' antes de deletar o documento da competição
             const messagesRef = collection(competitionRef, 'messages');
             const messageDocs = await getDocs(messagesRef);
             const batch = writeBatch(db);
             messageDocs.forEach(doc => {
                 batch.delete(doc.ref);
             });
-            batch.delete(competitionRef);
-            await batch.commit(); 
+            batch.delete(competitionRef); // Adiciona a exclusão do documento principal
+            await batch.commit();
         } else {
-            return;
+            return; // O criador cancelou a saída
         }
     } else if (voluntaryExit && !isCreator) {
+        // Se um participante normal sai, ele é removido da lista
         const competitionRef = doc(db, 'competicoes', activeCompetitionId);
         await updateDoc(competitionRef, {
-            [`participantes.${currentUser.uid}`]: deleteField() 
+            [`participantes.${currentUser.uid}`]: null // Define o participante como null para removê-lo
         });
     }
 
+    // Limpa os listeners e estados
     if (unsubscribeCompetition) unsubscribeCompetition();
     if (unsubscribeChat) unsubscribeChat();
 
@@ -1188,6 +1155,11 @@ async function leaveWaitingRoom(voluntaryExit = true) {
     activeCompetitionId = null;
     competitionData = null;
     switchScreen('initial-screen');
+    if (mainMenu) mainMenu.classList.remove('hidden');
+    if (welcomeMessage) welcomeMessage.classList.add('hidden');
+    if (currentUser) {
+        await loadUserGroups(currentUser.uid); // Recarrega os grupos do usuário
+    }
 }
 
 if (playAgainCompetitionBtn) {
@@ -1197,18 +1169,20 @@ if (playAgainCompetitionBtn) {
             return;
         }
 
+        // Reinicia a competição
         const competitionRef = doc(db, 'competicoes', activeCompetitionId);
         
+        // Resetar participantes e estado, mas manter o código e perguntas
         const resetParticipants = {};
         Object.keys(competitionData.participantes).forEach(uid => {
             const participant = competitionData.participantes[uid];
-            if (participant) {
+            if (participant) { // Garante que participantes que saíram não sejam reiniciados
                 resetParticipants[uid] = {
                     nome: participant.nome,
                     fotoURL: participant.fotoURL,
                     pontuacao: 0,
                     respostas: [],
-                    team: participant.team
+                    team: participant.team // Mantém a equipe selecionada
                 };
             }
         });
@@ -1217,8 +1191,9 @@ if (playAgainCompetitionBtn) {
             await updateDoc(competitionRef, {
                 estado: 'aguardando',
                 participantes: resetParticipants,
-                dataTermino: null
+                dataTermino: null // Limpa a data de término
             });
+            // O onSnapshot em showWaitingRoom irá detectar a mudança e reabrir a sala de espera
         } catch (error) {
             console.error("Erro ao reiniciar competição:", error);
             alert("Não foi possível reiniciar a competição.");
@@ -1231,7 +1206,10 @@ if (returnToLobbyBtn) {
         if (activeCompetitionId && currentUser) {
             showWaitingRoom(currentUser.uid === competitionData.criadorUid);
         } else {
+            // Se por algum motivo não houver competição ativa, volta ao menu inicial
             switchScreen('initial-screen');
+            if (mainMenu) mainMenu.classList.remove('hidden');
+            if (welcomeMessage) welcomeMessage.classList.add('hidden');
         }
     });
 }
@@ -1244,8 +1222,12 @@ const closeDonateModalBtn = document.getElementById('close-donate-modal');
 const copyPixKeyBtn = document.getElementById('copy-pix-key-btn');
 const pixKeyText = document.getElementById('pix-key-text');
 
-// Removido if (donateCard) aqui para evitar duplicidade, pois setupMainMenuListeners já cuida
-// Removido if (closeDonateModalBtn) aqui, pois pode ser adicionado uma única vez
+if (donateCard) {
+    donateCard.addEventListener('click', () => {
+        donateModal.classList.add('visible');
+    });
+}
+
 if (closeDonateModalBtn) {
     closeDonateModalBtn.addEventListener('click', () => {
         donateModal.classList.remove('visible');
