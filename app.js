@@ -1,6 +1,6 @@
 import { auth, db } from './firebase.js';
 import { GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-import { doc, getDoc, setDoc, updateDoc, increment, arrayUnion, collection, query, where, getDocs, addDoc, serverTimestamp, orderBy, limit, onSnapshot, writeBatch } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+import { doc, getDoc, setDoc, updateDoc, increment, arrayUnion, collection, query, where, getDocs, addDoc, serverTimestamp, orderBy, limit, onSnapshot, writeBatch, deleteField } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 // --- Elementos da UI ---
 const loginBtn = document.getElementById('login-btn');
@@ -157,26 +157,24 @@ function switchScreen(newScreenId) {
             screenToShow.classList.add('visible');
         }
     }
-}
 
-async function updateUiforGroupMode() {
-    const groupId = sessionStorage.getItem('currentGroupId');
-    if (groupPlayNotification && groupPlayName) {
-        if (groupId) {
-            try {
-                const groupRef = doc(db, 'grupos', groupId);
-                const groupDoc = await getDoc(groupRef);
-                if (groupDoc.exists()) {
-                    groupPlayName.textContent = groupDoc.data().nomeDoGrupo;
-                    groupPlayNotification.classList.remove('hidden');
-                }
-            } catch (error) {
-                console.error("Erro ao buscar nome do grupo:", error);
-                groupPlayNotification.classList.add('hidden');
-            }
-        } else {
-            groupPlayNotification.classList.add('hidden');
+    // Lógica adicional para mostrar/esconder o mainMenu e welcomeMessage
+    if (newScreenId === 'initial-screen') {
+        if (mainMenu) mainMenu.classList.remove('hidden');
+        if (currentUser && welcomeMessage) { // Se logado, esconde a mensagem de boas-vindas
+            welcomeMessage.classList.add('hidden');
+        } else if (!currentUser && welcomeMessage) { // Se não logado, mostra a mensagem de boas-vindas
+            welcomeMessage.classList.remove('hidden');
         }
+        // Garante que o estado do grupo ou competição seja atualizado na UI
+        if (currentUser) {
+            updateUiforGroupMode();
+            loadUserGroups(currentUser.uid); // Recarrega os grupos ao voltar para o menu
+        }
+    } else {
+        // Se não é a tela inicial, esconde o menu principal e a mensagem de boas-vindas
+        if (mainMenu) mainMenu.classList.add('hidden');
+        if (welcomeMessage) welcomeMessage.classList.add('hidden');
     }
 }
 
@@ -240,9 +238,7 @@ onAuthStateChanged(auth, async (user) => {
             } else {
                 console.error("Competição da sessão não encontrada.");
                 sessionStorage.removeItem('activeCompetitionId'); // Limpa a sessão se a competição não existe
-                if (mainMenu) mainMenu.classList.remove('hidden');
-                if (welcomeMessage) welcomeMessage.classList.add('hidden');
-                await loadUserGroups(user.uid); 
+                switchScreen('initial-screen'); // Volta para a tela inicial
             }
         } else { // Lógica original para grupos e menu inicial
             const groupIdFromSession = sessionStorage.getItem('currentGroupId');
@@ -251,9 +247,7 @@ onAuthStateChanged(auth, async (user) => {
                 await updateUiforGroupMode();
                 startQuiz(groupDifficultyFromSession);
             } else {
-                if (mainMenu) mainMenu.classList.remove('hidden');
-                if (welcomeMessage) welcomeMessage.classList.add('hidden');
-                await loadUserGroups(user.uid); 
+                switchScreen('initial-screen'); // Garante que a tela inicial seja mostrada
             }
         }
     } else {
@@ -261,17 +255,15 @@ onAuthStateChanged(auth, async (user) => {
         if (loginBtn) loginBtn.classList.remove('hidden');
         if (userInfoDiv) userInfoDiv.classList.add('hidden');
         if (logoutBtn) logoutBtn.classList.add('hidden');
-        if (mainMenu) mainMenu.classList.add('hidden');
-        if (welcomeMessage) welcomeMessage.classList.remove('hidden');
-        if (adminLink) adminLink.classList.add('hidden');
-        if (profileLink) profileLink.classList.add('hidden');
         // Limpa estados de competição ao deslogar
         sessionStorage.removeItem('activeCompetitionId');
+        sessionStorage.removeItem('currentGroupId');
+        sessionStorage.removeItem('currentGroupDifficulty');
         if (unsubscribeCompetition) unsubscribeCompetition();
         if (unsubscribeChat) unsubscribeChat();
         activeCompetitionId = null;
         competitionData = null;
-        switchScreen('initial-screen');
+        switchScreen('initial-screen'); // Garante que a tela inicial seja mostrada
     }
 });
 
@@ -448,6 +440,7 @@ if (backToMenuBtn) backToMenuBtn.addEventListener('click', () => {
     sessionStorage.removeItem('currentGroupId');
     sessionStorage.removeItem('currentGroupDifficulty');
     updateUiforGroupMode();
+    switchScreen('initial-screen'); // Garante que a tela inicial seja ativada
 });
 
 if (rankingCard) rankingCard.addEventListener('click', () => {
@@ -671,10 +664,7 @@ if (leaveQuizBtn) {
             sessionStorage.removeItem('currentGroupId');
             sessionStorage.removeItem('currentGroupDifficulty');
             sessionStorage.removeItem('activeCompetitionId'); // Garante que a competição seja limpa
-            updateUiforGroupMode();
-            switchScreen('initial-screen');
-            if (mainMenu) mainMenu.classList.remove('hidden');
-            if (welcomeMessage) welcomeMessage.classList.add('hidden');
+            switchScreen('initial-screen'); // Volta para a tela inicial
         }
     });
 }
@@ -683,10 +673,7 @@ if (restartBtn) restartBtn.addEventListener('click', () => {
     sessionStorage.removeItem('currentGroupId');
     sessionStorage.removeItem('currentGroupDifficulty');
     sessionStorage.removeItem('activeCompetitionId');
-    updateUiforGroupMode();
-    switchScreen('initial-screen');
-    if (mainMenu) mainMenu.classList.remove('hidden');
-    if (welcomeMessage) welcomeMessage.classList.add('hidden');
+    switchScreen('initial-screen'); // Volta para a tela inicial
 });
 
 function populateBookSelect() {
@@ -769,7 +756,7 @@ if (createCompetitionBtn) createCompetitionBtn.addEventListener('click', async (
         const inviteCode = Math.random().toString(36).substring(2, 7).toUpperCase();
         
         const primaryQuery = query(
-            collection(db, "perguntas"),
+            collection(db, "perguntas"), 
             where("nivel", "==", difficulty),
             where("faixaEtaria", "array-contains", currentUserAgeGroup)
         );
@@ -1168,13 +1155,8 @@ async function leaveWaitingRoom(voluntaryExit = true) {
     sessionStorage.removeItem('activeCompetitionId');
     activeCompetitionId = null;
     competitionData = null;
-    switchScreen('initial-screen');
-    if (mainMenu) mainMenu.classList.remove('hidden');
-    if (welcomeMessage) welcomeMessage.classList.add('hidden');
-    if (currentUser) {
-        await loadUserGroups(currentUser.uid); // Recarrega os grupos do usuário
-    }
-}
+    switchScreen('initial-screen'); // Volta para a tela inicial
+});
 
 if (playAgainCompetitionBtn) {
     playAgainCompetitionBtn.addEventListener('click', async () => {
@@ -1222,8 +1204,6 @@ if (returnToLobbyBtn) {
         } else {
             // Se por algum motivo não houver competição ativa, volta ao menu inicial
             switchScreen('initial-screen');
-            if (mainMenu) mainMenu.classList.remove('hidden');
-            if (welcomeMessage) welcomeMessage.classList.add('hidden');
         }
     });
 }
