@@ -535,10 +535,13 @@ function displayQuestion() {
     if (optionsContainer) optionsContainer.innerHTML = '';
     if (feedback) feedback.innerHTML = '';
     if (reference) reference.innerHTML = '';
-    if (nextBtn) nextBtn.classList.add('hidden');
+    if (nextBtn) nextBtn.classList.add('hidden'); 
+    
     // Mostra o botão "Finalizar Tentativa" apenas se estiver em competição
-    if (finishAttemptBtn) {
-        finishAttemptBtn.classList.toggle('hidden', !activeCompetitionId);
+    if (activeCompetitionId && finishAttemptBtn) {
+        finishAttemptBtn.classList.remove('hidden');
+    } else if (finishAttemptBtn) {
+        finishAttemptBtn.classList.add('hidden'); // Esconde se não estiver em competição
     }
 
     questions[currentQuestionIndex].alternativas.forEach((alt, index) => {
@@ -599,9 +602,8 @@ async function handleAnswer(e) {
                 clearInterval(quizTimer);
                 quizTimer = null;
             }
-            // Esconde o botão de finalizar tentativa
-            if (finishAttemptBtn) finishAttemptBtn.classList.add('hidden');
-
+            // O botão "Finalizar Tentativa" permanece visível até a tela mudar.
+            
             // Busca os dados mais recentes da competição para verificar se todos os participantes terminaram
             const latestCompetitionDoc = await getDoc(competitionRef);
             if (latestCompetitionDoc.exists()) {
