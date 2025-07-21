@@ -1141,10 +1141,10 @@ async function leaveWaitingRoom(voluntaryExit = true) {
         }
     } else if (voluntaryExit && !isCreator) {
         // Se um participante normal sai, ele é removido da lista
-        const competitionRef = doc(db, 'competicoes', activeCompetitionId);
+       const competitionRef = doc(db, 'competicoes', activeCompetitionId);
         // Use deleteField para remover o participante específico
-        await updateDoc(competitionRef, {
-            [`participantes.${currentUser.uid}`]: deleteField() 
+       await updateDoc(competitionRef, {
+            [`participantes.${currentUser.uid}`]: deleteField() // CORREÇÃO AQUI
         });
     }
 
