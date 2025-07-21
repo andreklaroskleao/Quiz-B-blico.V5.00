@@ -504,10 +504,12 @@ async function startQuiz(difficulty) {
 }
 
 function displayQuestion() {
+    // A lógica de finalização da competição foi movida para handleAnswer para verificar todos os jogadores.
+    // Esta função agora apenas exibe a próxima pergunta.
     if (currentQuestionIndex >= questions.length) {
-        if (activeCompetitionId) {
-            endCompetition(); // Nova: para finalizar a competição
-        } else {
+        // Se todas as perguntas do quiz individual foram respondidas, mostra os resultados.
+        // Para competição, a finalização é acionada após a última resposta de todos os jogadores.
+        if (!activeCompetitionId) {
             showResults();
         }
         return;
@@ -558,17 +560,41 @@ async function handleAnswer(e) {
         const competitionRef = doc(db, 'competicoes', activeCompetitionId);
         const participantPath = `participantes.${currentUser.uid}`;
         
-        await updateDoc(competitionRef, {
+        // Usa um batch write para atualização atômica da pontuação e respostas do participante
+        const batch = writeBatch(db);
+        batch.update(competitionRef, {
             [`${participantPath}.pontuacao`]: increment(questionScore),
             [`${participantPath}.respostas`]: arrayUnion({
                 questionIndex: currentQuestionIndex,
                 answeredCorrectly: isCorrect,
                 selectedOption: selectedIndex
-                // Removido serverTimestamp() daqui para evitar o erro.
-                // Se o timestamp for essencial, ele precisaria ser gerado no cliente
-                // como new Date().toISOString() ou o arrayUnion precisaria de outra estrutura.
             })
         });
+        await batch.commit(); // Confirma o batch write
+
+        // Verifica se esta é a última pergunta para o usuário atual
+        if (currentQuestionIndex + 1 === questions.length) {
+            // Busca os dados mais recentes da competição para verificar se todos os participantes terminaram
+            const latestCompetitionDoc = await getDoc(competitionRef);
+            if (latestCompetitionDoc.exists()) {
+                const latestCompetitionData = latestCompetitionDoc.data();
+                const participants = latestCompetitionData.participantes || {};
+                const numQuestionsInCompetition = latestCompetitionData.numPerguntas;
+
+                let allParticipantsFinished = true;
+                for (const uid in participants) {
+                    // Considera apenas participantes que não são nulos (ou seja, ainda estão no jogo)
+                    if (participants[uid] && participants[uid].respostas.length < numQuestionsInCompetition) {
+                        allParticipantsFinished = false;
+                        break;
+                    }
+                }
+
+                if (allParticipantsFinished) {
+                    endCompetition(); // Aciona o fim da competição para todos
+                }
+            }
+        }
     }
 }
 
@@ -800,8 +826,8 @@ if (createCompetitionBtn) createCompetitionBtn.addEventListener('click', async (
             estado: "aguardando",
             dificuldade: difficulty,
             numPerguntas: numQuestions,
-            minParticipantes: minPlayers,
             perguntas: competitionQuestions,
+            minParticipantes: minPlayers,
             participantes: {
                 [currentUser.uid]: {
                     nome: currentUser.displayName,
@@ -1216,8 +1242,33 @@ if (playAgainCompetitionBtn) {
 }
 
 if (returnToLobbyBtn) {
-    returnToLobbyBtn.addEventListener('click', () => {
+    returnToLobbyBtn.addEventListener('click', async () => { // Adicionado async
         if (activeCompetitionId && currentUser) {
+            const competitionRef = doc(db, 'competicoes', activeCompetitionId);
+            const competitionDoc = await getDoc(competitionRef); // Busca o estado mais recente
+
+            if (competitionDoc.exists()) {
+                const currentCompetitionState = competitionDoc.data();
+                const isCreator = currentUser.uid === currentCompetitionState.criadorUid;
+
+                if (currentCompetitionState.estado === 'finalizada' && !isCreator) {
+                    // Se um não-criador tenta voltar ao lobby de uma competição finalizada,
+                    // ele deve ser redirecionado para a tela inicial.
+                    sessionStorage.removeItem('activeCompetitionId');
+                    activeCompetitionId = null;
+                    competitionData = null; // Limpa os dados da competição
+                    switchScreen('initial-screen');
+                    if (mainMenu) mainMenu.classList.remove('hidden');
+                    if (welcomeMessage) welcomeMessage.classList.add('hidden');
+                    if (currentUser) {
+                        await loadUserGroups(currentUser.uid);
+                    }
+                    return; // Sai da função para evitar processamento adicional
+                }
+            }
+            // Se a competição não está finalizada, ou se o usuário é o criador (que pode reiniciar),
+            // ou se estamos em um estado ativo, procede para mostrar a sala de espera.
+            // A função showWaitingRoom já tem um onSnapshot que lida com as transições de estado.
             showWaitingRoom(currentUser.uid === competitionData.criadorUid);
         } else {
             // Se por algum motivo não houver competição ativa, volta ao menu inicial
