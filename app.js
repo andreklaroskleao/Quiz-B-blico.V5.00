@@ -83,6 +83,7 @@ const competitionResultCode = document.getElementById('competition-result-code')
 const competitionRankingTbody = document.getElementById('competition-ranking-tbody');
 const playAgainCompetitionBtn = document.getElementById('play-again-competition-btn');
 const returnToLobbyBtn = document.getElementById('return-to-lobby-btn');
+const groupCompetitionCard = document.getElementById('group-competition-card');
 
 
 // --- Estado do Quiz e Usuário ---
