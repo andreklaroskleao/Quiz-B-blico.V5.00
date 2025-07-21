@@ -604,27 +604,8 @@ async function handleAnswer(e) {
             }
             // O botão "Finalizar Tentativa" permanece visível até a tela mudar.
             
-            // Busca os dados mais recentes da competição para verificar se todos os participantes terminaram
-            const latestCompetitionDoc = await getDoc(competitionRef);
-            if (latestCompetitionDoc.exists()) {
-                const latestCompetitionData = latestCompetitionDoc.data();
-                const participants = latestCompetitionData.participantes || {};
-                const numQuestionsInCompetition = latestCompetitionData.numPerguntas;
-
-                let allParticipantsFinished = true;
-                for (const uid in participants) {
-                    // Considera apenas participantes que não são nulos (ou seja, ainda estão no jogo)
-                    // E verifica se a quantidade de respostas é igual ao número total de perguntas
-                    if (participants[uid] && participants[uid].respostas.length < numQuestionsInCompetition) {
-                        allParticipantsFinished = false;
-                        break;
-                    }
-                }
-
-                if (allParticipantsFinished) {
-                    endCompetition(); // Aciona o fim da competição para todos
-                }
-            }
+            // Força a finalização da tentativa do jogador e transiciona para resultados
+            await endCompetitionForcefully();
         }
     }
 }
@@ -1217,8 +1198,28 @@ async function endCompetitionForcefully() {
         console.error("Erro ao forçar finalização do participante:", error);
     }
 
-    // Em seguida, aciona o fim global da competição (que verificará se todos terminaram)
-    await endCompetition();
+    // Após garantir que as respostas do jogador foram atualizadas,
+    // verifica se todos os participantes terminaram e, se sim, finaliza a competição.
+    // Independentemente disso, o jogador atual é levado para a tela de resultados.
+    const latestCompetitionDoc = await getDoc(competitionRef);
+    if (latestCompetitionDoc.exists()) {
+        const latestCompetitionData = latestCompetitionDoc.data();
+        const participants = latestCompetitionData.participantes || {};
+        const numQuestionsInCompetition = latestCompetitionData.numPerguntas;
+
+        let allParticipantsFinished = true;
+        for (const uid in participants) {
+            if (participants[uid] && participants[uid].respostas.length < numQuestionsInCompetition) {
+                allParticipantsFinished = false;
+                break;
+            }
+        }
+
+        if (allParticipantsFinished) {
+            await endCompetition(); // Aciona o fim da competição para todos
+        }
+        showCompetitionResults(latestCompetitionData); // Leva o jogador atual para a tela de resultados
+    }
 }
 
 
@@ -1393,50 +1394,27 @@ if (playAgainCompetitionBtn) {
 
 if (returnToLobbyBtn) {
     returnToLobbyBtn.addEventListener('click', async () => {
-        if (activeCompetitionId && currentUser) {
-            const competitionRef = doc(db, 'competicoes', activeCompetitionId);
-            const competitionDoc = await getDoc(competitionRef); // Busca o estado mais recente
+        // Limpa o timer do quiz se estiver ativo
+        if (quizTimer) {
+            clearInterval(quizTimer);
+            quizTimer = null;
+        }
+        // Esconde o timer e o botão de finalizar tentativa
+        if (competitionTimerDiv) competitionTimerDiv.classList.add('hidden');
+        if (finishAttemptBtn) finishAttemptBtn.classList.add('hidden');
+        // Limpa o listener de resultados
+        if (competitionResultsUnsubscribe) competitionResultsUnsubscribe();
+        competitionResultsUnsubscribe = null;
 
-            if (competitionDoc.exists()) {
-                const currentCompetitionState = competitionDoc.data();
-                const isCreator = currentUser.uid === currentCompetitionState.criadorUid;
-
-                // Limpa o timer do quiz se estiver ativo
-                if (quizTimer) {
-                    clearInterval(quizTimer);
-                    quizTimer = null;
-                }
-                // Esconde o timer e o botão de finalizar tentativa
-                if (competitionTimerDiv) competitionTimerDiv.classList.add('hidden');
-                if (finishAttemptBtn) finishAttemptBtn.classList.add('hidden');
-                // Limpa o listener de resultados
-                if (competitionResultsUnsubscribe) competitionResultsUnsubscribe();
-                competitionResultsUnsubscribe = null;
-
-                if (currentCompetitionState.estado === 'finalizada' && !isCreator) {
-                    // Se um não-criador tenta voltar ao lobby de uma competição finalizada,
-                    // ele deve ser redirecionado para a tela inicial.
-                    sessionStorage.removeItem('activeCompetitionId');
-                    activeCompetitionId = null;
-                    competitionData = null; // Limpa os dados da competição
-                    switchScreen('initial-screen');
-                    if (mainMenu) mainMenu.classList.remove('hidden');
-                    if (welcomeMessage) welcomeMessage.classList.add('hidden');
-                    if (currentUser) {
-                        await loadUserGroups(currentUser.uid);
-                    }
-                    return; // Sai da função para evitar processamento adicional
-                }
-            }
-            // Se a competição não está finalizada, ou se o usuário é o criador (que pode reiniciar),
-            // ou se estamos em um estado ativo, procede para mostrar a sala de espera.
-            // A função showWaitingRoom já tem um onSnapshot que lida com as transições de estado.
-            showWaitingRoom(currentUser.uid === competitionData.criadorUid);
-        } else {
-            // Se por algum motivo não houver competição ativa, volta ao menu inicial
-            switchScreen('initial-screen');
-            if (mainMenu) mainMenu.classList.remove('hidden');
-            if (welcomeMessage) welcomeMessage.classList.add('hidden');
+        // Sempre retorna para a tela inicial (menu principal)
+        sessionStorage.removeItem('activeCompetitionId');
+        activeCompetitionId = null;
+        competitionData = null; // Limpa os dados da competição
+        switchScreen('initial-screen');
+        if (mainMenu) mainMenu.classList.remove('hidden');
+        if (welcomeMessage) welcomeMessage.classList.add('hidden');
+        if (currentUser) {
+            await loadUserGroups(currentUser.uid);
         }
     });
 }
