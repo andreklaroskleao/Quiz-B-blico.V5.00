@@ -90,14 +90,14 @@ let currentUser = null;
 let currentUserAgeGroup = "adulto";
 let questions = [];
 let currentQuestionIndex = 0;
-let score = 0; // Pontuação para o quiz atual do usuário, seja individual ou em competição
-let correctAnswersCount = 0; // Contagem de respostas corretas para o quiz atual
-let currentGroupId = null; // ID do grupo se for um quiz de grupo
-let quizAtualDifficulty = 'facil'; // Dificuldade do quiz atual
-let activeCompetitionId = null; // ID da competição ativa
-let competitionData = null; // Para armazenar os dados da competição ativa
-let unsubscribeCompetition = null; // Listener do Firestore para a competição
-let unsubscribeChat = null; // Listener do Firestore para o chat da competição
+let score = 0;
+let correctAnswersCount = 0;
+let currentGroupId = null;
+let quizAtualDifficulty = 'facil';
+let activeCompetitionId = null;
+let competitionData = null;
+let unsubscribeCompetition = null;
+let unsubscribeChat = null;
 
 // --- Dados da Bíblia ---
 const bibleBooks = {
@@ -186,12 +186,54 @@ function switchScreen(newScreenId) {
             updateUiforGroupMode();
             loadUserGroups(currentUser.uid); // Recarrega os grupos ao voltar para o menu
         }
+        // *******************************************************
+        // CHAMADA CRÍTICA: RE-ANEXAR LISTENERS DO MENU PRINCIPAL
+        setupMainMenuListeners();
+        // *******************************************************
     } else {
         // Se não é a tela inicial, esconde o menu principal e a mensagem de boas-vindas
         if (mainMenu) mainMenu.classList.add('hidden');
         if (welcomeMessage) welcomeMessage.classList.add('hidden');
     }
 }
+
+// --- Função para configurar os listeners do Menu Principal ---
+function setupMainMenuListeners() {
+    // Garantir que os elementos existem antes de adicionar listeners para evitar erros
+    if (donateCard) {
+        // Remove listener existente antes de adicionar para evitar duplicação
+        donateCard.removeEventListener('click', showDonateModal); 
+        donateCard.addEventListener('click', showDonateModal);
+    }
+    if (competitionCard) {
+        competitionCard.removeEventListener('click', showCompetitionLobbyModal);
+        competitionCard.addEventListener('click', showCompetitionLobbyModal);
+    }
+    if (groupCompetitionCard) { // Assumindo que este é o card para gerenciar grupos
+        // Se este card não tem um listener direto para uma ação "abrir", não precisa de setup aqui.
+        // Se "Criar Grupo" é um botão DENTRO deste card, seu listener já está em setup de modais.
+    }
+    if (rankingCard) {
+        rankingCard.removeEventListener('click', goToRankingPage);
+        rankingCard.addEventListener('click', goToRankingPage);
+    }
+    if (bibleCard) {
+        bibleCard.removeEventListener('click', showBibleModal);
+        bibleCard.addEventListener('click', showBibleModal);
+    }
+    if (createGroupBtn) { // Botão dentro do card de grupos
+        createGroupBtn.removeEventListener('click', showCreateGroupModal);
+        createGroupBtn.addEventListener('click', showCreateGroupModal);
+    }
+}
+
+// Funções auxiliares para os event listeners (para facilitar o removeEventListener)
+function showDonateModal() { donateModal.classList.add('visible'); }
+function showCompetitionLobbyModal() { competitionLobbyModal.classList.add('visible'); }
+function goToRankingPage() { window.location.href = 'ranking.html'; }
+function showBibleModal() { bibleModal.classList.add('visible'); }
+function showCreateGroupModal() { createGroupModal.classList.add('visible'); }
+
 
 // --- Inicialização ---
 document.addEventListener('DOMContentLoaded', () => {
@@ -214,6 +256,8 @@ document.addEventListener('DOMContentLoaded', () => {
         window.history.replaceState({path: cleanUrl}, '', cleanUrl);
     }
     populateBookSelect();
+    // Chamar setupMainMenuListeners aqui também para o carregamento inicial da página
+    setupMainMenuListeners(); // Certifica que os listeners são anexados no carregamento inicial
 });
 
 // --- Autenticação ---
@@ -407,7 +451,7 @@ async function loadUserGroups(userId) {
 }
 
 
-if (createGroupBtn) createGroupBtn.addEventListener('click', () => createGroupModal.classList.add('visible'));
+if (createGroupBtn) createGroupBtn.addEventListener('click', showCreateGroupModal); // Removido duplicidade, agora chamado por setupMainMenuListeners
 if (cancelGroupBtn) cancelGroupBtn.addEventListener('click', () => createGroupModal.classList.remove('visible'));
 if (saveGroupBtn) saveGroupBtn.addEventListener('click', async () => {
     if (!groupNameInput || !groupDifficultySelect) return;
@@ -459,12 +503,10 @@ if (saveGroupBtn) saveGroupBtn.addEventListener('click', async () => {
 if (backToMenuBtn) backToMenuBtn.addEventListener('click', () => {
     sessionStorage.removeItem('currentGroupId');
     sessionStorage.removeItem('currentGroupDifficulty');
-    switchScreen('initial-screen'); // Garante que a tela inicial seja ativada
+    switchScreen('initial-screen');
 });
 
-if (rankingCard) rankingCard.addEventListener('click', () => {
-    window.location.href = 'ranking.html';
-});
+if (rankingCard) rankingCard.addEventListener('click', goToRankingPage); // Removido duplicidade, agora chamado por setupMainMenuListeners
 
 if (difficultySelection) difficultySelection.addEventListener('click', (e) => {
     if (e.target.matches('.btn[data-difficulty]')) {
@@ -731,15 +773,14 @@ async function loadChapterText() {
         bibleTextDisplay.innerHTML = `<p style="color: red;">Erro ao carregar o capítulo. Tente novamente.</p>`;
     }
 }
-if (bibleCard) bibleCard.addEventListener('click', () => { if (bibleModal) bibleModal.classList.add('visible'); });
+if (bibleCard) bibleCard.addEventListener('click', showBibleModal); // Removido duplicidade
 if (closeBibleBtn) closeBibleBtn.addEventListener('click', () => { if (bibleModal) bibleModal.classList.remove('visible'); });
 if (bibleBookSelect) bibleBookSelect.addEventListener('change', populateChapterSelect);
 if (loadChapterBtn) loadChapterBtn.addEventListener('click', loadChapterText);
 
 // --- Lógica da Competição ---
-if (competitionCard) competitionCard.addEventListener('click', () => {
-    if(competitionLobbyModal) competitionLobbyModal.classList.add('visible');
-});
+if (competitionCard) competitionCard.addEventListener('click', showCompetitionLobbyModal); // Removido duplicidade
+
 if (closeLobbyBtn) closeLobbyBtn.addEventListener('click', () => {
     if(competitionLobbyModal) competitionLobbyModal.classList.remove('visible');
 });
@@ -813,7 +854,7 @@ if (createCompetitionBtn) createCompetitionBtn.addEventListener('click', async (
             dataCriacao: serverTimestamp()
         });
         activeCompetitionId = competitionRef.id;
-        sessionStorage.setItem('activeCompetitionId', activeCompetitionId); // Salva na sessão
+        sessionStorage.setItem('activeCompetitionId', activeCompetitionId);
         showWaitingRoom(true);
 
     } catch (error) {
@@ -1202,12 +1243,8 @@ const closeDonateModalBtn = document.getElementById('close-donate-modal');
 const copyPixKeyBtn = document.getElementById('copy-pix-key-btn');
 const pixKeyText = document.getElementById('pix-key-text');
 
-if (donateCard) {
-    donateCard.addEventListener('click', () => {
-        donateModal.classList.add('visible');
-    });
-}
-
+// Removido if (donateCard) aqui para evitar duplicidade, pois setupMainMenuListeners já cuida
+// Removido if (closeDonateModalBtn) aqui, pois pode ser adicionado uma única vez
 if (closeDonateModalBtn) {
     closeDonateModalBtn.addEventListener('click', () => {
         donateModal.classList.remove('visible');
